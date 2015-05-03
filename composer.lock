@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e0fb45858dbd362e40e3b84d71a7f653",
+    "hash": "bfaa33ba426a433ca09eb29839bb7d23",
     "packages": [
         {
             "name": "anahkiasen/former",
@@ -3484,6 +3484,86 @@
             "description": "A library to read, parse, export and make subsets of different types of font files.",
             "homepage": "https://github.com/PhenX/php-font-lib",
             "time": "2014-02-01 15:22:28"
+        },
+        {
+            "name": "php-mime-mail-parser/php-mime-mail-parser",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-mime-mail-parser/php-mime-mail-parser.git",
+                "reference": "70b520a0a9a2602cc40b92f62430599dd2043d89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-mime-mail-parser/php-mime-mail-parser/zipball/70b520a0a9a2602cc40b92f62430599dd2043d89",
+                "reference": "70b520a0a9a2602cc40b92f62430599dd2043d89",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mailparse": "*",
+                "php": ">=5.4.0"
+            },
+            "replace": {
+                "exorus/php-mime-mail-parser": "*",
+                "messaged/php-mime-mail-parser": "*"
+            },
+            "require-dev": {
+                "phpunit/php-token-stream": ">=1.3.0",
+                "phpunit/phpunit": "4.*",
+                "satooshi/php-coveralls": "0.*",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpMimeMailParser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "bucabay",
+                    "email": "gabe@fijiwebdesign.com",
+                    "homepage": "http://www.fijiwebdesign.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "eXorus",
+                    "email": "exorus.spam@gmail.com",
+                    "homepage": "https://github.com/eXorus/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "M.Valinskis",
+                    "email": "M.Valins@gmail.com",
+                    "homepage": "https://code.google.com/p/php-mime-mail-parser",
+                    "role": "Developer"
+                },
+                {
+                    "name": "eugene.emmett.wood",
+                    "email": "gene_w@cementhorizon.com",
+                    "homepage": "https://code.google.com/p/php-mime-mail-parser",
+                    "role": "Developer"
+                },
+                {
+                    "name": "alknetso",
+                    "email": "alkne@gmail.com",
+                    "homepage": "https://code.google.com/p/php-mime-mail-parser",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fully Tested Mailparse Extension Wrapper for PHP 5.4+",
+            "homepage": "https://github.com/php-mime-mail-parser/php-mime-mail-parser",
+            "keywords": [
+                "MimeMailParser",
+                "mail",
+                "mailparse",
+                "mime"
+            ],
+            "time": "2015-04-26 15:48:27"
         },
         {
             "name": "phpdocumentor/reflection-docblock",

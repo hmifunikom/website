@@ -12,6 +12,7 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'HMIF\Console\Commands\Inspire',
+        'HMIF\Console\Commands\EmailParserCommand',
 	];
 
 	/**

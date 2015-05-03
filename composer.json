@@ -72,6 +72,7 @@
 		"league/flysystem-dropbox": "~1.0@dev",
         "iron-io/iron_mq":  "~1.5",
 		"jenssegers/rollbar": "dev-master",
+        "php-mime-mail-parser/php-mime-mail-parser": "~2.0",
 
 		"xethron/migrations-generator": "dev-l5",
 		"way/generators": "dev-feature/laravel-five-stable",
