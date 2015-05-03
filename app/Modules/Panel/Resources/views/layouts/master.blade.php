@@ -37,7 +37,7 @@
     @include('panel::partials.javascript')
 
     <!-- ================== BEGIN PAGE LEVEL JS ================== -->
-    <script src="{{ asset_version('assets/js/apps.js') }}"></script>
+    <script src="{{ asset_version('assets/js/apps.min.js') }}"></script>
     <!-- ================== END PAGE LEVEL JS ================== -->
 
     <script>

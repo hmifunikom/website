@@ -295,6 +295,41 @@
 @section('javascript')
     <!-- ================== BEGIN PAGE LEVEL JS ================== -->
     <script>
+        var getMonthName = function(number) {
+            var month = [];
+            month[0] = "Januari";
+            month[1] = "Februari";
+            month[2] = "Maret";
+            month[3] = "April";
+            month[4] = "Mei";
+            month[5] = "Juni";
+            month[6] = "Juli";
+            month[7] = "Agustus";
+            month[8] = "September";
+            month[9] = "Oktober";
+            month[10] = "November";
+            month[11] = "Desember";
+
+            return month[number];
+        };
+
+        var getDate = function(date) {
+            var currentDate = new Date(date);
+            var dd = currentDate.getDate();
+            var mm = currentDate.getMonth() + 1;
+            var yyyy = currentDate.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+            currentDate = dd+'-'+mm+'-'+yyyy;
+
+            return currentDate;
+        };
+
         var handleVisitorsLineChart = function() {
             var green = '#0D888B';
             var greenLight = '#00ACAC';
@@ -367,10 +402,6 @@
 
             $.getScript('{{ asset_version('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}').done(function() {
                 handleDashboardDatepicker();
-            });
-
-            $.getScript('{{ asset_version('assets/js/dashboard-v2.js') }}').done(function () {
-                DashboardV2.init();
             });
         });
     </script>
