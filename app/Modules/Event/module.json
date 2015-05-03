@@ -1,0 +1,16 @@
+{
+    "name": "Event",
+    "alias": "event",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "HMIF\\Modules\\Event\\Providers\\EventServiceProvider",
+        "HMIF\\Modules\\Event\\Providers\\EntitiesServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

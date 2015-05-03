@@ -1,0 +1,15 @@
+{
+	"name": "hmif/user",
+	"description": "",
+	"authors": [
+		{
+			"name": "HMIF Unikom",
+			"email": "humas@hmifunikom.org"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"HMIF\\Modules\\User\\": ""
+		}
+	}
+}

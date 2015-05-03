@@ -1,0 +1,119 @@
+{
+	"name": "laravel/laravel",
+	"description": "The Laravel Framework.",
+	"keywords": ["framework", "laravel"],
+	"license": "MIT",
+	"type": "project",
+	"repositories": [
+		{
+			"type": "git",
+			"url": "git@github.com:jamisonvalenta/Laravel-4-Generators.git"
+		},
+        {
+            "type": "vcs",
+            "url": "https://github.com/stayallive/authority"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/stayallive/authority-l5"
+        }
+    ],
+	"require": {
+		"php": ">=5.5.0",
+		"ext-zip": "*",
+		
+		"laravel/framework": "5.0.*",
+		"illuminate/html": "5.0.*",
+		
+		"qwildz/localized-eloquent-date": "dev-master",
+		
+		"graham-campbell/binput": "~3.0",
+		"graham-campbell/core": "~2.0",
+		"graham-campbell/exceptions": "~1.0",
+		
+		"mccool/laravel-auto-presenter": "~3.0",
+		"cviebrock/eloquent-sluggable": "dev-master",
+		
+		"barryvdh/laravel-debugbar": "~2.0",
+		"barryvdh/laravel-ide-helper": "~2.0",
+		"rap2hpoutre/laravel-log-viewer": "0.1.*",
+
+        "jenssegers/date": "3.*",
+		"anahkiasen/former": "4.0.*@dev",
+		"davejamesmiller/laravel-breadcrumbs": "~3",
+		"gwnobots/laravel-head": "dev-master",
+		"roumen/sitemap": "~2.5",
+		"edvinaskrucas/notification": "5.*",
+        "patricktalmadge/bootstrapper": "~5",
+
+		"intervention/image": "~2.1.1",
+		"Chumper/Zipper": "dev-master",
+
+        "pingpong/generators": "2.0.*@dev",
+		"pingpong/modules": "2.0.*@dev",
+
+        "efficiently/authority-controller": "2.0.*@dev",
+        "venturecraft/revisionable": "1.*",
+        "prettus/l5-repository": "2.0.*",
+        "sleeping-owl/with-join": "1.*",
+		
+		"guzzlehttp/guzzle": "~5.0",
+
+		"maatwebsite/excel": "~2.0.0",
+        "endroid/qrcode": "1.*",
+		"barryvdh/laravel-dompdf": "0.5.*",
+		"sabre/vobject" : "~3.3",
+        "erusev/parsedown": "dev-master",
+
+		"embed/embed": "dev-master",
+        "greggilbert/recaptcha": "2.0.*@dev",
+		"floatingpoint/gravatar": "dev-master",
+        "rezzza/flickr": "1.1.*@dev",
+		"league/flysystem-dropbox": "~1.0@dev",
+        "iron-io/iron_mq":  "~1.5",
+		"jenssegers/rollbar": "dev-master",
+
+		"xethron/migrations-generator": "dev-l5",
+		"way/generators": "dev-feature/laravel-five-stable",
+		"vinkla/hashids": "~1.0@dev",
+		"spatie/laravel-analytics": "dev-master"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~4.0",
+		"phpspec/phpspec": "~2.1"
+	},
+	"suggest": {
+        "fitztrev/laravel-html-minify": "dev-master"
+    },
+	"autoload": {
+		"classmap": [
+			"database"
+		],
+		"psr-4": {
+			"HMIF\\": "app/"
+		}
+	},
+	"autoload-dev": {
+		"classmap": [
+			"tests/TestCase.php"
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php -r \"copy('.env.example', '.env');\"",
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "stable"
+}

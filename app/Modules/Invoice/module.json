@@ -1,0 +1,15 @@
+{
+    "name": "Invoice",
+    "alias": "invoice",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "HMIF\\Modules\\Invoice\\Providers\\InvoiceServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

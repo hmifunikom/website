@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: HMIF
+        psr4_prefix: HMIF
+        src_path: app

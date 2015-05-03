@@ -1,0 +1,11 @@
+/vendor
+/node_modules
+.env
+.env.example
+
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
+
+*.iml
+
+## Directory-based project format:
+.idea/
