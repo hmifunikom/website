@@ -6,7 +6,7 @@
         <ul class="nav">
             <li class="nav-profile">
                 <div class="image">
-                    <a href="javascript:;"><img src="{!! Gravatar::src('resnarizki29@gmail.com') !!}" alt="" /></a>
+                    <a href="javascript:;"><img src="{!! gravatar('resnarizki29@gmail.com') !!}" alt="" /></a>
                 </div>
                 <div class="info">
                     Resna

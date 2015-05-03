@@ -88,7 +88,7 @@
             </li>
             <li class="dropdown navbar-user">
                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="{!! Gravatar::src('resnarizki29@gmail.com') !!}" alt="" />
+                    <img src="{!! gravatar('resnarizki29@gmail.com') !!}" alt="" />
                     <span class="hidden-xs">Resna</span> <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu animated fadeInLeft">
