@@ -10,7 +10,7 @@ class EmailParserCommand extends Command {
      *
      * @var string
      */
-    protected $name = 'email:parse';
+    protected $name = 'emailparse';
 
     /**
      * The console command description.
@@ -53,7 +53,7 @@ class EmailParserCommand extends Command {
         $text = $parser->getMessageBody('text');
 
         $data = json_encode(compact('to', 'from', 'subject', 'text'));
-        Storage::append('mail.txt', $data);
+        Storage::put('mail.txt', $data);
     }
 
     ///**
