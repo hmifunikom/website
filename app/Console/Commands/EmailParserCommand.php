@@ -50,7 +50,7 @@ class EmailParserCommand extends Command {
         $to = $parser->getHeader('to');
         $from = $parser->getHeader('from');
         $subject = $parser->getHeader('subject');
-        $text = $parser->getMessageBody('text');
+        $text = $parser->getMessageBody('htmlEmbedded');
 
         $data = json_encode(compact('to', 'from', 'subject', 'text'));
         Storage::put('mail.txt', $data);
