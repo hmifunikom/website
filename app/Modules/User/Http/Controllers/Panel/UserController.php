@@ -9,6 +9,7 @@ class UserController extends PanelController {
 
     public function __construct(UserRepository $userRepository)
     {
+        parent::__construct();
         $this->userRepository = $userRepository;
     }
 

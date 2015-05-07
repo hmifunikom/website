@@ -12,6 +12,7 @@ class EventController extends PanelController {
 
     public function __construct(EventRepository $eventRepository)
     {
+        parent::__construct();
         $this->eventRepository = $eventRepository;
     }
 

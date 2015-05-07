@@ -5,6 +5,11 @@ use LaravelAnalytics;
 
 class DashboardController extends PanelController {
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
 	public function index()
 	{
         head_title('Dashboard');

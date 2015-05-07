@@ -12,6 +12,7 @@ class TicketController extends PanelController {
 
     public function __construct(TicketRepository $ticketRepository)
     {
+        parent::__construct();
         $this->ticketRepository = $ticketRepository;
     }
 
