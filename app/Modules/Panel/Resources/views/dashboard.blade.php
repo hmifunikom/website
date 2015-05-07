@@ -391,7 +391,6 @@
 
         $(document).ready(function() {
             App.restartGlobalFunction();
-            //App.setPageTitle('Color Admin | Dashboard V2');
 
             $.getScript('{{ asset_version('assets/plugins/morris/raphael.min.js') }}').done(function() {
                 $.getScript('{{ asset_version('assets/plugins/morris/morris.js') }}').done(function() {

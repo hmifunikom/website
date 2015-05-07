@@ -1,5 +1,10 @@
 <?php
 
+function head_title($title)
+{
+    Head::setTitle($title);
+}
+
 function head_description($content)
 {
 

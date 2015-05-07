@@ -18,11 +18,14 @@ class TicketController extends Controller {
     public function index($event)
     {
         $tickets = $this->ticketRepository->parentModel($event)->paginate();
+
+        head_title('Daftar Tiket - ' . $event->nama_acara);
         return view('event::panel.ticket.index')->with(compact('event', 'tickets'));
     }
 
     public function create($event)
     {
+        head_title('Tambah Tiket - ' . $event->nama_acara);
         return view('event::panel.ticket.create')->with(compact('event'));
     }
 
@@ -66,6 +69,7 @@ class TicketController extends Controller {
 
     public function edit($event, $ticket)
     {
+        head_title('Edit Tiket - ' . $event->nama_acara);
         return view('event::panel.ticket.edit')->with(compact('event', 'ticket'));
     }
 

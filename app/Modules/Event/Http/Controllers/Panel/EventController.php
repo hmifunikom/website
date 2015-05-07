@@ -19,11 +19,13 @@ class EventController extends Controller {
     {
         $events = $this->eventRepository->paginate();
 
+        head_title('Daftar Event');
         return view('event::panel.index')->with(['events' => $events]);
     }
 
     public function create()
     {
+        head_title('Tambah Event');
         return view('event::panel.create')->with(['method' => 'create']);
     }
 
@@ -48,11 +50,13 @@ class EventController extends Controller {
 
     public function show($event)
     {
+        head_title($event->nama_acara);
         return view('event::panel.show')->with(compact('event'));
     }
 
     public function edit($event)
     {
+        head_title('Edit Event');
         return view('event::panel.edit')->with(compact('event'));
     }
 

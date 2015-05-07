@@ -173,8 +173,6 @@
             $('#wizard').bwizard('next');
         };
 
-        App.restartGlobalFunction();
-
         $.getScript('{{ asset_version('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}', function () {
             handleDatepicker();
         });

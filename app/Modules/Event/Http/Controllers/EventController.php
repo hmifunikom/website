@@ -33,6 +33,7 @@ class EventController extends Controller {
         $event = $this->eventRepository->pushCriteria(new DateRangeCriteria($date))->paginate();
         $total = $this->eventRepository->pushCriteria(new DateRangeCriteria($date, 'year'))->paginate()->total();
 
+        head_title('Event');
 		return view('event::index')->with(['pagetitle' => 'Event' , 'date' => $date, 'listacara' => $event, 'total' => $total]);
 	}
 
@@ -44,6 +45,7 @@ class EventController extends Controller {
             return Redirect::route('event.show', ['event' => $event, 'slug' => $event->slug], 301);
         }
 
+        head_title($event->nama_acara);
         return view('event::item')->with(['pagetitle' => $event->nama_acara, 'event' => $event]);
     }
 }

@@ -62,8 +62,6 @@
             });
         };
 
-        App.restartGlobalFunction();
-
         $.getScript('{{ asset_version('assets/plugins/form/jquery.form.js') }}');
         $.getScript('{{ asset_version('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}', function() {
             handleDatepicker();

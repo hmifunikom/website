@@ -41,9 +41,5 @@
 @endsection
 
 @section('javascript')
-    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
-    <script>
-        App.restartGlobalFunction();
-    </script>
-    <!-- ================== END PAGE LEVEL JS ================== -->
+
 @endsection
