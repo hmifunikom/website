@@ -29,11 +29,11 @@ return array(
 
 	'title' => array(
 
-		'sitename' => '',
+		'sitename' => 'HMIF Unikom',
 
 		'show_sitename' => true,
 
-		'separator' => ' - ',
+		'separator' => ' | ',
 
 		'first' => true,
 
@@ -49,7 +49,7 @@ return array(
 	|
 	*/
 
-	'description' => '',
+	'description' => 'HMIF Unikom Official Website',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -66,7 +66,7 @@ return array(
 	|
 	*/
 
-	'favicon' =>'',
+	'favicon' =>'favicon',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -88,7 +88,7 @@ return array(
 
 	'ie_edge' => true,
 
-	'html5_shiv' => true,
+	'html5_shiv' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -102,7 +102,7 @@ return array(
 	|
 	*/
 
-	'responsive' => true,
+	'responsive' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -118,13 +118,13 @@ return array(
 
 	'facebook' => array(
 
-		'active' => false,
+		'active' => true,
 
-		'page_id' => '',
+		'page_id' => '433175063394714',
 
-		'app_id' => '',
+		'app_id' => '1576946569237047',
 
-		'admins' => '',
+		'admins' => '1338503834',
 
 		'image' => '',
 
@@ -144,13 +144,13 @@ return array(
 
 	'twitter' => array(
 
-		'active' => false,
+		'active' => true,
 
 		'image' => '',
 
-		'site' => '',
+		'site' => '@hmifunikom',
 
-		'creator' => '',
+		'creator' => '@hmifunikom',
 
 	),
 
@@ -207,7 +207,7 @@ return array(
 
 		'active' => true,
 
-		'id' => '',
+		'id' => 'UA-47738576-2',
 
 		'script' => '',
 

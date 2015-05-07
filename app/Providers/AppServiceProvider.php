@@ -1,5 +1,7 @@
 <?php namespace HMIF\Providers;
 
+use Head;
+use Queue;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider {
@@ -11,7 +13,8 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-
+        $this->turnOffIronSllVerifypeer();
+        $this->addHeadMeta();
 	}
 
 	/**
@@ -30,5 +33,16 @@ class AppServiceProvider extends ServiceProvider {
 			'HMIF\Services\Registrar'
 		);
 	}
+
+
+    public function turnOffIronSllVerifypeer()
+    {
+        Queue::getIron()->ssl_verifypeer = false;
+    }
+
+    public function addHeadMeta()
+    {
+        head_meta('name', 'twitter:card', 'summary_large_image');
+    }
 
 }

@@ -4,8 +4,10 @@
 <html lang="en">
 <!--<![endif]-->
 <head>
+    {!! Head::render() !!}
     @include('panel::partials.head')
     @yield('head')
+    <meta name="_token" content="{{ csrf_token() }}" />
 </head>
 <body class="flat-black">
     <!-- begin #page-loader -->

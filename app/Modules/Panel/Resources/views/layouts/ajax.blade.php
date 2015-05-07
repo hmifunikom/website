@@ -1,4 +1,5 @@
 <head>
+    {!! Head::render() !!}
     @yield('head')
     <meta name="_token" content="{{ csrf_token() }}" />
 </head>
