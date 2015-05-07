@@ -1,3 +1,3 @@
-## Website HMIF Unikom [https://hmifunikom.org](https://hmifunikom.org) 
+## Website HMIF Unikom [https://hmifunikom.org](https://hmifunikom.org) (Under Development) 
 
-[![Deployment status from dploy.io](https://prox.dploy.io/badge/56046447846952/29590.png)](http://dploy.io)
+[![Deployment status from dploy.io](https://qwildz.dploy.io/badge/02267417942607/29594.png)](http://dploy.io)
