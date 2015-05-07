@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bfaa33ba426a433ca09eb29839bb7d23",
+    "hash": "72d93129f62b13bbd4bedc599a953c49",
     "packages": [
         {
             "name": "anahkiasen/former",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/formers/former.git",
-                "reference": "4a03cdd08f1bdd975bd2521bed74ab38bf590388"
+                "reference": "e37cb69d12d4436282e6754800903d94788528f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/formers/former/zipball/4a03cdd08f1bdd975bd2521bed74ab38bf590388",
-                "reference": "4a03cdd08f1bdd975bd2521bed74ab38bf590388",
+                "url": "https://api.github.com/repos/formers/former/zipball/e37cb69d12d4436282e6754800903d94788528f3",
+                "reference": "e37cb69d12d4436282e6754800903d94788528f3",
                 "shasum": ""
             },
             "require": {
@@ -63,7 +63,7 @@
                 "foundation",
                 "laravel"
             ],
-            "time": "2015-04-20 13:53:18"
+            "time": "2015-05-06 00:01:16"
         },
         {
             "name": "anahkiasen/html-object",
@@ -2757,16 +2757,16 @@
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.0.2",
+            "version": "v5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "9af203053815cb12c9b8307e8367153c84fdd4b7"
+                "reference": "c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/9af203053815cb12c9b8307e8367153c84fdd4b7",
-                "reference": "9af203053815cb12c9b8307e8367153c84fdd4b7",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94",
+                "reference": "c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94",
                 "shasum": ""
             },
             "require": {
@@ -2803,7 +2803,7 @@
                     "email": "adam@laravelcollective.com"
                 }
             ],
-            "time": "2015-03-10 15:59:48"
+            "time": "2015-05-06 14:23:37"
         },
         {
             "name": "league/flysystem",
@@ -3725,12 +3725,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pingpong-labs/modules.git",
-                "reference": "d7dbb30cd3d52bf0e91d7eb72979275331c98769"
+                "reference": "c083fdbadfb8f78680a2e500b58aa6ce42a4f690"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/d7dbb30cd3d52bf0e91d7eb72979275331c98769",
-                "reference": "d7dbb30cd3d52bf0e91d7eb72979275331c98769",
+                "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/c083fdbadfb8f78680a2e500b58aa6ce42a4f690",
+                "reference": "c083fdbadfb8f78680a2e500b58aa6ce42a4f690",
                 "shasum": ""
             },
             "require": {
@@ -3774,7 +3774,7 @@
                 "modules",
                 "pingpong"
             ],
-            "time": "2015-04-28 20:44:10"
+            "time": "2015-05-05 18:21:27"
         },
         {
             "name": "predis/predis",
@@ -4317,16 +4317,16 @@
         },
         {
             "name": "roumen/sitemap",
-            "version": "v2.5.2",
+            "version": "v2.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RoumenDamianoff/laravel-sitemap.git",
-                "reference": "ea5f875f57593e3b35d58f2419b31738fa228d10"
+                "reference": "39867015192825c14a388270482f8a3b2237782e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-sitemap/zipball/ea5f875f57593e3b35d58f2419b31738fa228d10",
-                "reference": "ea5f875f57593e3b35d58f2419b31738fa228d10",
+                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-sitemap/zipball/39867015192825c14a388270482f8a3b2237782e",
+                "reference": "39867015192825c14a388270482f8a3b2237782e",
                 "shasum": ""
             },
             "require": {
@@ -4339,7 +4339,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev"
+                    "dev-master": "2.5-dev",
+                    "dev-laravel4": "2.4-dev"
                 }
             },
             "autoload": {
@@ -4365,7 +4366,7 @@
                 "Sitemap",
                 "laravel"
             ],
-            "time": "2015-02-25 11:10:34"
+            "time": "2015-05-05 09:25:21"
         },
         {
             "name": "sabre/vobject",
@@ -5927,6 +5928,59 @@
                 "migrations"
             ],
             "time": "2015-02-23 05:43:08"
+        },
+        {
+            "name": "yocmen/html-minify",
+            "version": "v2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yocmen/html-minify.git",
+                "reference": "7737335c7f4d02b4d622efc5cdb2e71ab2cd4414"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yocmen/html-minify/zipball/7737335c7f4d02b4d622efc5cdb2e71ab2cd4414",
+                "reference": "7737335c7f4d02b4d622efc5cdb2e71ab2cd4414",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Yocmen\\HtmlMinify": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Trevor Fitzgerald",
+                    "email": "fitztrev@gmail.com"
+                },
+                {
+                    "name": "Yocsel Mendoza",
+                    "email": "yocmen@gmail.com"
+                }
+            ],
+            "description": "Minifies the HTML output of Laravel 5 applications (Originally from https://github.com/fitztrev/laravel-html-minify)",
+            "homepage": "https://github.com/yocmen/html-minify",
+            "keywords": [
+                "blade",
+                "compress",
+                "html",
+                "l5",
+                "laravel",
+                "minifier",
+                "minify",
+                "optimization",
+                "performance"
+            ],
+            "time": "2015-04-14 20:18:25"
         }
     ],
     "packages-dev": [
@@ -6962,6 +7016,7 @@
         "pingpong/generators": 20,
         "pingpong/modules": 20,
         "efficiently/authority-controller": 20,
+        "vinkla/hashids": 20,
         "erusev/parsedown": 20,
         "embed/embed": 20,
         "greggilbert/recaptcha": 20,
@@ -6969,10 +7024,9 @@
         "rezzza/flickr": 20,
         "league/flysystem-dropbox": 20,
         "jenssegers/rollbar": 20,
+        "spatie/laravel-analytics": 20,
         "xethron/migrations-generator": 20,
-        "way/generators": 20,
-        "vinkla/hashids": 20,
-        "spatie/laravel-analytics": 20
+        "way/generators": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -166,6 +166,7 @@ return [
         'Spatie\LaravelAnalytics\LaravelAnalyticsServiceProvider',
         'Jenssegers\Rollbar\RollbarServiceProvider',
         'FloatingPoint\Gravatar\LaravelGravatarServiceProvider',
+        'Yocmen\HtmlMinify\HtmlMinifyServiceProvider',
 
         /*
          * Application Service Providers...
