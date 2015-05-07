@@ -1,9 +1,9 @@
 <?php namespace HMIF\Modules\User\Http\Controllers\Panel;
 
+use HMIF\Modules\Panel\Http\Controllers\PanelController;
 use HMIF\Modules\User\Repositories\UserRepository;
-use Illuminate\Routing\Controller;
 
-class UserController extends Controller {
+class UserController extends PanelController {
 
     private $userRepository;
 

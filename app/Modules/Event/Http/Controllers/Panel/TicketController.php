@@ -1,12 +1,12 @@
 <?php namespace HMIF\Modules\Event\Http\Controllers\Panel;
 
+use HMIF\Modules\Panel\Http\Controllers\PanelController;
 use Input;
 use stdClass;
 use HMIF\Modules\Event\Http\Requests\StoreTicketPostRequest;
 use HMIF\Modules\Event\Repositories\TicketRepository;
-use HMIF\Http\Controllers\Controller;
 
-class TicketController extends Controller {
+class TicketController extends PanelController {
 
     private $ticketRepository;
 

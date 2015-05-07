@@ -2,9 +2,8 @@
 
 use Date;
 use LaravelAnalytics;
-use Illuminate\Routing\Controller;
 
-class DashboardController extends Controller {
+class DashboardController extends PanelController {
 
 	public function index()
 	{

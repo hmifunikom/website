@@ -1,12 +1,12 @@
 <?php namespace HMIF\Modules\Event\Http\Controllers\Panel;
 
+use HMIF\Modules\Panel\Http\Controllers\PanelController;
 use stdClass;
 use HMIF\Libraries\ImageManipulation;
-use HMIF\Http\Controllers\Controller;
 use HMIF\Modules\Event\Http\Requests\StoreEventPostRequest;
 use HMIF\Modules\Event\Repositories\EventRepository;
 
-class EventController extends Controller {
+class EventController extends PanelController {
 
     private $eventRepository;
 
