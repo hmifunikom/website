@@ -11,4 +11,10 @@ class BaseModel extends Model {
 
     protected $revisionEnabled = false;
 
+    public function setBoolean($coloumn, $value = true)
+    {
+        $this->{$coloumn} = (bool) $value;
+        return $this->save();
+    }
+
 }
