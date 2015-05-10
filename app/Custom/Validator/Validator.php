@@ -1,10 +1,23 @@
 <?php namespace HMIF\Custom\Validator;
 
 use DB;
+use Felixkiss\UniqueWithValidator\ValidatorExtension;
 use HMIF\Libraries\NimParser;
-use Illuminate\Validation\Validator as LaravelValidator;
 
-class Validator extends LaravelValidator {
+class Validator extends ValidatorExtension {
+
+    public function __construct($translator, $data, $rules, $messages, array $customAttributes = array())
+    {
+        // Set custom validation error messages
+        if(!isset($messages['unique_with']))
+        {
+            $messages['unique_with'] = $translator->get(
+                'validation.unique_with'
+            );
+        }
+
+        parent::__construct($translator, $data, $rules, $messages, $customAttributes);
+    }
 
     public function validateNim($attribute, $value, $parameters)
     {

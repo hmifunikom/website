@@ -75,6 +75,7 @@ return [
     "nim_if"               => "Format NIM tidak valid.",
     "unique_if"            => ":attribute sudah ada sebelumnya.",
     "recaptcha"            => ':attribute tidak valid.',
+    'unique_with'          => 'Isian ini sudah ada sebelumnya.',
 
     /*
     |---------------------------------------------------------------------------------------
@@ -106,7 +107,6 @@ return [
         'password_confirmation'    => 'Konfirmasi Password',
 
 
-
         'waktu'                    => 'Waktu Acara',
 
         'nama_div'                 => 'Nama Divisi Acara',
@@ -118,6 +118,6 @@ return [
         'nim'                      => 'NIM',
         'no_hp'                    => 'No. Handphone',
         'email'                    => 'E-mail',
-        'recaptcha_response_field' => 'Kode verifikasi'
+        'recaptcha_response_field' => 'Kode verifikasi',
     ],
 ];

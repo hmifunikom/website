@@ -59,7 +59,7 @@
         "sleeping-owl/with-join": "1.*",
         "vinkla/hashids": "~1.0@dev",
 		
-		"guzzlehttp/guzzle": "~5.0",
+		"guzzlehttp/guzzle": "~4.0",
 
 		"maatwebsite/excel": "~2.0.0",
         "endroid/qrcode": "1.*",
@@ -78,7 +78,8 @@
         "spatie/laravel-analytics": "dev-master",
 
 		"xethron/migrations-generator": "dev-l5",
-		"way/generators": "dev-feature/laravel-five-stable"
+		"way/generators": "dev-feature/laravel-five-stable",
+		"felixkiss/uniquewith-validator": "2.*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

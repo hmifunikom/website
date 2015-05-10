@@ -167,6 +167,7 @@ return [
         'Jenssegers\Rollbar\RollbarServiceProvider',
         'FloatingPoint\Gravatar\LaravelGravatarServiceProvider',
         'Yocmen\HtmlMinify\HtmlMinifyServiceProvider',
+        'Felixkiss\UniqueWithValidator\UniqueWithValidatorServiceProvider',
 
         /*
          * Application Service Providers...

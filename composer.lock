@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "72d93129f62b13bbd4bedc599a953c49",
+    "hash": "fa61a882c11a9525fc7ac248b8e72844",
     "packages": [
         {
             "name": "anahkiasen/former",
@@ -1250,12 +1250,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/oscarotero/Embed.git",
-                "reference": "8a2f292d8084600924e9092f3441008ce4979320"
+                "reference": "a30a75896e2a8e2a2f81d12a750cfcbe7a0ab3fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/8a2f292d8084600924e9092f3441008ce4979320",
-                "reference": "8a2f292d8084600924e9092f3441008ce4979320",
+                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/a30a75896e2a8e2a2f81d12a750cfcbe7a0ab3fe",
+                "reference": "a30a75896e2a8e2a2f81d12a750cfcbe7a0ab3fe",
                 "shasum": ""
             },
             "require": {
@@ -1289,7 +1289,7 @@
                 "opengraph",
                 "twitter cards"
             ],
-            "time": "2015-03-24 22:31:47"
+            "time": "2015-05-09 11:58:22"
         },
         {
             "name": "endroid/qrcode",
@@ -1379,6 +1379,51 @@
                 "parser"
             ],
             "time": "2015-04-29 20:22:24"
+        },
+        {
+            "name": "felixkiss/uniquewith-validator",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/felixkiss/uniquewith-validator.git",
+                "reference": "6182fc2292c0230540114c7e32523a83b262137d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/felixkiss/uniquewith-validator/zipball/6182fc2292c0230540114c7e32523a83b262137d",
+                "reference": "6182fc2292c0230540114c7e32523a83b262137d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.x",
+                "illuminate/validation": "5.x",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Felixkiss\\UniqueWithValidator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Felix Kiss",
+                    "email": "felix@felixkiss.com"
+                }
+            ],
+            "description": "Custom Laravel Validator for combined unique indexes",
+            "homepage": "https://github.com/felixkiss/uniquewith-validator",
+            "keywords": [
+                "laravel"
+            ],
+            "time": "2015-03-30 11:47:52"
         },
         {
             "name": "filp/whoops",
@@ -1714,30 +1759,30 @@
         },
         {
             "name": "graham-campbell/manager",
-            "version": "v2.0.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Manager.git",
-                "reference": "17c2e2f3282bd795c136487928edb79dc8335a33"
+                "reference": "1a99ed46590cac9c524ca5ab54bd8a80aa127c39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Manager/zipball/17c2e2f3282bd795c136487928edb79dc8335a33",
-                "reference": "17c2e2f3282bd795c136487928edb79dc8335a33",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Manager/zipball/1a99ed46590cac9c524ca5ab54bd8a80aa127c39",
+                "reference": "1a99ed46590cac9c524ca5ab54bd8a80aa127c39",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.0.*",
-                "illuminate/support": "5.0.*",
-                "php": ">=5.4.7"
+                "illuminate/contracts": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.0"
+                "graham-campbell/testbench": "~2.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -1767,7 +1812,7 @@
                 "laravel",
                 "manager"
             ],
-            "time": "2015-02-05 20:11:50"
+            "time": "2015-05-07 12:37:59"
         },
         {
             "name": "graham-campbell/security",
@@ -1879,20 +1924,21 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "5.2.0",
+            "version": "4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "475b29ccd411f2fa8a408e64576418728c032cfa"
+                "reference": "66fd916e9f9130bc22c51450476823391cb2f67c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/475b29ccd411f2fa8a408e64576418728c032cfa",
-                "reference": "475b29ccd411f2fa8a408e64576418728c032cfa",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/66fd916e9f9130bc22c51450476823391cb2f67c",
+                "reference": "66fd916e9f9130bc22c51450476823391cb2f67c",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/ringphp": "~1.0",
+                "ext-json": "*",
+                "guzzlehttp/streams": "~2.1",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -1900,16 +1946,22 @@
                 "phpunit/phpunit": "~4.0",
                 "psr/log": "~1.0"
             },
+            "suggest": {
+                "ext-curl": "Guzzle will use specific adapters if cURL is present"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.0-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "GuzzleHttp\\": "src/"
-                }
+                },
+                "files": [
+                    "src/functions.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1933,71 +1985,20 @@
                 "rest",
                 "web service"
             ],
-            "time": "2015-01-28 01:03:29"
-        },
-        {
-            "name": "guzzlehttp/ringphp",
-            "version": "1.0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/RingPHP.git",
-                "reference": "52d868f13570a9a56e5fce6614e0ec75d0f13ac2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/52d868f13570a9a56e5fce6614e0ec75d0f13ac2",
-                "reference": "52d868f13570a9a56e5fce6614e0ec75d0f13ac2",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/streams": "~3.0",
-                "php": ">=5.4.0",
-                "react/promise": "~2.0"
-            },
-            "require-dev": {
-                "ext-curl": "*",
-                "phpunit/phpunit": "~4.0"
-            },
-            "suggest": {
-                "ext-curl": "Guzzle will use specific adapters if cURL is present"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Ring\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "Provides a simple API and specification that abstracts away the details of HTTP into a single PHP function.",
-            "time": "2015-03-30 01:43:20"
+            "time": "2014-10-05 19:29:14"
         },
         {
             "name": "guzzlehttp/streams",
-            "version": "3.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/streams.git",
-                "reference": "47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5"
+                "reference": "f91b721d73f0e561410903b3b3c90a5d0e40b534"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/streams/zipball/47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
-                "reference": "47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
+                "url": "https://api.github.com/repos/guzzle/streams/zipball/f91b721d73f0e561410903b3b3c90a5d0e40b534",
+                "reference": "f91b721d73f0e561410903b3b3c90a5d0e40b534",
                 "shasum": ""
             },
             "require": {
@@ -2009,13 +2010,16 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "GuzzleHttp\\Stream\\": "src/"
-                }
+                },
+                "files": [
+                    "src/functions.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2028,13 +2032,13 @@
                     "homepage": "https://github.com/mtdowling"
                 }
             ],
-            "description": "Provides a simple abstraction over streams of data",
+            "description": "Provides a simple abstraction over streams of data (Guzzle 4+)",
             "homepage": "http://guzzlephp.org/",
             "keywords": [
                 "Guzzle",
                 "stream"
             ],
-            "time": "2014-10-12 19:18:40"
+            "time": "2014-08-17 21:15:53"
         },
         {
             "name": "gwnobots/laravel-head",
@@ -2467,16 +2471,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "3.0.1",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/laravel-date.git",
-                "reference": "779f4568c0c5446932e0077cb604be898e1aaf00"
+                "reference": "2ede94bfb7346778c326240ae98641bc926ba864"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/779f4568c0c5446932e0077cb604be898e1aaf00",
-                "reference": "779f4568c0c5446932e0077cb604be898e1aaf00",
+                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/2ede94bfb7346778c326240ae98641bc926ba864",
+                "reference": "2ede94bfb7346778c326240ae98641bc926ba864",
                 "shasum": ""
             },
             "require": {
@@ -2519,7 +2523,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2015-04-30 15:22:38"
+            "time": "2015-05-09 21:07:17"
         },
         {
             "name": "jenssegers/rollbar",
@@ -2527,12 +2531,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/laravel-rollbar.git",
-                "reference": "924277d928d0799a844132f905fee8c6172c0bc0"
+                "reference": "ed6d75b827a6b9f4a784bbfa39671de1ff0f2ca9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-rollbar/zipball/924277d928d0799a844132f905fee8c6172c0bc0",
-                "reference": "924277d928d0799a844132f905fee8c6172c0bc0",
+                "url": "https://api.github.com/repos/jenssegers/laravel-rollbar/zipball/ed6d75b827a6b9f4a784bbfa39671de1ff0f2ca9",
+                "reference": "ed6d75b827a6b9f4a784bbfa39671de1ff0f2ca9",
                 "shasum": ""
             },
             "require": {
@@ -2569,7 +2573,7 @@
                 "monitoring",
                 "rollbar"
             ],
-            "time": "2015-04-19 12:41:57"
+            "time": "2015-05-09 20:10:00"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -2631,16 +2635,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.0.28",
+            "version": "5.0.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "06a09429322cf53e5bd4587db1060f02a291562e"
+                "reference": "c7ffbf1fd4895ac4cdac551265d635d995346d97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/06a09429322cf53e5bd4587db1060f02a291562e",
-                "reference": "06a09429322cf53e5bd4587db1060f02a291562e",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c7ffbf1fd4895ac4cdac551265d635d995346d97",
+                "reference": "c7ffbf1fd4895ac4cdac551265d635d995346d97",
                 "shasum": ""
             },
             "require": {
@@ -2753,7 +2757,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-04-21 01:44:32"
+            "time": "2015-05-08 19:11:13"
         },
         {
             "name": "laravelcollective/html",
@@ -3301,21 +3305,21 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.18.0",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "99e2f69f7bdc2cc4334b2d00f1e0ba450623ea36"
+                "reference": "68868e0b02d2d803d0052a59d4e5003cccf87320"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/99e2f69f7bdc2cc4334b2d00f1e0ba450623ea36",
-                "reference": "99e2f69f7bdc2cc4334b2d00f1e0ba450623ea36",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/68868e0b02d2d803d0052a59d4e5003cccf87320",
+                "reference": "68868e0b02d2d803d0052a59d4e5003cccf87320",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "symfony/translation": "2.6.*"
+                "symfony/translation": "~2.6"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -3344,7 +3348,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2015-03-26 03:05:57"
+            "time": "2015-05-09 03:23:44"
         },
         {
             "name": "nikic/php-parser",
@@ -3725,24 +3729,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pingpong-labs/modules.git",
-                "reference": "c083fdbadfb8f78680a2e500b58aa6ce42a4f690"
+                "reference": "1eaf2722efb718e4eae311fe2811840a6a61f5ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/c083fdbadfb8f78680a2e500b58aa6ce42a4f690",
-                "reference": "c083fdbadfb8f78680a2e500b58aa6ce42a4f690",
+                "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/1eaf2722efb718e4eae311fe2811840a6a61f5ae",
+                "reference": "1eaf2722efb718e4eae311fe2811840a6a61f5ae",
                 "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.0.*",
                 "laravelcollective/html": "~5.0",
                 "php": ">=5.4.0",
-                "pingpong/generators": "2.0.*@dev"
+                "pingpong/generators": "~2.0"
             },
             "require-dev": {
                 "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4",
-                "pingpong/testing": "1.*"
+                "phpunit/phpunit": "~4"
             },
             "type": "library",
             "extra": {
@@ -3774,7 +3777,7 @@
                 "modules",
                 "pingpong"
             ],
-            "time": "2015-05-05 18:21:27"
+            "time": "2015-05-09 17:23:25"
         },
         {
             "name": "predis/predis",
@@ -4120,50 +4123,6 @@
                 "logging"
             ],
             "time": "2015-02-27 13:37:12"
-        },
-        {
-            "name": "react/promise",
-            "version": "v2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/reactphp/promise.git",
-                "reference": "365fcee430dfa4ace1fbc75737ca60ceea7eeeef"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise/zipball/365fcee430dfa4ace1fbc75737ca60ceea7eeeef",
-                "reference": "365fcee430dfa4ace1fbc75737ca60ceea7eeeef",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "React\\Promise\\": "src/"
-                },
-                "files": [
-                    "src/functions_include.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jan Sorgalla",
-                    "email": "jsorgalla@googlemail.com"
-                }
-            ],
-            "description": "A lightweight implementation of CommonJS Promises/A for PHP",
-            "time": "2014-12-30 13:32:42"
         },
         {
             "name": "rezzza/flickr",
@@ -5733,28 +5692,28 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vinkla/hashids.git",
-                "reference": "06b19f75c9292db8bbfd80c10c098257c4fe3e8c"
+                "reference": "dbb23bb78309fd5d0668f5442234de408a83ca7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vinkla/hashids/zipball/06b19f75c9292db8bbfd80c10c098257c4fe3e8c",
-                "reference": "06b19f75c9292db8bbfd80c10c098257c4fe3e8c",
+                "url": "https://api.github.com/repos/vinkla/hashids/zipball/dbb23bb78309fd5d0668f5442234de408a83ca7e",
+                "reference": "dbb23bb78309fd5d0668f5442234de408a83ca7e",
                 "shasum": ""
             },
             "require": {
-                "graham-campbell/manager": "~2.0",
+                "graham-campbell/manager": "~2.1",
                 "hashids/hashids": "~1.0",
-                "illuminate/contracts": "5.0.*",
-                "illuminate/support": "5.0.*",
-                "php": ">=5.4.7"
+                "illuminate/contracts": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.0"
+                "graham-campbell/testbench": "~2.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -5772,7 +5731,7 @@
                     "email": "hello@vinkla.com"
                 }
             ],
-            "description": "Laravel 5 wrapper for the Hashids API.",
+            "description": "A Hashids bridge for Laravel",
             "keywords": [
                 "bitly",
                 "decrypt",
@@ -5785,7 +5744,7 @@
                 "obfuscate",
                 "youtube"
             ],
-            "time": "2015-05-02 11:34:23"
+            "time": "2015-05-09 13:06:43"
         },
         {
             "name": "vlucas/phpdotenv",
