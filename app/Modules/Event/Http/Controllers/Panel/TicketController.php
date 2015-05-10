@@ -18,7 +18,7 @@ class TicketController extends PanelController {
 
     public function index($event)
     {
-        $tickets = $this->ticketRepository->parentModel($event)->paginate();
+        $tickets = $event->ticket()->paginate();
 
         head_title('Daftar Tiket - ' . $event->nama_acara);
         return view('event::panel.ticket.index')->with(compact('event', 'tickets'));

@@ -11,7 +11,7 @@ class Attendee extends SoftDeleteBaseModel implements HasPresenter {
     protected $table      = 'tb_acara_peserta';
     protected $primaryKey = 'id_peserta';
 
-    protected $fillable = ['nama_peserta', 'alamat', 'nim', 'no_hp', 'email', 'kode'];
+    protected $fillable = ['nama_peserta', 'alamat', 'nim', 'no_hp', 'email'];
 
     protected $dates = ['mulai', 'deleted_at'];
 
@@ -27,6 +27,11 @@ class Attendee extends SoftDeleteBaseModel implements HasPresenter {
     public function ticket()
     {
         return $this->belongsTo('HMIF\Modules\Event\Entities\Ticket', 'id_tiket');
+    }
+
+    public function invoice()
+    {
+        return $this->morphOne('HMIF\Modules\Invoice\Entities\Invoice', 'invoiceable');
     }
 
     public function getPresenterClass()

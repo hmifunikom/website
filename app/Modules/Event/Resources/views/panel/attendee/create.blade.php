@@ -1,8 +1,7 @@
 @extends(((Request::ajax()) ? 'panel::layouts.ajax' : 'panel::layouts.master'))
 
 @section('head')
-    <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
-    <!-- ================== END PAGE LEVEL STYLE ================== -->
+
 @endsection
 
 @section('content')
@@ -12,7 +11,7 @@
         {!! Breadcrumbs::renderIfExists() !!}
         <!-- end breadcrumb -->
         <!-- begin page-header -->
-        <h1 class="page-header">Form tambah tiket</h1>
+        <h1 class="page-header">Form tambah peserta</h1>
         <!-- end page-header -->
 
         <!-- begin row -->
@@ -22,11 +21,11 @@
                 <!-- begin panel -->
                 <div class="panel panel-inverse">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Informasi tiket</h4>
+                        <h4 class="panel-title">Informasi peserta</h4>
                     </div>
                     <div class="panel-body panel-form">
-                        {!! Former::open()->route('panel.event.ticket.store', $event->getWrappedObject())->class('form-horizontal form-bordered')->data_pjax() !!}
-                        @include('event::panel.ticket.form')
+                        {!! Former::open()->route('panel.event.attendee.store', $event->getWrappedObject())->class('form-horizontal form-bordered')->data_pjax() !!}
+                        @include('event::panel.attendee.form')
                         {!! Former::close() !!}
                     </div>
                 </div>

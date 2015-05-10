@@ -35,6 +35,11 @@ class Event extends SoftDeleteBaseModel implements HasPresenter, SluggableInterf
         return $this->hasMany('HMIF\Modules\Event\Entities\Ticket', 'id_acara');
     }
 
+    public function attendde()
+    {
+        $this->hasManyThrough('HMIF\Modules\Event\Entities\Attendde', 'HMIF\Modules\Event\Entities\Ticket');
+    }
+
     public function getPresenterClass()
     {
         return EventPresenter::class;

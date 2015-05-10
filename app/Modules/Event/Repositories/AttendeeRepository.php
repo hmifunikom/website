@@ -13,21 +13,20 @@ class AttendeeRepository extends BaseRepository {
         return 'HMIF\Modules\Event\Entities\Attendee';
     }
 
-    public function setSudahBayar($id)
+    public function setPaid($id)
     {
-        return $this->setBayar($id);
+        return $this->setPaymentStatus($id);
     }
 
-    public function setBelumBayar($id)
+    public function setUnpaid($id)
     {
-        return $this->setBayar($id, false);
+        return $this->setPaymentStatus($id, false);
     }
 
-    private function setBayar($id, $status = true)
+    private function setPaymentStatus($id, $status = true)
     {
         $model = $this->find($id);
-        $model->aktif = (bool) $status;
-        $model->save();
+        $model = $model->invoice->setBoolean('dibayar', $status);
 
         return $this->parserResult($model);
     }

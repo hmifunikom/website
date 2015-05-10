@@ -1,11 +1,15 @@
 <?php namespace HMIF\Modules\Event\Http\Requests;
 
-class StoreTicketPostRequest extends Request {
+use HMIF\Modules\Event\Entities\Ticket;
+
+class StoreAttendeePostRequest extends Request {
 
     public $rules = [
-        'nama_tiket' => 'required',
-        'kuota'       => 'required|integer',
-        'harga'       => 'required|integer',
+        'nama_peserta' => 'required',
+        'alamat'       => 'required',
+        'no_hp'        => 'required|numeric',
+        'email'        => 'required|email',
+        'tiket'        => 'required',
     ];
 
     /**
@@ -25,9 +29,33 @@ class StoreTicketPostRequest extends Request {
      */
     public function rules()
     {
-        if ($this->isUpdate())
+        $ticketId = $this->request->get('tiket');
+        $ticket = Ticket::find($ticketId);
+
+        if ($ticket)
         {
-            //
+            $needKtm = $ticket->pluck('ktm');
+
+            if ($needKtm)
+            {
+                $this->rules['nim'] = 'required|numeric|nim|unique_with:tb_acara_peserta,tiket = id_tiket';
+            }
+
+            if ($this->isUpdate())
+            {
+                if ($needKtm)
+                {
+                    $attendeeId = hashids_model_decode('event.ticket.peserta', $this->route('attendee'));
+                    $this->rules['nim'] .= ',' . $attendeeId;
+                }
+            }
+        }
+        else
+        {
+            if ($this->isUpdate())
+            {
+                //
+            }
         }
 
         return $this->rules;

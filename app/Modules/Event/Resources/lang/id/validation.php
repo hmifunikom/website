@@ -23,7 +23,7 @@ return [
     | menentukan spesifik baris bahasa kustom untuk aturan atribut yang diberikan.
     |
     */
-    'custom'               => [
+    'custom'     => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
@@ -39,13 +39,14 @@ return [
     |
     */
 
-    'attributes'           => [
-        'nama_acara'               => 'Nama Acara',
-        'tgl'                      => 'Tanggal Acara',
-        'tempat'                   => 'Tempat',
-        'info'                     => 'Deskripsi Acara',
-        'pj'                       => 'Program Kerja',
-        'tgl_selesai_LPJ'          => 'Tanggal Selesai LPJ',
-        'tema'                     => 'Tema Acara',
+    'attributes' => [
+        'nama_acara' => 'Nama acara',
+        'tgl'        => 'Tanggal acara',
+        'tempat'     => 'Tempat',
+        'info'       => 'Deskripsi acara',
+        'pj'         => 'Program kerja',
+        'tema'       => 'Tema acara',
+        'nim'        => 'NIM',
+        'no_hp'      => 'No handphone',
     ],
 ];

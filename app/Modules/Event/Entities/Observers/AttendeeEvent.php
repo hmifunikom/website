@@ -2,6 +2,7 @@
 
 use HMIF\Entities\Observers\ModelEvent;
 use Input;
+use DB;
 
 class AttendeeEvent extends ModelEvent {
 
@@ -9,7 +10,7 @@ class AttendeeEvent extends ModelEvent {
 
     public function saving($model)
     {
-        $exist = $model->find($model->id_peserta);
+        $exist = $model->exists;
 
         if ( ! $exist)
         {
@@ -28,6 +29,8 @@ class AttendeeEvent extends ModelEvent {
             {
                 $model->kode = 1;
             }
+
+            $model->ticket->increment('terjual');
         }
     }
 }

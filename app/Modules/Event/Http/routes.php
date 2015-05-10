@@ -34,5 +34,7 @@ Route::group(['namespace' => 'HMIF\Modules\Event\Http\Controllers\Panel'], funct
 
         Route::resource('event.ticket', 'TicketController', ['except' => ['show']]);
         Route::post('event/{event}/ticket/{ticket}/status', ['uses' => 'TicketController@setStatus', 'as' => 'panel.event.ticket.status']);
+
+        Route::resource('event.attendee', 'AttendeeController', ['except' => []]);
     });
 });

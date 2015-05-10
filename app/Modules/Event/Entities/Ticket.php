@@ -10,7 +10,7 @@ class Ticket extends SoftDeleteBaseModel implements HasPresenter {
     protected $table      = 'tb_acara_tiket';
     protected $primaryKey = 'id_tiket';
 
-    protected $fillable = ['nama_tiket', 'kuota', 'harga'];
+    protected $fillable = ['nama_tiket', 'kuota', 'harga', 'ktm'];
 
     protected $dates = ['deleted_at'];
 
@@ -18,6 +18,7 @@ class Ticket extends SoftDeleteBaseModel implements HasPresenter {
         'nama_tiket' => 'string',
         'kuota'      => 'integer',
         'harga'      => 'integer',
+        'ktm'        => 'boolean',
     ];
 
     public function event()

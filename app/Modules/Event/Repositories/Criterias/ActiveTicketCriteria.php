@@ -3,11 +3,11 @@
 use Prettus\Repository\Contracts\CriteriaInterface;
 use Prettus\Repository\Contracts\RepositoryInterface;
 
-class AvailableKuotaCriteria implements CriteriaInterface {
+class ActiveTicketCriteria implements CriteriaInterface {
 
     public function apply($model, RepositoryInterface $repository)
     {
-        $query = $model->where('terjual', '<=', 'kuota');
+        $query = $model->where('aktif', 1);
         return $query;
     }
 

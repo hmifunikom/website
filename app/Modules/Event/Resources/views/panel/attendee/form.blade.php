@@ -1,4 +1,8 @@
-{!! Former::text('nama_tiket') !!}
-{!! Former::text('kuota') !!}
-{!! Former::number('harga')->prepend('Rp')->inlineHelp('Masukkan hanya angka')->step(1000) !!}
+{!! Former::text('nama_peserta') !!}
+{!! Former::text('nim')->inlineHelp('Isi jika mahasiswa Unikom') !!}
+{!! Former::text('alamat') !!}
+{!! Former::text('no_hp') !!}
+{!! Former::email('email') !!}
+{!! Former::select('tiket')->fromQuery($tickets, 'nama_tiket', 'id_tiket')->placeholder('Pilih tiket...') !!}
+{!! Former::checkbox('bayar')->text('Langsung bayar') !!}
 {!! Former::actions( Button::primary('Simpan')->submit(), Button::withValue('Reset')->reset() ) !!}

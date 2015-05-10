@@ -10,5 +10,10 @@
             'link' => route('panel.event.ticket.index', $event->getWrappedObject()),
             'linkAttributes' => ['data-pjax' => true],
         ],
+        [
+            'title' => Icon::group() . ' Peserta',
+            'link' => route('panel.event.attendee.index', $event->getWrappedObject()),
+            'linkAttributes' => ['data-pjax' => true],
+        ],
     ])
 !!}

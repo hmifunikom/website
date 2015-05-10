@@ -14,4 +14,9 @@ class TicketPresenter extends BasePresenter {
     {
         return 'Rp. ' . number_format($this->wrappedObject->harga, 0, ',', '.');
     }
+
+    public function id_hash()
+    {
+        return $this->wrappedObject->getRouteKey();
+    }
 }

@@ -7,7 +7,7 @@ class AvailableKuotaCriteria implements CriteriaInterface {
 
     public function apply($model, RepositoryInterface $repository)
     {
-        $query = $model->where('terjual', '<', 'kuota');
+        $query = $model->whereRaw('terjual < kuota');
         return $query;
     }
 

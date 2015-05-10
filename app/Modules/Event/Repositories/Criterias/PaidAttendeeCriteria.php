@@ -3,11 +3,14 @@
 use Prettus\Repository\Contracts\CriteriaInterface;
 use Prettus\Repository\Contracts\RepositoryInterface;
 
-class AvailableKuotaCriteria implements CriteriaInterface {
+class PaidAttendeeCriteria implements CriteriaInterface {
 
     public function apply($model, RepositoryInterface $repository)
     {
-        $query = $model->where('terjual', '<', 'kuota');
+        $query = $model->whereHas('invoice', function($q) {
+            $q->where('dibayar', 1);
+        });
+
         return $query;
     }
 
