@@ -814,12 +814,12 @@ var temphints = {};
 var formShowError = function(key, hint) {
     var e = $('[name='+key+']');
 
-    var group = e.closest('.form-group')
+    var group = e.closest('.form-group');
     group.addClass('has-error');
 
     if(group.find('.help-block').length) {
         if(! temphints.hasOwnProperty(key)) temphints[key] = group.find('.help-block').text();
-        e.find('.help-block').text(hint);
+        group.find('.help-block').text(hint);
     } else {
         var hint = $('<span />').text(hint).addClass('help-block');
         group.children().last().append(hint);
@@ -829,13 +829,13 @@ var formShowError = function(key, hint) {
 var formClearError = function(key) {
     var e = $('[name='+key+']');
 
-    var group = e.closest('.form-group')
+    var group = e.closest('.form-group');
     group.removeClass('has-error');
 
     if(temphints.hasOwnProperty(key)) {
-        e.find('.help-block').text(temphints[key]);
+        group.find('.help-block').text(temphints[key]);
     } else {
-        e.find('.help-block').remove();
+        group.find('.help-block').remove();
     }
 };
 
