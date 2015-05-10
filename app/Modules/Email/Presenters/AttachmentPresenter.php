@@ -1,22 +1,13 @@
-<?php namespace HMIF\Modules\Event\Presenters;
+<?php namespace HMIF\Modules\Email\Presenters;
 
-use HMIF\Modules\Event\Entities\Ticket;
+use HMIF\Modules\Email\Entities\Attachment;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
-class TicketPresenter extends BasePresenter {
+class AttchmentPresenter extends BasePresenter {
 
-    public function __construct(Ticket $resource)
+    public function __construct(Attachment $resource)
     {
         $this->wrappedObject = $resource;
     }
 
-    public function harga_rp()
-    {
-        return 'Rp. ' . number_format($this->wrappedObject->harga, 0, ',', '.');
-    }
-
-    public function id_hash()
-    {
-        return $this->wrappedObject->getRouteKey();
-    }
 }

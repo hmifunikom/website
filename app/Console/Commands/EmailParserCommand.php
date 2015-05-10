@@ -1,8 +1,8 @@
 <?php namespace HMIF\Console\Commands;
 
+use HMIF\Libraries\EmailStorer;
 use Storage;
 use Illuminate\Console\Command;
-use PhpMimeMailParser\Parser;
 class EmailParserCommand extends Command {
 
     /**
@@ -19,14 +19,18 @@ class EmailParserCommand extends Command {
      */
     protected $description = 'Parses an incoming email.';
 
+    private $emailStorer;
+
     /**
      * Create a new command instance.
      *
-     * @return void
+     * @param EmailStorer $emailStorer
      */
-    public function __construct()
+    public function __construct(EmailStorer $emailStorer)
     {
         parent::__construct();
+
+        $this->emailStorer = $emailStorer;
     }
 
     /**
@@ -44,40 +48,8 @@ class EmailParserCommand extends Command {
         }
         fclose($fd);
 
-        $parser = new Parser();
-        $parser->setText($rawEmail);
-
-        $to = $parser->getHeader('to');
-        $from = $parser->getHeader('from');
-        $subject = $parser->getHeader('subject');
-        $text = $parser->getMessageBody('htmlEmbedded');
-
-        $data = json_encode(compact('to', 'from', 'subject', 'text'));
-        Storage::put('mail.txt', $data);
+        $this->emailStorer->setRaw($rawEmail)->setType('in');
+        $this->emailStorer->save();
     }
-
-    ///**
-    // * Get the console command arguments.
-    // *
-    // * @return array
-    // */
-    //protected function getArguments()
-    //{
-    //	return [
-    //		['example', InputArgument::REQUIRED, 'An example argument.'],
-    //	];
-    //}
-    //
-    ///**
-    // * Get the console command options.
-    // *
-    // * @return array
-    // */
-    //protected function getOptions()
-    //{
-    //	return [
-    //		['example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null],
-    //	];
-    //}
 
 }

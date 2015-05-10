@@ -11,24 +11,6 @@ class EmailPresenter extends BasePresenter {
         $this->wrappedObject = $resource;
     }
 
-    public function mulai_full()
-    {
-        return $this->wrappedObject->mulai->format('l, j F Y @ H:i');
-    }
 
-    public function mulai_tanggal()
-    {
-        return $this->wrappedObject->mulai->format('m/d/Y');
-    }
-
-    public function mulai_waktu()
-    {
-        return $this->wrappedObject->mulai->format('H:i');
-    }
-
-    public function open_register()
-    {
-        return $this->wrappedObject->mulai->gte(Date::now());
-    }
 
 }
