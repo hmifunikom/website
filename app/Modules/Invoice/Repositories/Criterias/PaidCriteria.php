@@ -7,7 +7,7 @@ class PaidCriteria implements CriteriaInterface {
 
     public function apply($model, RepositoryInterface $repository)
     {
-        $query = $model->has('');
+        $query = $model->where('dibayar', 1);
 
         return $query;
     }

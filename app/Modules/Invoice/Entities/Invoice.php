@@ -20,6 +20,7 @@ class Invoice extends SoftDeleteBaseModel implements HasPresenter {
         'alamat'        => 'string',
         'no_hp'         => 'string',
         'email'         => 'string',
+        'dibayar'       => 'boolean',
     ];
 
     public function invoiceable()
