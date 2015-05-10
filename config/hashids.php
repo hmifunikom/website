@@ -52,6 +52,12 @@ return [
             'alphabet' => '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         ],
 
+        'email'   => [
+            'salt'     => env('HASHIDS_EMAIL', 's4lt'),
+            'length'   => '16',
+            'alphabet' => '1234567890abcdefghijklmnopqrstuvwxyz'
+        ],
+
     ],
 
     'model'       => [
@@ -61,6 +67,9 @@ return [
         'event.ticket.peserta' => 'ticket',
 
         'invoice.invoice'      => 'invoice',
+
+        'email.email'          => 'email',
+        'email.attachment'     => 'email',
 
     ],
 
