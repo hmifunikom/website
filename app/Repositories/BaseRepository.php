@@ -13,7 +13,7 @@ abstract class BaseRepository extends PrettusBaseRepository {
 
     public function parentModel($model)
     {
-        $this->model->where($model->getKeyName(), $model->getKey());
+        $this->model = $this->model->where($model->getKeyName(), $model->getKey());
         return $this;
     }
 
@@ -38,10 +38,46 @@ abstract class BaseRepository extends PrettusBaseRepository {
         return $this->parserResult($model);
     }
 
+    public function updateRelation(array $attributes, $id, $relationKeys)
+    {
+        if( !is_null($this->validator) )
+        {
+            $this->validator->with($attributes)
+                ->setId($id)
+                ->passesOrFail( ValidatorInterface::RULE_UPDATE );
+        }
+
+        $_skipPresenter = $this->skipPresenter;
+
+        $this->skipPresenter(true);
+
+        $model = $this->find($id);
+        $model->fill($attributes);
+
+        foreach($relationKeys as $key => $value)
+        {
+            $model->{$key} = $value;
+        }
+
+        $model->save();
+
+        $this->skipPresenter($_skipPresenter);
+
+        return $this->parserResult($model);
+    }
+
     public function includes(array $relations)
     {
         $this->model = $this->model->includes($relations);
         return $this;
+    }
+
+    public function setBoolean($id, $coloumn, $value = true)
+    {
+        $model = $this->find($id);
+        $model->setBoolean($coloumn, $value);
+
+        return $this->parserResult($model);
     }
 
 }
