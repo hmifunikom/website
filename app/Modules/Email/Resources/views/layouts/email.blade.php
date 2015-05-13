@@ -954,7 +954,7 @@
                                                 <table class="six columns">
                                                     <tr>
                                                         <td>
-                                                            <a href="{{ route('index') }}"><img src="{{ asset_version('assets/images/logo-mail.jpg') }}" /></a>
+                                                            <a href="{{ route('index') }}"><img src="{{ asset_version('assets/images/logo-mail.png') }}" /></a>
                                                         </td>
                                                         <td class="expander"></td>
                                                     </tr>
