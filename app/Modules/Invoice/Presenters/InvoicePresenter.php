@@ -12,7 +12,12 @@ class InvoicePresenter extends BasePresenter {
 
     public function total_rp()
     {
-        return 'Rp. ' . number_format($this->wrappedObject->harga, 0, ',', '.');
+        return to_rp($this->wrappedObject->jumlah);
+    }
+
+    public function tanggal_diterbitkan()
+    {
+        return $this->wrappedObject->created_at->format('l, j F Y');
     }
 
 }

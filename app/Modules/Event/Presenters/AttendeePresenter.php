@@ -10,4 +10,9 @@ class AttendeePresenter extends BasePresenter {
         $this->wrappedObject = $resource;
     }
 
+    public function kode()
+    {
+        return str_pad($this->wrappedObject->kode, 3, 0, STR_PAD_LEFT);
+    }
+
 }

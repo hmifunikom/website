@@ -3,10 +3,12 @@
 use Date;
 use Hashids;
 use HMIF\Entities\SoftDeleteBaseModel;
+use HMIF\Modules\Email\Entities\EmailAttachmentable;
 use HMIF\Modules\Event\Presenters\AttendeePresenter;
+use HMIF\Modules\Invoice\Entities\Invoiceable;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
-class Attendee extends SoftDeleteBaseModel implements HasPresenter {
+class Attendee extends SoftDeleteBaseModel implements HasPresenter, Invoiceable, EmailAttachmentable {
 
     protected $table      = 'tb_acara_peserta';
     protected $primaryKey = 'id_peserta';
@@ -42,5 +44,30 @@ class Attendee extends SoftDeleteBaseModel implements HasPresenter {
     public function getRouteKey()
     {
         return Hashids::connection('ticket')->encode($this->getKey(), $this->id_tiket);
+    }
+
+    public function getItemName()
+    {
+        return $this->ticket->event->nama_acara . ' | ' . $this->ticket->nama_tiket . ' | ' . $this->kode;
+    }
+
+    public function getItemDescription()
+    {
+        return 'Tiket acara ' . $this->ticket->event->nama_acara . ' dengan kategori tiket ' . $this->ticket->nama_tiket . '.';
+    }
+
+    public function getItemPrice()
+    {
+        return $this->ticket->harga;
+    }
+
+    public function getAttachmentFullPath()
+    {
+        return storage_path('app/tickets/' . $this->getRouteKey() . '.pdf');
+    }
+
+    public function getAttachmentType()
+    {
+        return 'ticket';
     }
 }

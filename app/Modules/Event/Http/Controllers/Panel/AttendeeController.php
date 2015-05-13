@@ -1,5 +1,6 @@
 <?php namespace HMIF\Modules\Event\Http\Controllers\Panel;
 
+use HMIF\Commands\BookEventTicketCommand;
 use HMIF\Modules\Event\Repositories\TicketRepository;
 use HMIF\Modules\Event\Repositories\Criterias\AvailableKuotaCriteria;
 use Input;
@@ -39,16 +40,9 @@ class AttendeeController extends PanelController {
 
     public function store($eventId, StoreAttendeePostRequest $request)
     {
-        $bayar = $request->get('bayar', 0);
+        $bayar = (bool) $request->get('bayar', 0);
 
-        if ( ! $bayar)
-        {
-            $this->attendeeRepository->createRelation($request->all(), ['id_tiket' => $request->request->get('tiket')]);
-        }
-        else
-        {
-
-        }
+        $this->dispatchFrom(BookEventTicketCommand::class, $request, compact($bayar));
 
         $eventId = hashids_model_encode('event.event', $eventId);
 

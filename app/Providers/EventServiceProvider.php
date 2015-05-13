@@ -30,6 +30,8 @@ class EventServiceProvider extends ServiceProvider {
             $emailStorer->setRaw($message)->setType('out');
             $emailStorer->save();
         });
+
+        $events->subscribe('HMIF\Handlers\Events\SendEmailEventHandler');
     }
 
 }
