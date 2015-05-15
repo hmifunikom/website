@@ -31,7 +31,7 @@ class EventController extends Controller {
         }
 
         $event = $this->eventRepository->pushCriteria(new DateRangeCriteria($date))->paginate();
-        $total = $this->eventRepository->pushCriteria(new DateRangeCriteria($date, 'year'))->paginate()->total();
+        $total = $this->eventRepository->reset()->pushCriteria(new DateRangeCriteria($date, 'year'))->count();
 
         head_title('Event');
 		return view('event::index')->with(['pagetitle' => 'Event' , 'date' => $date, 'listacara' => $event, 'total' => $total]);
