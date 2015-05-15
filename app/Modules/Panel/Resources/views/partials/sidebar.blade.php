@@ -6,11 +6,11 @@
         <ul class="nav">
             <li class="nav-profile">
                 <div class="image">
-                    <a href="javascript:;"><img src="{!! gravatar('resnarizki29@gmail.com') !!}" alt="" /></a>
+                    <a href="javascript:;"><img src="{!! gravatar(auth()->user()->email) !!}" alt="" /></a>
                 </div>
                 <div class="info">
-                    Resna
-                    <small>Mantan PWTI</small>
+                    <div style="width: 130px" class="text-ellipsis">{{ auth()->user()->userable->nama }}</div>
+                    <small>{{ auth()->user()->userable->divisi->singkatan }}</small>
                 </div>
             </li>
         </ul>

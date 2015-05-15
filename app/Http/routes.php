@@ -1,7 +1,4 @@
 <?php
-
-Queue::getIron()->ssl_verifypeer = false;
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -13,10 +10,10 @@ Queue::getIron()->ssl_verifypeer = false;
 |
 */
 
-//Route::controllers([
-//   'auth'     => 'Auth\AuthController',
-//   'password' => 'Auth\PasswordController',
-//]);
+Route::controllers([
+   'auth'     => 'Auth\AuthController',
+   //'password' => 'Auth\PasswordController',
+]);
 
 Route::get('/', ['uses' => 'HomeController@index', 'as' => 'index']);
 

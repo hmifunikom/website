@@ -117,7 +117,8 @@ return [
         'tgl_daftar'               => 'Tanggal Daftar',
         'nim'                      => 'NIM',
         'no_hp'                    => 'No. Handphone',
-        'email'                    => 'E-mail',
+        'email'                    => 'Email',
         'recaptcha_response_field' => 'Kode verifikasi',
+        'password'                 => 'Password',
     ],
 ];

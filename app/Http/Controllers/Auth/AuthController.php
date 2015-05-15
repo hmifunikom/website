@@ -18,7 +18,10 @@ class AuthController extends Controller {
 	|
 	*/
 
-	use AuthenticatesAndRegistersUsers;
+	use AuthenticatesAndRegistersUsers {
+        getLogin as getLoginTrait;
+        getRegister as getRegisterTrait;
+    }
 
 	/**
 	 * Create a new authentication controller instance.
@@ -34,5 +37,23 @@ class AuthController extends Controller {
 
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
+
+    public function getLogin()
+    {
+        head_norobot();
+        head_title('Masuk');
+        return $this->getLoginTrait();
+    }
+
+
+    protected function getFailedLoginMessage()
+    {
+        return 'Email atau password tidak salah.';
+    }
+
+    public function redirectPath()
+    {
+        return redirect()->route('panel.index')->getTargetUrl();
+    }
 
 }

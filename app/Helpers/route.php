@@ -30,7 +30,7 @@ function route_prefix($statement, $clouser)
 
 function route_panel($clouser)
 {
-    route_prefix('panel', $clouser);
+    route_prefix(['prefix' => 'panel', 'middleware' => 'auth'], $clouser);
     //route_domain(['domain' => 'panel'], $clouser);
 }
 
@@ -80,6 +80,19 @@ function route_repo($key, $class, Closure $callback = null, $hashids = null)
         }
 
         throw new Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+    });
+}
+
+function route_bind_key($key, $class, $table_key)
+{
+    Route::bind($key, function ($value) use ($class, $table_key)
+    {
+        if (is_null($value)) return;
+
+        if ($model = (new $class)->findByField($table_key, $value))
+        {
+            return $model;
+        }
     });
 }
 
