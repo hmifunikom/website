@@ -1,5 +1,6 @@
 <?php namespace HMIF\Repositories;
 
+use Illuminate\Support\Collection;
 use Prettus\Repository\Eloquent\BaseRepository as PrettusBaseRepository;
 
 abstract class BaseRepository extends PrettusBaseRepository {
@@ -7,27 +8,29 @@ abstract class BaseRepository extends PrettusBaseRepository {
     public function findByField($field, $value = null, $columns = ['*'])
     {
         $this->applyCriteria();
-        $model = $this->model->where($field,'=',$value)->firstOrFail($columns);
+        $model = $this->model->where($field, '=', $value)->firstOrFail($columns);
+
         return $this->parserResult($model);
     }
 
     public function parentModel($model)
     {
         $this->model = $this->model->where($model->getKeyName(), $model->getKey());
+
         return $this;
     }
 
     public function createRelation(array $attributes, array $relationKeys)
     {
-        if( !is_null($this->validator) )
+        if ( ! is_null($this->validator))
         {
             $this->validator->with($attributes)
-                ->passesOrFail( ValidatorInterface::RULE_CREATE );
+                ->passesOrFail(ValidatorInterface::RULE_CREATE);
         }
 
         $model = $this->model->newInstance($attributes);
 
-        foreach($relationKeys as $key => $value)
+        foreach ($relationKeys as $key => $value)
         {
             $model->{$key} = $value;
         }
@@ -40,11 +43,11 @@ abstract class BaseRepository extends PrettusBaseRepository {
 
     public function updateRelation(array $attributes, $id, $relationKeys)
     {
-        if( !is_null($this->validator) )
+        if ( ! is_null($this->validator))
         {
             $this->validator->with($attributes)
                 ->setId($id)
-                ->passesOrFail( ValidatorInterface::RULE_UPDATE );
+                ->passesOrFail(ValidatorInterface::RULE_UPDATE);
         }
 
         $_skipPresenter = $this->skipPresenter;
@@ -54,7 +57,7 @@ abstract class BaseRepository extends PrettusBaseRepository {
         $model = $this->find($id);
         $model->fill($attributes);
 
-        foreach($relationKeys as $key => $value)
+        foreach ($relationKeys as $key => $value)
         {
             $model->{$key} = $value;
         }
@@ -69,6 +72,7 @@ abstract class BaseRepository extends PrettusBaseRepository {
     public function includes(array $relations)
     {
         $this->model = $this->model->includes($relations);
+
         return $this;
     }
 
@@ -79,5 +83,22 @@ abstract class BaseRepository extends PrettusBaseRepository {
 
         return $this->parserResult($model);
     }
+
+    public function count()
+    {
+        $this->applyCriteria();
+
+        return $this->model->count();
+    }
+
+    public function reset()
+    {
+        $this->makeModel();
+        $this->criteria = new Collection();
+        $this->boot();
+
+        return $this;
+    }
+
 
 }
