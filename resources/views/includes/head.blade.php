@@ -13,20 +13,20 @@
 @endif
 
 <!-- Bootstrap core CSS -->
-<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ asset_version('assets/old/css/bootstrap.min.css') }}" rel="stylesheet">
 
 @if(App::environment('production'))
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="//cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.css" rel="stylesheet">
 @else
-<link href="{{ asset('assets/fonts/font-awesome.min.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/css/fullcalendar.css') }}" rel="stylesheet">
+<link href="{{ asset_version('assets/old/fonts/font-awesome.min.css') }}" rel="stylesheet">
+<link href="{{ asset_version('assets/old/css/fullcalendar.css') }}" rel="stylesheet">
 @endif
-<link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 
 
-<link rel="stylesheet" href="{{ asset(asset_version('assets/css/main.min.css')) }}" />
+<link rel="stylesheet" href="{{ asset_version('assets/old/css/main.min.css') }}" />
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>

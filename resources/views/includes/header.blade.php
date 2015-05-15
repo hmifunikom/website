@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{route('index')}}"><img src="{{asset('assets/images/logo.png')}}" />HMIF Unikom</a>
+            <a class="navbar-brand" href="{{route('index')}}"><img src="{{asset_version('assets/images/logo.png')}}" />HMIF Unikom</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">

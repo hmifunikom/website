@@ -1,0 +1,11 @@
+util.print: Use console.log instead
+.big-title {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: 'Bitter', serif;
+}
+@media (min-width: 768px) {
+  .big-title {
+    font-size: 32px;
+  }
+}
