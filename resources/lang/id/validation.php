@@ -120,5 +120,6 @@ return [
         'email'                    => 'Email',
         'recaptcha_response_field' => 'Kode verifikasi',
         'password'                 => 'Password',
+        'g-recaptcha-response'     => 'Captcha',
     ],
 ];

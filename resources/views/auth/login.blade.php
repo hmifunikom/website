@@ -56,6 +56,9 @@
                         <div class="form-group m-b-15">
                             <input name="password" type="password" class="form-control input-lg" placeholder="Password" />
                         </div>
+                        <div class="form-group m-b-15">
+                            {!! Recaptcha::render() !!}
+                        </div>
                         <div class="login-buttons">
                             <button type="submit" class="btn btn-success btn-block btn-lg">Masuk</button>
                         </div>

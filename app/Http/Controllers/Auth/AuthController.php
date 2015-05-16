@@ -3,7 +3,9 @@
 use HMIF\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller {
 
@@ -21,6 +23,7 @@ class AuthController extends Controller {
 	use AuthenticatesAndRegistersUsers {
         getLogin as getLoginTrait;
         getRegister as getRegisterTrait;
+        postLogin as postLoginTrait;
     }
 
 	/**
@@ -49,6 +52,22 @@ class AuthController extends Controller {
     protected function getFailedLoginMessage()
     {
         return 'Email atau password tidak salah.';
+    }
+
+    public function postLogin(Request $request)
+    {
+        // Bug recaptcha can't use Binput
+        $loader = AliasLoader::getInstance();
+        $loader->alias('Input', 'Illuminate\Support\Facades\Input');
+
+        $this->validate($request, [
+            'g-recaptcha-response' => 'required|recaptcha',
+        ]);
+
+        // Switch back to Binput
+        $loader->alias('Input', 'GrahamCampbell\Binput\Facades\Binput');
+
+        return $this->postLoginTrait($request);
     }
 
     public function redirectPath()
