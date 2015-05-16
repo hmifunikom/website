@@ -28,7 +28,7 @@
                     <li class="arrow"></li>
                     <li><a href="javascript:;">Edit Profil</a></li>
                     <li class="divider"></li>
-                    <li><a href="{{ url('auth/logout') }}">Log Out</a></li>
+                    <li><a href="{{ url('auth/logout') }}">Keluar</a></li>
                 </ul>
             </li>
         </ul>
