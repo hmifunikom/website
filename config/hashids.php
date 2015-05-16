@@ -62,14 +62,14 @@ return [
 
     'model'       => [
 
-        'event.event'          => 'main',
-        'event.ticket'         => 'event',
-        'event.ticket.peserta' => 'ticket',
+        'event_event'          => 'main',
+        'event_ticket'         => 'event',
+        'event_ticket_peserta' => 'ticket',
 
-        'invoice.invoice'      => 'invoice',
+        'invoice_invoice'      => 'invoice',
 
-        'email.email'          => 'email',
-        'email.attachment'     => 'email',
+        'email_email'          => 'email',
+        'email_attachment'     => 'email',
 
     ],
 
