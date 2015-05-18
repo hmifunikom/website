@@ -1,9 +1,9 @@
-<?php namespace HMIF\Modules\Perpustakaan\Database\Seeders;
+<?php namespace HMIF\Modules\Library\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
-class PerpustakaanDatabaseSeeder extends Seeder {
+class LibraryDatabaseSeeder extends Seeder {
 
 	/**
 	 * Run the database seeds.

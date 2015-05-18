@@ -1,5 +1,5 @@
 {
-	"name": "hmif/perpustakaan",
+	"name": "hmif/library",
 	"description": "",
 	"authors": [
 		{
@@ -9,7 +9,7 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"HMIF\\Modules\\Perpustakaan\\": ""
+			"HMIF\\Modules\\Library\\": ""
 		}
 	}
 }

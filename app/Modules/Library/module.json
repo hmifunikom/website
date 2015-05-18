@@ -1,12 +1,12 @@
 {
-    "name": "Perpustakaan",
-    "alias": "perpustakaan",
+    "name": "Library",
+    "alias": "library",
     "description": "",
     "keywords": [],
     "active": 1,
     "order": 0,
     "providers": [
-        "HMIF\\Modules\\Perpustakaan\\Providers\\PerpustakaanServiceProvider"
+        "HMIF\\Modules\\Library\\Providers\\LibraryServiceProvider"
     ],
     "aliases":{},
     "files": [

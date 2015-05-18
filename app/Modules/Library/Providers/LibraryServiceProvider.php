@@ -1,8 +1,8 @@
-<?php namespace HMIF\Modules\Perpustakaan\Providers;
+<?php namespace HMIF\Modules\Library\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class PerpustakaanServiceProvider extends ServiceProvider {
+class LibraryServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -29,10 +29,10 @@ class PerpustakaanServiceProvider extends ServiceProvider {
 	protected function registerConfig()
 	{
 		$this->publishes([
-		    __DIR__.'/../Config/config.php' => config_path('perpustakaan.php'),
+		    __DIR__.'/../Config/config.php' => config_path('library.php'),
 		]);
 		$this->mergeConfigFrom(
-		    __DIR__.'/../Config/config.php', 'perpustakaan'
+		    __DIR__.'/../Config/config.php', 'library'
 		);
 	}
 
@@ -43,7 +43,7 @@ class PerpustakaanServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return [];
+		return array();
 	}
 
 }

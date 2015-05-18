@@ -12,8 +12,8 @@
 |
 */
 
-Lang::addNamespace('perpustakaan', __DIR__.'/Resources/lang');
+Lang::addNamespace('library', __DIR__.'/Resources/lang');
 
-View::addNamespace('perpustakaan', __DIR__.'/Resources/views');
+View::addNamespace('library', __DIR__.'/Resources/views');
 
 require __DIR__ . '/Http/routes.php';
