@@ -6,7 +6,7 @@ use DB;
 
 class AttendeeEvent extends ModelEvent {
 
-    protected $softDeleteChild = ['ticket'];
+    protected $softDeleteChild = [];
 
     public function saving($model)
     {

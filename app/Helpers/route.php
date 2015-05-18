@@ -194,3 +194,10 @@ function response_ajax_fail(stdClass $data = null)
 {
     return response_ajax($data, false);
 }
+
+function route_append_qs($name, $parameters = array(), $only = null, $absolute = true, $route = null)
+{
+    $qs = ($only != null) ? Input::only($only) : Input::all();
+    $parameters = $parameters + $qs;
+    return route($name, $parameters, $absolute, $route);
+}

@@ -1,10 +1,11 @@
 <?php namespace HMIF\Modules\Event\Http\Controllers\Panel;
 
 use HMIF\Commands\BookEventTicketCommand;
+use HMIF\Modules\Event\Repositories\Criterias\ByEventTicketCriteria;
+use HMIF\Modules\Event\Repositories\Criterias\PaidAttendeeCriteria;
 use HMIF\Modules\Event\Repositories\TicketRepository;
 use HMIF\Modules\Event\Repositories\Criterias\AvailableKuotaCriteria;
 use Input;
-use stdClass;
 use HMIF\Modules\Event\Http\Requests\StoreAttendeePostRequest;
 use HMIF\Modules\Event\Repositories\AttendeeRepository;
 use HMIF\Modules\Panel\Http\Controllers\PanelController;
@@ -19,12 +20,23 @@ class AttendeeController extends PanelController {
         parent::__construct();
         $this->attendeeRepository = $attendeeRepository;
         $this->ticketRepository = $ticketRepository;
+        $this->attendeeRepository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
     }
 
     public function index($event)
     {
+        $id_tiket = hashids_model_key_decode('event_ticket', Input::get('ticket'));
 
+        if(Input::get('paid'))
+        {
+            $this->attendeeRepository->pushCriteria(new PaidAttendeeCriteria());
+        }
 
+        $tickets = $this->ticketRepository->parentModel($event)->all();
+        $attendees = $this->attendeeRepository->pushCriteria(new ByEventTicketCriteria($event->id_acara, $id_tiket))->paginate();
+
+        head_title('Daftar Peserta - ' . $event->nama_acara);
+        return view('event::panel.attendee.index')->with(compact('event', 'tickets', 'attendees'));
     }
 
     public function create($event)
@@ -44,7 +56,7 @@ class AttendeeController extends PanelController {
 
         $this->dispatchFrom(BookEventTicketCommand::class, $request, compact($bayar));
 
-        $eventId = hashids_model_encode('event.event', $eventId);
+        $eventId = hashids_model_encode('event_event', $eventId);
 
         flash_success_store('Data peserta sukses ditambah.');
 
@@ -58,20 +70,29 @@ class AttendeeController extends PanelController {
         }
     }
 
+    public function show($event, $attendee)
+    {
+
+    }
+
     public function edit($event, $attendee)
     {
+        $tickets = $this->ticketRepository->parentModel($event)
+            ->pushCriteria(new AvailableKuotaCriteria($attendee->id_tiket))
+            ->all();
+
         head_title('Edit Peserta - ' . $event->nama_acara);
 
-        return view('event::panel.attendee.edit')->with(compact('event', 'attendee'));
+        return view('event::panel.attendee.edit')->with(compact('event', 'tickets', 'attendee'));
     }
 
     public function update($eventId, $attendeeId, StoreAttendeePostRequest $request)
     {
-        $this->attendeeRepository->updateRelation($request->all(), $attendeeId, ['id_tiket' => $request->request->get('id_tiket')]);
+        $this->attendeeRepository->updateRelation($request->all(), $attendeeId, ['id_tiket' => $request->request->get('tiket')]);
 
         flash_success_update('Data peserta sukses diubah.');
 
-        $eventId = hashids_model_encode('event.event', $eventId);
+        $eventId = hashids_model_encode('event_event', $eventId);
 
         return redirect_ajax('panel.event.attendee.index', $eventId);
     }
@@ -82,7 +103,7 @@ class AttendeeController extends PanelController {
 
         flash_success('Peserta sukses dihapus.');
 
-        $eventId = hashids_model_encode('event.event', $eventId);
+        $eventId = hashids_model_encode('event_event', $eventId);
 
         return redirect_ajax('panel.event.attendee.index', $eventId);
     }
@@ -92,6 +113,10 @@ class AttendeeController extends PanelController {
         if ((bool) Input::get('paid'))
         {
             $this->attendeeRepository->setPaid($attendeeId);
+
+            $ticket = $this->attendeeRepository->find($attendeeId);
+            event('mail.ticket.pay', $ticket);
+
             flash_success('Status peserta telah membayar. Tiket dan tanda bukti telah dikirimkan ke email peserta.');
         }
         else
@@ -100,7 +125,7 @@ class AttendeeController extends PanelController {
             flash_success('Status peserta belum membayar.');
         }
 
-        $eventId = hashids_model_encode('event.event', $eventId);
+        $eventId = hashids_model_encode('event_event', $eventId);
 
         return redirect_ajax('panel.event.attendee.index', $eventId);
     }

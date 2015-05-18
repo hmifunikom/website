@@ -34,7 +34,7 @@ class TicketController extends PanelController {
     {
         $this->ticketRepository->createRelation($request->all(), ['id_acara' => $eventId]);
 
-        $eventId = hashids_model_encode('event.event', $eventId);
+        $eventId = hashids_model_encode('event_event', $eventId);
 
         if($request->has('wizard'))
         {
@@ -80,7 +80,7 @@ class TicketController extends PanelController {
 
         flash_success_update('Data tiket sukses diubah.');
 
-        $eventId = hashids_model_encode('event.event', $eventId);
+        $eventId = hashids_model_encode('event_event', $eventId);
         return redirect_ajax('panel.event.ticket.index', $eventId);
 
     }
@@ -91,7 +91,7 @@ class TicketController extends PanelController {
 
         flash_success('Tiket sukses dihapus.');
 
-        $eventId = hashids_model_encode('event.event', $eventId);
+        $eventId = hashids_model_encode('event_event', $eventId);
         return redirect_ajax('panel.event.ticket.index', $eventId);
     }
 
@@ -108,7 +108,7 @@ class TicketController extends PanelController {
             flash_success('Tiket dinonaktifkan.');
         }
 
-        $eventId = hashids_model_encode('event.event', $eventId);
+        $eventId = hashids_model_encode('event_event', $eventId);
         return redirect_ajax('panel.event.ticket.index', $eventId);
     }
 }

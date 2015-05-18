@@ -726,6 +726,13 @@ var handleSidebarAjaxClick = function() {
     $(document).on('submit', '#ajax-content form[data-pjax]', function(event) {
         var target = $(event.currentTarget);
 
+        var method = target.attr('method');
+
+        if(method == 'GET') {
+            var url = target.attr('action') + '?' + target.serialize();
+            $.pjax({url: url, container: '#ajax-content'});
+        }
+
         var options = {
             beforeSubmit: function() {
                 Pace.restart();

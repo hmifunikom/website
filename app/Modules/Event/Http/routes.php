@@ -26,6 +26,7 @@ Route::group(['namespace' => 'HMIF\Modules\Event\Http\Controllers\Panel'], funct
         {
             route_repo('event', HMIF\Modules\Event\Repositories\EventRepository::class, null, true);
             route_repo('ticket', HMIF\Modules\Event\Repositories\TicketRepository::class, null, 'event');
+            route_repo('attendee', HMIF\Modules\Event\Repositories\AttendeeRepository::class, null, 'ticket');
         }
 
         Route::resource('event', 'EventController');
@@ -36,5 +37,6 @@ Route::group(['namespace' => 'HMIF\Modules\Event\Http\Controllers\Panel'], funct
         Route::post('event/{event}/ticket/{ticket}/status', ['uses' => 'TicketController@setStatus', 'as' => 'panel.event.ticket.status']);
 
         Route::resource('event.attendee', 'AttendeeController', ['except' => []]);
+        Route::post('event/{event}/attendee/{attendee}/paid', ['uses' => 'AttendeeController@setPaidStatus', 'as' => 'panel.event.attendee.paid']);
     });
 });

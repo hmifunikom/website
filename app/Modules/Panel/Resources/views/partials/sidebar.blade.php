@@ -24,10 +24,34 @@
                     <span>Dashboard</span>
                 </a>
             </li>
+            <li class="{{ menu_active('panel.user.index') }}">
+                <a href="{{ route('panel.user.index') }}" data-toggle="ajax">
+                    <i class="fa fa-group"></i>
+                    <span>Keanggotaan</span>
+                </a>
+            </li>
             <li class="{{ menu_active('panel.event.index') }}">
                 <a href="{{ route('panel.event.index') }}" data-toggle="ajax">
                     <i class="fa fa-calendar"></i>
                     <span>Event</span>
+                </a>
+            </li>
+            <li class="{{ menu_active('panel.user.index') }}">
+                <a href="{{ route('panel.user.index') }}" data-toggle="ajax">
+                    <i class="fa fa-book"></i>
+                    <span>Perpustakaan</span>
+                </a>
+            </li>
+            <li class="{{ menu_active('panel.user.index') }}">
+                <a href="{{ route('panel.user.index') }}" data-toggle="ajax">
+                    <i class="fa fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+            </li>
+            <li class="{{ menu_active('panel.user.index') }}">
+                <a href="{{ route('panel.user.index') }}" data-toggle="ajax">
+                    <i class="fa fa-file-text-o"></i>
+                    <span>Invoice</span>
                 </a>
             </li>
             <li class="{{ menu_active('panel.user.index') }}">

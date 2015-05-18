@@ -39,14 +39,15 @@ class StoreAttendeePostRequest extends Request {
             if ($needKtm)
             {
                 $this->rules['nim'] = 'required|numeric|nim|unique_with:tb_acara_peserta,tiket = id_tiket';
+
             }
 
             if ($this->isUpdate())
             {
                 if ($needKtm)
                 {
-                    $attendeeId = hashids_model_decode('event.ticket.peserta', $this->route('attendee'));
-                    $this->rules['nim'] .= ',' . $attendeeId;
+                    $attendeeId = $this->route('attendee');
+                    $this->rules['nim'] .= ',' . $attendeeId . ' = id_peserta';
                 }
             }
         }

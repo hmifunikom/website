@@ -5,7 +5,9 @@ use HMIF\Repositories\BaseRepository;
 class AttendeeRepository extends BaseRepository {
 
     protected $fieldSearchable = [
-
+        'kode',
+        'nama_peserta' => 'like',
+        'nim',
     ];
 
     function model()
