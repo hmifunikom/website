@@ -64,6 +64,18 @@ return [
 			'strict'    => false,
 		],
 
+        'perpus' => [
+            'driver'    => 'mysql',
+            'host'      => env('DBPERPUS_HOST', 'localhost'),
+            'database'  => env('DBPERPUS_DATABASE', 'forge'),
+            'username'  => env('DBPERPUS_USERNAME', 'forge'),
+            'password'  => env('DBPERPUS_PASSWORD', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
+
 		'pgsql' => [
 			'driver'   => 'pgsql',
 			'host'     => env('DB_HOST', 'localhost'),

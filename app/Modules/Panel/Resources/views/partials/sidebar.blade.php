@@ -36,8 +36,8 @@
                     <span>Event</span>
                 </a>
             </li>
-            <li class="{{ menu_active('panel.user.index') }}">
-                <a href="{{ route('panel.user.index') }}" data-toggle="ajax">
+            <li class="{{ menu_active('panel.library.index') }}">
+                <a href="{{ route('panel.library.index') }}" data-toggle="ajax">
                     <i class="fa fa-book"></i>
                     <span>Perpustakaan</span>
                 </a>
