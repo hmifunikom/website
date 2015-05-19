@@ -70,7 +70,7 @@
                     </div>
                     @if($books->hasPages())
                         <div class="panel-footer text-right">
-                            {!! $books->appends(Input::all())->render() !!}
+                            {!! $books->appends(Input::only('s'))->render() !!}
                         </div>
                     @endif
                 </div>

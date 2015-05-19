@@ -16,10 +16,10 @@ class BookController extends PanelController {
 
     public function index()
     {
-        $books = $this->bookRepository->paginate();
+        $books = $this->bookRepository->paginate(null, ['Kode_buku', 'Nama_jenis', 'Judul_buku', 'Pengarang', 'Penerbit', 'Tahun_terbit', 'Jumlah']);
 
         head_title('Daftar Buku Perpustakaan IF');
-        return view('event::panel.index')->with(compact('books'));
+        return view('library::panel.index')->with(compact('books'));
     }
 	
 }
