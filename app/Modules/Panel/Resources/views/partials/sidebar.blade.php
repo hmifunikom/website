@@ -6,7 +6,7 @@
         <ul class="nav">
             <li class="nav-profile">
                 <div class="image">
-                    <a href="javascript:;"><img src="{!! gravatar(auth()->user()->email) !!}" alt="" /></a>
+                    <a href="javascript:;"><img src="{!! gravatarlib(auth()->user()->email) !!}" alt="" /></a>
                 </div>
                 <div class="info">
                     <div style="width: 130px" class="text-ellipsis">{{ auth()->user()->userable->nama }}</div>
