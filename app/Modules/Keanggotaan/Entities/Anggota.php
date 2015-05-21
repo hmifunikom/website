@@ -16,11 +16,12 @@ class Anggota extends SoftDeleteBaseModel implements HasPresenter {
     protected $casts = [
         'nim'         => 'string',
         'nama'        => 'string',
-        'nim'         => 'string',
         'alamat'      => 'string',
         'asal'        => 'string',
         'status_hima' => 'string',
     ];
+
+    protected $with = ['divisi'];
 
     public function divisi()
     {
