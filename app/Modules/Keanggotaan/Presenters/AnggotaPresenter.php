@@ -10,4 +10,28 @@ class AnggotaPresenter extends BasePresenter {
         $this->wrappedObject = $resource;
     }
 
+    public function jabatan()
+    {
+        if($this->anggota_spesial())
+        {
+            if ($this->wrappedObject->divisi->id_divisi > 4)
+            {
+                return 'Ketua Divisi ' . $this->wrappedObject->divisi->divisi;
+            }
+            else
+            {
+                return $this->wrappedObject->divisi->divisi;
+            }
+        }
+        else
+        {
+            return $this->wrappedObject->divisi->divisi . ' (' . $this->wrappedObject->status_hima . ')';
+        }
+    }
+
+    public function anggota_spesial()
+    {
+        return $this->wrappedObject->divisi->id_penanggung_jawab == $this->wrappedObject->id_anggota;
+    }
+
 }

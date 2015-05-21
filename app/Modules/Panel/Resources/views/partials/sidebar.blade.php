@@ -30,6 +30,17 @@
                     <span>Keanggotaan</span>
                 </a>
             </li>
+            <li class="has-sub active">
+                <a href="javascript:;">
+                    <b class="caret pull-right"></b>
+                    <i class="fa fa-group"></i>
+                    <span>Keanggotaan</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="{{ menu_active('panel.keanggotaan.anggota.index') }}"><a href="{{ route('panel.keanggotaan.anggota.index') }}">Anggota</a></li>
+                    <li><a href="ui_general.html">Divisi</a></li>
+                </ul>
+            </li>
             <li class="{{ menu_active('panel.event.index') }}">
                 <a href="{{ route('panel.event.index') }}" data-toggle="ajax">
                     <i class="fa fa-calendar"></i>

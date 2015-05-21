@@ -5,7 +5,8 @@ use HMIF\Repositories\BaseRepository;
 class AnggotaRepository extends BaseRepository {
 
     protected $fieldSearchable = [
-
+        'nim',
+        'nama' => 'like',
     ];
 
     function model()
