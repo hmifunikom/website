@@ -28,9 +28,6 @@ class EmailServiceProvider extends ServiceProvider {
 	 */
 	protected function registerConfig()
 	{
-		$this->publishes([
-		    __DIR__.'/../Config/config.php' => config_path('email.php'),
-		]);
 		$this->mergeConfigFrom(
 		    __DIR__.'/../Config/config.php', 'email'
 		);

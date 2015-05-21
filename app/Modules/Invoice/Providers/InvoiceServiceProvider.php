@@ -28,9 +28,6 @@ class InvoiceServiceProvider extends ServiceProvider {
 	 */
 	protected function registerConfig()
 	{
-		$this->publishes([
-		    __DIR__.'/../Config/config.php' => config_path('invoice.php'),
-		]);
 		$this->mergeConfigFrom(
 		    __DIR__.'/../Config/config.php', 'invoice'
 		);

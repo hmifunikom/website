@@ -28,9 +28,6 @@ class PanelServiceProvider extends ServiceProvider {
 	 */
 	protected function registerConfig()
 	{
-		$this->publishes([
-		    __DIR__.'/../Config/config.php' => config_path('panel.php'),
-		]);
 		$this->mergeConfigFrom(
 		    __DIR__.'/../Config/config.php', 'panel'
 		);
