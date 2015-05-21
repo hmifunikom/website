@@ -89,7 +89,7 @@ function route_bind_key($key, $class, $table_key)
     {
         if (is_null($value)) return;
 
-        if ($model = (new $class)->findByField($table_key, $value))
+        if ($model = (new $class(app()))->findByField($table_key, $value))
         {
             return $model;
         }
