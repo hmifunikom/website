@@ -65,7 +65,7 @@
         "endroid/qrcode": "1.*",
 		"barryvdh/laravel-dompdf": "0.5.*",
 		"sabre/vobject" : "~3.3",
-        "erusev/parsedown": "dev-master",
+        "erusev/parsedown": "~1.4",
 
 		"embed/embed": "dev-master",
         "greggilbert/recaptcha": "2.0.*@dev",

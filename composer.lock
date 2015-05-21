@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fa61a882c11a9525fc7ac248b8e72844",
+    "hash": "7a03248b7f7b3056f69b2532398210f4",
     "packages": [
         {
             "name": "anahkiasen/former",
@@ -103,6 +103,126 @@
             ],
             "description": "A set of classes to create and manipulate HTML objects abstractions",
             "time": "2015-03-04 17:12:08"
+        },
+        {
+            "name": "authority-php/authority",
+            "version": "2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/authority-php/authority.git",
+                "reference": "fe89591278e0767719134717ee27d36c4d8adf60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/authority-php/authority/zipball/fe89591278e0767719134717ee27d36c4d8adf60",
+                "reference": "fe89591278e0767719134717ee27d36c4d8adf60",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "jeremeamia/superclosure": "~2.0",
+                "mockery/mockery": "0.7.*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Authority": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Machuga",
+                    "email": "machuga@gmail.com"
+                },
+                {
+                    "name": "Koen Schmeets",
+                    "email": "hello@koenschmeets.nl"
+                },
+                {
+                    "name": "Jesse O'Brien",
+                    "email": "jesse@jesse-obrien.ca"
+                },
+                {
+                    "name": "Tortue Torche",
+                    "email": "tortuetorche@spam.me"
+                }
+            ],
+            "description": "A simple and flexible authorization system for PHP",
+            "time": "2015-05-16 10:35:15"
+        },
+        {
+            "name": "authority-php/authority-laravel",
+            "version": "2.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/authority-php/authority-laravel.git",
+                "reference": "0bfd16859255e8138f07e1357e0da0059fb636ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/authority-php/authority-laravel/zipball/0bfd16859255e8138f07e1357e0da0059fb636ea",
+                "reference": "0bfd16859255e8138f07e1357e0da0059fb636ea",
+                "shasum": ""
+            },
+            "require": {
+                "authority-php/authority": "~2.2.2",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Authority\\AuthorityLaravel": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Machuga",
+                    "email": "machuga@gmail.com"
+                },
+                {
+                    "name": "Koen Schmeets",
+                    "email": "hello@koenschmeets.nl"
+                },
+                {
+                    "name": "Jesse O'Brien",
+                    "email": "jesse@jesse-obrien.ca"
+                },
+                {
+                    "name": "Conar Welsh",
+                    "email": "conar@welshlabs.com"
+                },
+                {
+                    "name": "Tortue Torche",
+                    "email": "tortuetorche@spam.me"
+                }
+            ],
+            "description": "A simple and flexible authorization system for PHP",
+            "homepage": "https://github.com/authority-php/authority-laravel",
+            "keywords": [
+                "Authentication",
+                "authorization",
+                "laravel",
+                "laravel 5"
+            ],
+            "time": "2015-05-16 10:49:08"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -385,12 +505,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cviebrock/eloquent-sluggable.git",
-                "reference": "3483a412feb0c4b687cd88ecc59f5644334df3d4"
+                "reference": "8aaf4c4909eb2f571ba72dd7bf1ba4eca87d0f96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/3483a412feb0c4b687cd88ecc59f5644334df3d4",
-                "reference": "3483a412feb0c4b687cd88ecc59f5644334df3d4",
+                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/8aaf4c4909eb2f571ba72dd7bf1ba4eca87d0f96",
+                "reference": "8aaf4c4909eb2f571ba72dd7bf1ba4eca87d0f96",
                 "shasum": ""
             },
             "require": {
@@ -427,7 +547,7 @@
                 "laravel",
                 "slug"
             ],
-            "time": "2015-04-07 02:26:43"
+            "time": "2015-05-18 21:14:15"
         },
         {
             "name": "danielstjules/stringy",
@@ -1170,17 +1290,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/authority-controller.git",
-                "reference": "5325dbab58670b3b782ffcdfd10e12d4fab1d5fc"
+                "reference": "dfb9d77351698dee80733c37afc66f3adbe95892"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/authority-controller/zipball/5325dbab58670b3b782ffcdfd10e12d4fab1d5fc",
-                "reference": "5325dbab58670b3b782ffcdfd10e12d4fab1d5fc",
+                "url": "https://api.github.com/repos/efficiently/authority-controller/zipball/dfb9d77351698dee80733c37afc66f3adbe95892",
+                "reference": "dfb9d77351698dee80733c37afc66f3adbe95892",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0",
-                "stayallive/authority-l5": "~2.4.1"
+                "authority-php/authority-laravel": "~2.4.3",
+                "php": ">=5.4.0"
             },
             "require-dev": {
                 "illuminate/html": "5.0.*",
@@ -1242,7 +1362,7 @@
                 "role",
                 "security"
             ],
-            "time": "2015-03-10 16:56:06"
+            "time": "2015-05-16 11:04:53"
         },
         {
             "name": "embed/embed",
@@ -1250,12 +1370,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/oscarotero/Embed.git",
-                "reference": "a30a75896e2a8e2a2f81d12a750cfcbe7a0ab3fe"
+                "reference": "f29633a2cb97c6905947b8d5023aea1ee712711c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/a30a75896e2a8e2a2f81d12a750cfcbe7a0ab3fe",
-                "reference": "a30a75896e2a8e2a2f81d12a750cfcbe7a0ab3fe",
+                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/f29633a2cb97c6905947b8d5023aea1ee712711c",
+                "reference": "f29633a2cb97c6905947b8d5023aea1ee712711c",
                 "shasum": ""
             },
             "require": {
@@ -1289,7 +1409,7 @@
                 "opengraph",
                 "twitter cards"
             ],
-            "time": "2015-05-09 11:58:22"
+            "time": "2015-05-12 18:00:24"
         },
         {
             "name": "endroid/qrcode",
@@ -1343,7 +1463,7 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "dev-master",
+            "version": "1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
@@ -1379,6 +1499,50 @@
                 "parser"
             ],
             "time": "2015-04-29 20:22:24"
+        },
+        {
+            "name": "erusev/parsedown-extra",
+            "version": "0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown-extra.git",
+                "reference": "11a44e076d02ffcc4021713398a60cd73f78b6f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/11a44e076d02ffcc4021713398a60cd73f78b6f5",
+                "reference": "11a44e076d02ffcc4021713398a60cd73f78b6f5",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "~1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ParsedownExtra": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "An extension of Parsedown that adds support for Markdown Extra.",
+            "homepage": "https://github.com/erusev/parsedown-extra",
+            "keywords": [
+                "markdown",
+                "markdown extra",
+                "parsedown",
+                "parser"
+            ],
+            "time": "2015-01-25 14:52:34"
         },
         {
             "name": "felixkiss/uniquewith-validator",
@@ -1534,16 +1698,16 @@
         },
         {
             "name": "google/apiclient",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client.git",
-                "reference": "9c35bbbbaf04a5236d763560dab1e2f6e672a724"
+                "reference": "523430f21a92c54172099d12d0f31d40f3de67e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/9c35bbbbaf04a5236d763560dab1e2f6e672a724",
-                "reference": "9c35bbbbaf04a5236d763560dab1e2f6e672a724",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/523430f21a92c54172099d12d0f31d40f3de67e9",
+                "reference": "523430f21a92c54172099d12d0f31d40f3de67e9",
                 "shasum": ""
             },
             "require": {
@@ -1572,36 +1736,36 @@
             "keywords": [
                 "google"
             ],
-            "time": "2014-11-25 14:35:03"
+            "time": "2015-05-17 00:43:01"
         },
         {
             "name": "graham-campbell/binput",
-            "version": "v3.0.0",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Binput.git",
-                "reference": "b63ff5e9eab92958a9a9d3316e29db7d01455cd4"
+                "reference": "1f4bf545f40ae5b37401f7a8d6d811d9a626f498"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/b63ff5e9eab92958a9a9d3316e29db7d01455cd4",
-                "reference": "b63ff5e9eab92958a9a9d3316e29db7d01455cd4",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/1f4bf545f40ae5b37401f7a8d6d811d9a626f498",
+                "reference": "1f4bf545f40ae5b37401f7a8d6d811d9a626f498",
                 "shasum": ""
             },
             "require": {
-                "graham-campbell/security": "3.0.*",
-                "illuminate/contracts": "5.0.*",
-                "illuminate/http": "5.0.*",
-                "illuminate/support": "5.0.*",
-                "php": ">=5.4.7"
+                "graham-campbell/security": "~3.1",
+                "illuminate/contracts": "5.0.*|5.1.*",
+                "illuminate/http": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.0"
+                "graham-campbell/testbench": "~2.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -1633,7 +1797,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2015-02-05 20:08:25"
+            "time": "2015-05-20 23:26:52"
         },
         {
             "name": "graham-campbell/core",
@@ -1816,30 +1980,30 @@
         },
         {
             "name": "graham-campbell/security",
-            "version": "v3.0.0",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Security.git",
-                "reference": "c4be38d187ec49efdd9b18b00395a0f29bc33b46"
+                "reference": "9f573002070cfe49f32bf49ca91a415d3220d86e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/c4be38d187ec49efdd9b18b00395a0f29bc33b46",
-                "reference": "c4be38d187ec49efdd9b18b00395a0f29bc33b46",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/9f573002070cfe49f32bf49ca91a415d3220d86e",
+                "reference": "9f573002070cfe49f32bf49ca91a415d3220d86e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.0.*",
-                "illuminate/support": "5.0.*",
-                "php": ">=5.4.7"
+                "illuminate/contracts": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.0"
+                "graham-campbell/testbench": "~2.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -1868,7 +2032,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2015-02-05 19:54:29"
+            "time": "2015-05-20 23:18:09"
         },
         {
             "name": "greggilbert/recaptcha",
@@ -2471,16 +2635,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.0.2",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/laravel-date.git",
-                "reference": "2ede94bfb7346778c326240ae98641bc926ba864"
+                "reference": "fa657ffaf6a616f15b8c3684a267e27a751b850c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/2ede94bfb7346778c326240ae98641bc926ba864",
-                "reference": "2ede94bfb7346778c326240ae98641bc926ba864",
+                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/fa657ffaf6a616f15b8c3684a267e27a751b850c",
+                "reference": "fa657ffaf6a616f15b8c3684a267e27a751b850c",
                 "shasum": ""
             },
             "require": {
@@ -2523,7 +2687,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2015-05-09 21:07:17"
+            "time": "2015-05-17 11:11:56"
         },
         {
             "name": "jenssegers/rollbar",
@@ -2635,16 +2799,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "5.0.30",
+            "version": "v5.0.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c7ffbf1fd4895ac4cdac551265d635d995346d97"
+                "reference": "db0a7400465df159ba8c6eaa954f97f50bc19687"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c7ffbf1fd4895ac4cdac551265d635d995346d97",
-                "reference": "c7ffbf1fd4895ac4cdac551265d635d995346d97",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/db0a7400465df159ba8c6eaa954f97f50bc19687",
+                "reference": "db0a7400465df159ba8c6eaa954f97f50bc19687",
                 "shasum": ""
             },
             "require": {
@@ -2757,7 +2921,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-05-08 19:11:13"
+            "time": "2015-05-11 22:15:00"
         },
         {
             "name": "laravelcollective/html",
@@ -2941,23 +3105,23 @@
         },
         {
             "name": "league/fractal",
-            "version": "0.11.0",
+            "version": "0.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/fractal.git",
-                "reference": "5abf7b1ce12fea1e575355f76f4f58f15dba4be4"
+                "reference": "0a51dcb6398dc2377d086210d0624996a1df8322"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/5abf7b1ce12fea1e575355f76f4f58f15dba4be4",
-                "reference": "5abf7b1ce12fea1e575355f76f4f58f15dba4be4",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/0a51dcb6398dc2377d086210d0624996a1df8322",
+                "reference": "0a51dcb6398dc2377d086210d0624996a1df8322",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3"
+                "php": ">=5.4"
             },
             "require-dev": {
-                "illuminate/pagination": "~4.1",
+                "illuminate/contracts": "~5.0",
                 "mockery/mockery": "~0.9",
                 "pagerfanta/pagerfanta": "~1.0.0",
                 "phpunit/phpunit": "~4.0",
@@ -2972,7 +3136,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.10-dev"
+                    "dev-master": "0.13-dev"
                 }
             },
             "autoload": {
@@ -2992,7 +3156,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Handle the output of complex data structures ready for JSON output.",
+            "description": "Handle the output of complex data structures ready for API output.",
             "homepage": "http://fractal.thephpleague.com/",
             "keywords": [
                 "api",
@@ -3000,7 +3164,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2014-12-10 16:59:07"
+            "time": "2015-03-19 15:16:43"
         },
         {
             "name": "maatwebsite/excel",
@@ -3127,16 +3291,16 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ShawnMcCool/laravel-auto-presenter.git",
-                "reference": "fbde239dd9b3c9145e5f281fd585623181013b80"
+                "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
+                "reference": "846eee0565bf84d911c1d2cad81e707ec9ac2e9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ShawnMcCool/laravel-auto-presenter/zipball/fbde239dd9b3c9145e5f281fd585623181013b80",
-                "reference": "fbde239dd9b3c9145e5f281fd585623181013b80",
+                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/846eee0565bf84d911c1d2cad81e707ec9ac2e9c",
+                "reference": "846eee0565bf84d911c1d2cad81e707ec9ac2e9c",
                 "shasum": ""
             },
             "require": {
@@ -3149,7 +3313,6 @@
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "~1.2",
                 "graham-campbell/testbench": "~2.0"
             },
             "type": "library",
@@ -3184,7 +3347,7 @@
                 "lpm",
                 "presenter"
             ],
-            "time": "2015-02-04 19:20:36"
+            "time": "2015-05-18 10:21:57"
         },
         {
             "name": "monolog/monolog",
@@ -3397,16 +3560,16 @@
         },
         {
             "name": "patricktalmadge/bootstrapper",
-            "version": "5.6.1",
+            "version": "5.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/patricktalmadge/bootstrapper.git",
-                "reference": "4d2ceb490816ee3251c1845f91f84b29307e162f"
+                "reference": "b1f00061042efbaf91719f829a7e0c0294ee3ca0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/patricktalmadge/bootstrapper/zipball/4d2ceb490816ee3251c1845f91f84b29307e162f",
-                "reference": "4d2ceb490816ee3251c1845f91f84b29307e162f",
+                "url": "https://api.github.com/repos/patricktalmadge/bootstrapper/zipball/b1f00061042efbaf91719f829a7e0c0294ee3ca0",
+                "reference": "b1f00061042efbaf91719f829a7e0c0294ee3ca0",
                 "shasum": ""
             },
             "require": {
@@ -3453,7 +3616,7 @@
                 "bootstrap",
                 "laravel"
             ],
-            "time": "2015-04-09 14:35:02"
+            "time": "2015-05-16 15:23:33"
         },
         {
             "name": "phenx/php-font-lib",
@@ -3681,19 +3844,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pingpong-labs/generators.git",
-                "reference": "a83891791994de5f687f2b7dabd4688610a14ab6"
+                "reference": "23f9e237741d65a9435ba93b3d2c470334b4f26d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pingpong-labs/generators/zipball/a83891791994de5f687f2b7dabd4688610a14ab6",
-                "reference": "a83891791994de5f687f2b7dabd4688610a14ab6",
+                "url": "https://api.github.com/repos/pingpong-labs/generators/zipball/23f9e237741d65a9435ba93b3d2c470334b4f26d",
+                "reference": "23f9e237741d65a9435ba93b3d2c470334b4f26d",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "~2.5",
                 "illuminate/filesystem": "5.0.*",
                 "illuminate/support": "5.0.*",
-                "php": ">=5.4.0"
+                "php": ">=5.4.0",
+                "pingpong/support": "~2.0"
             },
             "require-dev": {
                 "mockery/mockery": "~0.9",
@@ -3721,7 +3885,7 @@
                 "laravel",
                 "pingpong"
             ],
-            "time": "2015-04-23 19:40:53"
+            "time": "2015-05-21 04:41:20"
         },
         {
             "name": "pingpong/modules",
@@ -3729,19 +3893,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pingpong-labs/modules.git",
-                "reference": "1eaf2722efb718e4eae311fe2811840a6a61f5ae"
+                "reference": "419481ed704424dd663754ec0e549f1570945173"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/1eaf2722efb718e4eae311fe2811840a6a61f5ae",
-                "reference": "1eaf2722efb718e4eae311fe2811840a6a61f5ae",
+                "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/419481ed704424dd663754ec0e549f1570945173",
+                "reference": "419481ed704424dd663754ec0e549f1570945173",
                 "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.0.*",
                 "laravelcollective/html": "~5.0",
                 "php": ">=5.4.0",
-                "pingpong/generators": "~2.0"
+                "pingpong/generators": "~2.0",
+                "pingpong/support": "~2.0"
             },
             "require-dev": {
                 "mockery/mockery": "~0.9",
@@ -3777,7 +3942,49 @@
                 "modules",
                 "pingpong"
             ],
-            "time": "2015-05-09 17:23:25"
+            "time": "2015-05-21 04:41:20"
+        },
+        {
+            "name": "pingpong/support",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pingpong-labs/support.git",
+                "reference": "22b2c64bac74e6aefbf024e764ecf3ea8104c72b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pingpong-labs/support/zipball/22b2c64bac74e6aefbf024e764ecf3ea8104c72b",
+                "reference": "22b2c64bac74e6aefbf024e764ecf3ea8104c72b",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown-extra": "0.7.*",
+                "illuminate/filesystem": "5.0.*",
+                "illuminate/support": "5.0.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pingpong\\Support\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pingpong Labs",
+                    "email": "pingpong.labs@gmail.com"
+                }
+            ],
+            "description": "Support Component of Pingpong Sky Package",
+            "time": "2015-05-19 16:21:15"
         },
         {
             "name": "predis/predis",
@@ -3831,22 +4038,24 @@
         },
         {
             "name": "prettus/l5-repository",
-            "version": "2.0.10",
+            "version": "2.0.11",
             "source": {
                 "type": "git",
-                "url": "https://github.com/andersao/l5-repository.git",
-                "reference": "7df019a25853a79da16cbee2c1490b70aa002545"
+                "url": "https://github.com/prettus/l5-repository.git",
+                "reference": "5c852781756503c122f066c12a5e4a23fefbffed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/7df019a25853a79da16cbee2c1490b70aa002545",
-                "reference": "7df019a25853a79da16cbee2c1490b70aa002545",
+                "url": "https://api.github.com/repos/prettus/l5-repository/zipball/5c852781756503c122f066c12a5e4a23fefbffed",
+                "reference": "5c852781756503c122f066c12a5e4a23fefbffed",
                 "shasum": ""
             },
             "require": {
                 "illuminate/config": "5.0.*",
+                "illuminate/console": "5.0.*",
+                "illuminate/filesystem": "5.0.*",
                 "illuminate/support": "5.0.*",
-                "league/fractal": "0.11.*",
+                "league/fractal": "0.12.*",
                 "php": ">=5.4.0",
                 "prettus/laravel-validation": "1.1.*",
                 "robclancy/presenter": "1.3.*"
@@ -3883,19 +4092,19 @@
                 "model",
                 "repository"
             ],
-            "time": "2015-04-07 04:40:38"
+            "time": "2015-05-16 18:26:16"
         },
         {
             "name": "prettus/laravel-validation",
             "version": "1.1.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/andersao/laravel-validator.git",
+                "url": "https://github.com/prettus/laravel-validator.git",
                 "reference": "b00eb06b10e678dacfa6ffd22cb17047df151632"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andersao/laravel-validator/zipball/b00eb06b10e678dacfa6ffd22cb17047df151632",
+                "url": "https://api.github.com/repos/prettus/laravel-validator/zipball/b00eb06b10e678dacfa6ffd22cb17047df151632",
                 "reference": "b00eb06b10e678dacfa6ffd22cb17047df151632",
                 "shasum": ""
             },
@@ -4230,17 +4439,20 @@
         },
         {
             "name": "rollbar/rollbar",
-            "version": "v0.11.0",
+            "version": "v0.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rollbar/rollbar-php.git",
-                "reference": "ef8bd4e16ec1e84eece96aeea17a1909d639e241"
+                "reference": "41c94162509b7fa9ecbe87c08ad365c048150582"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rollbar/rollbar-php/zipball/ef8bd4e16ec1e84eece96aeea17a1909d639e241",
-                "reference": "ef8bd4e16ec1e84eece96aeea17a1909d639e241",
+                "url": "https://api.github.com/repos/rollbar/rollbar-php/zipball/41c94162509b7fa9ecbe87c08ad365c048150582",
+                "reference": "41c94162509b7fa9ecbe87c08ad365c048150582",
                 "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*"
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*",
@@ -4272,7 +4484,7 @@
                 "logging",
                 "monitoring"
             ],
-            "time": "2015-04-04 00:22:54"
+            "time": "2015-05-19 23:47:15"
         },
         {
             "name": "roumen/sitemap",
@@ -4329,16 +4541,16 @@
         },
         {
             "name": "sabre/vobject",
-            "version": "3.4.2",
+            "version": "3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fruux/sabre-vobject.git",
-                "reference": "0c90f60dae40137f1903c7b5915d3691c4fc99b0"
+                "reference": "5c0cf39f54bd9bee01820f67ce0e6c890a021ef7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fruux/sabre-vobject/zipball/0c90f60dae40137f1903c7b5915d3691c4fc99b0",
-                "reference": "0c90f60dae40137f1903c7b5915d3691c4fc99b0",
+                "url": "https://api.github.com/repos/fruux/sabre-vobject/zipball/5c0cf39f54bd9bee01820f67ce0e6c890a021ef7",
+                "reference": "5c0cf39f54bd9bee01820f67ce0e6c890a021ef7",
                 "shasum": ""
             },
             "require": {
@@ -4391,7 +4603,7 @@
                 "jCard",
                 "vCard"
             ],
-            "time": "2015-02-25 17:47:50"
+            "time": "2015-05-19 08:08:16"
         },
         {
             "name": "sleeping-owl/with-join",
@@ -4504,119 +4716,6 @@
             "time": "2015-03-19 08:22:15"
         },
         {
-            "name": "stayallive/authority",
-            "version": "2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Stayallive/authority.git",
-                "reference": "477721fc0a3c206c1886e90e3415754d92904f8d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Stayallive/authority/zipball/477721fc0a3c206c1886e90e3415754d92904f8d",
-                "reference": "477721fc0a3c206c1886e90e3415754d92904f8d",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/events": "~5.0",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.7.*",
-                "phpunit/phpunit": "3.7.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Authority": "src/"
-                }
-            },
-            "license": [
-                "mit"
-            ],
-            "authors": [
-                {
-                    "name": "Matthew Machuga",
-                    "email": "machuga@gmail.com"
-                },
-                {
-                    "name": "Koen Schmeets",
-                    "email": "hello@koenschmeets.nl"
-                },
-                {
-                    "name": "Jesse O'Brien",
-                    "email": "jesse@jesse-obrien.ca"
-                }
-            ],
-            "description": "A simple and flexible authorization system for PHP",
-            "support": {
-                "source": "https://github.com/Stayallive/authority/tree/2.2.1"
-            },
-            "time": "2015-01-18 23:19:54"
-        },
-        {
-            "name": "stayallive/authority-l5",
-            "version": "2.4.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Stayallive/authority-l5.git",
-                "reference": "7340f738c8f3a9e507a7bd9736c5e9e84042a7e8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Stayallive/authority-l5/zipball/7340f738c8f3a9e507a7bd9736c5e9e84042a7e8",
-                "reference": "7340f738c8f3a9e507a7bd9736c5e9e84042a7e8",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.0",
-                "php": ">=5.3.0",
-                "stayallive/authority": "2.2.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Authority\\AuthorityL5": "src/"
-                }
-            },
-            "authors": [
-                {
-                    "name": "Matthew Machuga",
-                    "email": "machuga@gmail.com"
-                },
-                {
-                    "name": "Koen Schmeets",
-                    "email": "hello@koenschmeets.nl"
-                },
-                {
-                    "name": "Jesse O'Brien",
-                    "email": "jesse@jesse-obrien.ca"
-                },
-                {
-                    "name": "Conar Welsh",
-                    "email": "conar@welshlabs.com"
-                }
-            ],
-            "description": "A simple and flexible authorization system for PHP",
-            "homepage": "https://github.com/stayallive/authority-l5",
-            "keywords": [
-                "authentication",
-                "authorization",
-                "laravel",
-                "laravel 5"
-            ],
-            "support": {
-                "source": "https://github.com/Stayallive/authority-l5/tree/2.4.2",
-                "issues": "https://github.com/Stayallive/authority-l5/issues"
-            },
-            "time": "2015-03-21 20:30:17"
-        },
-        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.0",
             "source": {
@@ -4670,17 +4769,17 @@
         },
         {
             "name": "symfony/class-loader",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/ClassLoader",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ClassLoader.git",
-                "reference": "861765b3e5f32979de5bd19ad2577cbb830a29d5"
+                "reference": "695134c9b39559297fa5d1dcff6a9054bb56facb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ClassLoader/zipball/861765b3e5f32979de5bd19ad2577cbb830a29d5",
-                "reference": "861765b3e5f32979de5bd19ad2577cbb830a29d5",
+                "url": "https://api.github.com/repos/symfony/ClassLoader/zipball/695134c9b39559297fa5d1dcff6a9054bb56facb",
+                "reference": "695134c9b39559297fa5d1dcff6a9054bb56facb",
                 "shasum": ""
             },
             "require": {
@@ -4707,31 +4806,31 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony ClassLoader Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-27 10:19:51"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-02 15:18:45"
         },
         {
             "name": "symfony/console",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667"
+                "reference": "ebc5679854aa24ed7d65062e9e3ab0b18a917272"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/5b91dc4ed5eb08553f57f6df04c4730a73992667",
-                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/ebc5679854aa24ed7d65062e9e3ab0b18a917272",
+                "reference": "ebc5679854aa24ed7d65062e9e3ab0b18a917272",
                 "shasum": ""
             },
             "require": {
@@ -4765,31 +4864,31 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony Console Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-30 15:54:10"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-02 15:18:45"
         },
         {
             "name": "symfony/css-selector",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/CssSelector",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/CssSelector.git",
-                "reference": "db2c48df9658423a8c168d89f7b971b73d3d74a4"
+                "reference": "189cf0f7f56d7c4be3b778df15a7f16a29f3680d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/CssSelector/zipball/db2c48df9658423a8c168d89f7b971b73d3d74a4",
-                "reference": "db2c48df9658423a8c168d89f7b971b73d3d74a4",
+                "url": "https://api.github.com/repos/symfony/CssSelector/zipball/189cf0f7f56d7c4be3b778df15a7f16a29f3680d",
+                "reference": "189cf0f7f56d7c4be3b778df15a7f16a29f3680d",
                 "shasum": ""
             },
             "require": {
@@ -4815,35 +4914,35 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Jean-François Simon",
                     "email": "jeanfrancois.simon@sensiolabs.com"
                 },
                 {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony CssSelector Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-22 16:55:57"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-02 15:18:45"
         },
         {
             "name": "symfony/debug",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/Debug",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "d49a46a20a8f0544aedac54466750ad787d3d3e3"
+                "reference": "ad4511a8fddce7ec163b513ba39a30ea4f32c9e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/d49a46a20a8f0544aedac54466750ad787d3d3e3",
-                "reference": "d49a46a20a8f0544aedac54466750ad787d3d3e3",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/ad4511a8fddce7ec163b513ba39a30ea4f32c9e7",
+                "reference": "ad4511a8fddce7ec163b513ba39a30ea4f32c9e7",
                 "shasum": ""
             },
             "require": {
@@ -4880,31 +4979,31 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony Debug Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-22 16:55:57"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-08 13:17:44"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "70f7c8478739ad21e3deef0d977b38c77f1fb284"
+                "reference": "672593bc4b0043a0acf91903bb75a1c82d8f2e02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/70f7c8478739ad21e3deef0d977b38c77f1fb284",
-                "reference": "70f7c8478739ad21e3deef0d977b38c77f1fb284",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/672593bc4b0043a0acf91903bb75a1c82d8f2e02",
+                "reference": "672593bc4b0043a0acf91903bb75a1c82d8f2e02",
                 "shasum": ""
             },
             "require": {
@@ -4939,31 +5038,31 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony EventDispatcher Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-13 17:37:22"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-02 15:18:45"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/Filesystem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "4983964b3693e4f13449cb3800c64a9112c301b4"
+                "reference": "f73904bd2dae525c42ea1f0340c7c98480ecacde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/4983964b3693e4f13449cb3800c64a9112c301b4",
-                "reference": "4983964b3693e4f13449cb3800c64a9112c301b4",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/f73904bd2dae525c42ea1f0340c7c98480ecacde",
+                "reference": "f73904bd2dae525c42ea1f0340c7c98480ecacde",
                 "shasum": ""
             },
             "require": {
@@ -4989,31 +5088,31 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony Filesystem Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-22 16:55:57"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-08 00:09:07"
         },
         {
             "name": "symfony/finder",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/Finder",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "5dbe2e73a580618f5b4880fda93406eed25de251"
+                "reference": "704c64c8b12c8882640d5c0330a8414b1e06dc99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/5dbe2e73a580618f5b4880fda93406eed25de251",
-                "reference": "5dbe2e73a580618f5b4880fda93406eed25de251",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/704c64c8b12c8882640d5c0330a8414b1e06dc99",
+                "reference": "704c64c8b12c8882640d5c0330a8414b1e06dc99",
                 "shasum": ""
             },
             "require": {
@@ -5039,31 +5138,31 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony Finder Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-30 15:54:10"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-02 15:18:45"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/HttpFoundation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "8a6337233f08f7520de97f4ffd6f00e947d892f9"
+                "reference": "8a0d00980ef9f6b47ddbf24bdfbf70fead760816"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/8a6337233f08f7520de97f4ffd6f00e947d892f9",
-                "reference": "8a6337233f08f7520de97f4ffd6f00e947d892f9",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/8a0d00980ef9f6b47ddbf24bdfbf70fead760816",
+                "reference": "8a0d00980ef9f6b47ddbf24bdfbf70fead760816",
                 "shasum": ""
             },
             "require": {
@@ -5093,31 +5192,31 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony HttpFoundation Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-04-01 16:50:12"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-02 15:18:45"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/HttpKernel",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "3829cacfe21eaf3f73604a62d79183d1f6e792c4"
+                "reference": "2010194de0a57731af9404c7f97fd300db98b7a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/3829cacfe21eaf3f73604a62d79183d1f6e792c4",
-                "reference": "3829cacfe21eaf3f73604a62d79183d1f6e792c4",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/2010194de0a57731af9404c7f97fd300db98b7a3",
+                "reference": "2010194de0a57731af9404c7f97fd300db98b7a3",
                 "shasum": ""
             },
             "require": {
@@ -5171,31 +5270,31 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony HttpKernel Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-04-01 16:55:26"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-11 01:58:49"
         },
         {
             "name": "symfony/process",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/Process",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "a8bebaec1a9dc6cde53e0250e32917579b0be552"
+                "reference": "9f3c4baaf840ed849e1b1f7bfd5ae246e8509562"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/a8bebaec1a9dc6cde53e0250e32917579b0be552",
-                "reference": "a8bebaec1a9dc6cde53e0250e32917579b0be552",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/9f3c4baaf840ed849e1b1f7bfd5ae246e8509562",
+                "reference": "9f3c4baaf840ed849e1b1f7bfd5ae246e8509562",
                 "shasum": ""
             },
             "require": {
@@ -5221,31 +5320,31 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony Process Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-30 15:54:10"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-02 15:18:45"
         },
         {
             "name": "symfony/routing",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/Routing",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing.git",
-                "reference": "4e173a645b63ff60a124f3741b4f15feebd908fa"
+                "reference": "1455ec537940f7428ea6aa9411f3c4bca69413a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Routing/zipball/4e173a645b63ff60a124f3741b4f15feebd908fa",
-                "reference": "4e173a645b63ff60a124f3741b4f15feebd908fa",
+                "url": "https://api.github.com/repos/symfony/Routing/zipball/1455ec537940f7428ea6aa9411f3c4bca69413a0",
+                "reference": "1455ec537940f7428ea6aa9411f3c4bca69413a0",
                 "shasum": ""
             },
             "require": {
@@ -5284,27 +5383,27 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony Routing Component",
-            "homepage": "http://symfony.com",
+            "homepage": "https://symfony.com",
             "keywords": [
                 "router",
                 "routing",
                 "uri",
                 "url"
             ],
-            "time": "2015-03-30 15:54:10"
+            "time": "2015-05-02 15:18:45"
         },
         {
             "name": "symfony/security-core",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/Security/Core",
             "source": {
                 "type": "git",
@@ -5368,17 +5467,17 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/Translation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Translation.git",
-                "reference": "bd939f05cdaca128f4ddbae1b447d6f0203b60af"
+                "reference": "398e0eedcb89243ad34a10d079a4b6ea4c0b61ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Translation/zipball/bd939f05cdaca128f4ddbae1b447d6f0203b60af",
-                "reference": "bd939f05cdaca128f4ddbae1b447d6f0203b60af",
+                "url": "https://api.github.com/repos/symfony/Translation/zipball/398e0eedcb89243ad34a10d079a4b6ea4c0b61ff",
+                "reference": "398e0eedcb89243ad34a10d079a4b6ea4c0b61ff",
                 "shasum": ""
             },
             "require": {
@@ -5413,31 +5512,31 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony Translation Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-30 15:54:10"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-05 16:51:00"
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/VarDumper",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "aafae00236e147568832de3c65ccb94cfc836278"
+                "reference": "89eec96645fb44af4a454a26c74c72ba6311f5bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/aafae00236e147568832de3c65ccb94cfc836278",
-                "reference": "aafae00236e147568832de3c65ccb94cfc836278",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/89eec96645fb44af4a454a26c74c72ba6311f5bc",
+                "reference": "89eec96645fb44af4a454a26c74c72ba6311f5bc",
                 "shasum": ""
             },
             "require": {
@@ -5469,21 +5568,21 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Nicolas Grekas",
                     "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony mechanism for exploring and dumping PHP variables",
-            "homepage": "http://symfony.com",
+            "homepage": "https://symfony.com",
             "keywords": [
                 "debug",
                 "dump"
             ],
-            "time": "2015-03-31 08:12:29"
+            "time": "2015-05-01 14:14:24"
         },
         {
             "name": "thomaswelton/gravatarlib",
@@ -6915,17 +7014,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "174f009ed36379a801109955fc5a71a49fe62dd4"
+                "reference": "f157ab074e453ecd4c0fa775f721f6e67a99d9e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/174f009ed36379a801109955fc5a71a49fe62dd4",
-                "reference": "174f009ed36379a801109955fc5a71a49fe62dd4",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/f157ab074e453ecd4c0fa775f721f6e67a99d9e2",
+                "reference": "f157ab074e453ecd4c0fa775f721f6e67a99d9e2",
                 "shasum": ""
             },
             "require": {
@@ -6951,17 +7050,17 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony Yaml Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-30 15:54:10"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-02 15:18:45"
         }
     ],
     "aliases": [],
@@ -6976,7 +7075,6 @@
         "pingpong/modules": 20,
         "efficiently/authority-controller": 20,
         "vinkla/hashids": 20,
-        "erusev/parsedown": 20,
         "embed/embed": 20,
         "greggilbert/recaptcha": 20,
         "floatingpoint/gravatar": 20,
