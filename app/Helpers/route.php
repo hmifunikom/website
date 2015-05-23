@@ -89,6 +89,8 @@ function route_bind_key($key, $class, $table_key)
     {
         if (is_null($value)) return;
 
+        if (Request::method() != \Symfony\Component\HttpFoundation\Request::METHOD_GET) return $value;
+
         if ($model = (new $class(app()))->findByField($table_key, $value))
         {
             return $model;
@@ -150,7 +152,7 @@ function redirect_ajax($name, $parameters = [], $notification = false, $data = n
             Session::forget('notification');
         }
 
-        return response(json_encode($response));
+        return response()->json($response);
     }
     else
     {
@@ -187,7 +189,7 @@ function response_ajax(stdClass $data = null, $status = true)
         $data->success = true;
     }
 
-    return response(json_encode($data), $data->code);
+    return response()->json($data, $data->code);
 }
 
 function response_ajax_fail(stdClass $data = null)

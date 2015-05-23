@@ -27,6 +27,7 @@ Route::group(['namespace' => 'HMIF\\Modules\Keanggotaan\Http\Controllers\Panel']
             route_bind_key('anggota', HMIF\Modules\Keanggotaan\Repositories\AnggotaRepository::class, 'nim');
         }
 
-        Route::resource('keanggotaan/anggota', 'AnggotaController');
+        Route::resource('keanggotaan/anggota', 'AnggotaController', ['except' => ['create', 'store']]);
+        Route::post('keanggotaan/anggota/{anggota}/avatar', ['uses' => 'AnggotaController@avatarStore', 'as' => 'panel.event.avatar.store']);
     });
 });

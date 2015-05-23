@@ -34,6 +34,8 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+    protected $with = ['userable'];
+
     public function userable()
     {
         return $this->morphTo();

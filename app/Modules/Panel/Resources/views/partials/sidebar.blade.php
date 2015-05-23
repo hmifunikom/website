@@ -6,7 +6,7 @@
         <ul class="nav">
             <li class="nav-profile">
                 <div class="image">
-                    <a href="javascript:;"><img src="{!! gravatarlib(auth()->user()->email) !!}" alt="" /></a>
+                    <a href="javascript:;"><img src="{!! avatar(auth()->user()->userable->avatar) !!}" alt="" /></a>
                 </div>
                 <div class="info">
                     <div style="width: 130px" class="text-ellipsis">{{ auth()->user()->userable->nama }}</div>
@@ -22,12 +22,6 @@
                 <a href="{{ route('panel.index') }}" data-toggle="ajax">
                     <i class="fa fa-home"></i>
                     <span>Dashboard</span>
-                </a>
-            </li>
-            <li class="{{ menu_active('panel.user.index') }}">
-                <a href="{{ route('panel.user.index') }}" data-toggle="ajax">
-                    <i class="fa fa-group"></i>
-                    <span>Keanggotaan</span>
                 </a>
             </li>
             <li class="has-sub active">

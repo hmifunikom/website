@@ -18,9 +18,15 @@ Breadcrumbs::register('panel.index', function ($breadcrumbs) {
 |--------------------------------------------------------------------------
 */
 
-Breadcrumbs::register('panel.keanggotaan.index', function ($breadcrumbs) {
+Breadcrumbs::register('panel.keanggotaan.anggota.index', function ($breadcrumbs) {
     $breadcrumbs->parent('panel.index');
-    $breadcrumbs->push('Keanggotaan', route('panel.keanggotaan.index'));
+    $breadcrumbs->push('Keanggotaan');
+    $breadcrumbs->push('Anggota', route('panel.keanggotaan.anggota.index'));
+});
+
+Breadcrumbs::register('panel.keanggotaan.anggota.show', function($breadcrumbs, $anggota) {
+    $breadcrumbs->parent('panel.keanggotaan.anggota.index');
+    $breadcrumbs->push($anggota->nama, route('panel.keanggotaan.anggota.show', $anggota));
 });
 
 /*

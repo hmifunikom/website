@@ -21,3 +21,15 @@ function gravatarlib($email, $size = 80, $rating = null)
 
     return htmlentities($gravatar->buildGravatarURL($email));
 }
+
+function avatar($path)
+{
+    if ($path)
+    {
+        return asset_version('media/thumbs/' . $path);
+    }
+    else
+    {
+        return asset_version('media/thumbs/avatar.jpg');
+    }
+}

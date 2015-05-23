@@ -21,7 +21,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown navbar-user">
                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="{!! gravatarlib(auth()->user()->email) !!}" alt="" />
+                    <img src="{!! avatar(auth()->user()->userable->avatar) !!}" alt="" />
                     <span class="hidden-xs">{{ auth()->user()->email }}</span> <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu animated fadeInLeft">

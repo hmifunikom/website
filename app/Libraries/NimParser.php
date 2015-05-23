@@ -177,4 +177,9 @@ class NimParser {
 
         return true;
     }
+
+    public function __toString()
+    {
+        return $this->nim;
+    }
 }

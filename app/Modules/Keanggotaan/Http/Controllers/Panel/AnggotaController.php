@@ -30,23 +30,16 @@ class AnggotaController extends PanelController {
             ->pushCriteria(new ByDivisiCriteria(Input::get('divisi')))
             ->pushCriteria(new ByStatusCriteria(Input::get('status')))
             ->paginate();
+
         $divisi = app('HMIF\Modules\Keanggotaan\Repositories\DivisiRepository')->all();
 
-        head_title('Daftar anggota');
+        head_title('Daftar anggota HMIF');
         return view('keanggotaan::panel.anggota.index')->with(compact('anggota', 'divisi'));
-    }
-
-    public function create()
-    {
-    }
-
-    public function store(StoreAnggotaPostRequest $request)
-    {
     }
 
     public function show($anggota)
     {
-        head_title($anggota->nama_acara);
+        head_title($anggota->nama);
         return view('keanggotaan::panel.anggota.show')->with(compact('anggota'));
     }
 
@@ -74,64 +67,43 @@ class AnggotaController extends PanelController {
         return redirect_ajax('panel.keanggotaan.anggota.index');
     }
 
-    public function posterStore($anggotaId)
+    public function avatarStore($anggotaId)
     {
         if(! is_ajax()) redirect_ajax('panel.keanggotaan.anggota.show', $anggotaId);
 
-        $anggota = $this->anggotaRepository->find($anggotaId);
+        $anggota = $this->anggotaRepository->findByField('nim', $anggotaId);
 
-        $filename = str_slug($anggota->nama_acara);
-        $img = new ImageManipulation('posterupload', $filename);
+        $filename = str_slug($anggota->nim);
+        $img = new ImageManipulation('avatarupload', $filename);
 
         if ($img->isUploaded())
         {
-            $img->resize();
-            $img->thumb();
+            $img->thumb(200);
 
-            if ($anggota->poster)
+            if ($anggota->avatar)
             {
-                delete_media($anggota->poster);
+                delete_media($anggota->avatar);
             }
 
-            $anggota->poster = $img->getFileName();
+            $anggota->avatar = $img->getFileName();
 
             if ($anggota->save())
             {
-                flash_success('Poster sukses disimpan.');
+                flash_success('Foto profil sukses disimpan.');
                 $response = new stdClass();
-                $response->path = asset_version('media/images/' . $img->getFileName());
+                $response->path = asset_version('media/thumbs/' . $img->getFileName());
                 return response_ajax($response);
             }
             else
             {
-                flash_error('Poster gagal disimpan.');
+                flash_error('Foto profil gagal disimpan.');
                 return response_ajax_fail();
             }
         }
         else
         {
-            flash_error('Poster gagal diunggah.');
+            flash_error('Foto profil gagal diunggah.');
             return response_ajax_fail();
         }
-    }
-
-    public function posterDelete($anggotaId)
-    {
-        $anggota = $this->anggotaRepository->find($anggotaId);
-
-        $tmp_poster = $anggota->poster;
-        $anggota->poster = null;
-
-        if ($anggota->save())
-        {
-            delete_media($tmp_poster);
-            flash_success('Poster sukses dihapus.');
-        }
-        else
-        {
-            flash_error('Poster gagal dihapus.');
-        }
-
-        return redirect_ajax_notification('panel.keanggotaan.anggota.show', $anggota);
     }
 }

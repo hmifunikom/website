@@ -11,7 +11,7 @@
         {!! Breadcrumbs::renderIfExists() !!}
         <!-- end breadcrumb -->
         <!-- begin page-header -->
-        <h1 class="page-header">Daftar anggota</h1>
+        <h1 class="page-header">Daftar anggota HMIF</h1>
         <!-- end page-header -->
 
         <!-- begin row -->
@@ -21,7 +21,7 @@
                 <!-- begin panel -->
                 <div class="panel panel-inverse">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Table daftar anggota</h4>
+                        <h4 class="panel-title">Table daftar anggota HMIF</h4>
                     </div>
                     <div class="panel-toolbar">
                         <div class="row">

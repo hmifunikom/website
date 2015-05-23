@@ -40,7 +40,7 @@ class ImageManipulation {
     public function resize($size = 1024)
     {
         $img = Image::make($this->_source());
-        $img->resize(null, 1024, function ($constraint) {
+        $img->resize(null, $size, function ($constraint) {
             $constraint->aspectRatio();
             $constraint->upsize();
         });
