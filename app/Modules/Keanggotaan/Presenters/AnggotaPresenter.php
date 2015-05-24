@@ -16,7 +16,17 @@ class AnggotaPresenter extends BasePresenter {
         return (new NimParser($this->wrappedObject->nim));
     }
 
-    public function facebook()
+    public function tanggal_lahir()
+    {
+        return $this->wrappedObject->tanggal_lahir->format('m/d/Y');
+    }
+
+    public function tanggal_lahir_full()
+    {
+        return $this->wrappedObject->tanggal_lahir->format('l, j F Y');
+    }
+
+    public function link_facebook()
     {
         if ($this->wrappedObject->facebook)
         {
@@ -40,7 +50,7 @@ class AnggotaPresenter extends BasePresenter {
         return null;
     }
 
-    public function twitter()
+    public function link_twitter()
     {
         if ($this->wrappedObject->twitter)
         {

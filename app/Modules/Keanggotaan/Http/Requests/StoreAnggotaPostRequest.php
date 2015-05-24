@@ -3,11 +3,15 @@
 class StoreAnggotaPostRequest extends Request {
 
     public $rules = [
-        'nim'         => 'required',
-        'nama'        => 'required',
-        'alamat'      => 'required',
-        'asal'        => 'required',
-        'status_hima' => '',
+        'jenis_kelamin' => 'required',
+        'tempat_lahir'  => '',
+        'tanggal_lahir' => 'date',
+        'alamat'        => '',
+        'agama'         => '',
+        'no_hp'         => '',
+        'email'         => '',
+        'facebook'      => '',
+        'twitter'       => '',
     ];
 
     /**

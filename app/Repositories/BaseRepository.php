@@ -41,6 +41,28 @@ abstract class BaseRepository extends PrettusBaseRepository {
         return $this->parserResult($model);
     }
 
+    public function updateByField(array $attributes, $field, $value)
+    {
+        if( !is_null($this->validator) )
+        {
+            $this->validator->with($attributes)
+                ->passesOrFail( ValidatorInterface::RULE_UPDATE );
+        }
+
+        $_skipPresenter = $this->skipPresenter;
+
+        $this->skipPresenter(true);
+
+        $model = $this->model->where($field, '=', $value)->firstOrFail();
+        $model->fill($attributes);
+        $model->save();
+
+        $this->skipPresenter($_skipPresenter);
+
+
+        return $this->parserResult($model);
+    }
+
     public function updateRelation(array $attributes, $id, $relationKeys)
     {
         if ( ! is_null($this->validator))

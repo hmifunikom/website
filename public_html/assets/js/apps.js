@@ -734,14 +734,14 @@ var handleSidebarAjaxClick = function() {
         }
 
         var options = {
+            dataType: 'json',
+
             beforeSubmit: function() {
                 Pace.restart();
             },
 
             success: function(data, status, xhr) {
                 if(xhr.status == 200) {
-                    var data = jQuery.parseJSON(data);
-
                     if(target.data('pjax-success')) {
                         window[target.data('pjax-success')](data, status, xhr);
                     } else {

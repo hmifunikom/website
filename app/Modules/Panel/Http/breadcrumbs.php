@@ -29,6 +29,11 @@ Breadcrumbs::register('panel.keanggotaan.anggota.show', function($breadcrumbs, $
     $breadcrumbs->push($anggota->nama, route('panel.keanggotaan.anggota.show', $anggota));
 });
 
+Breadcrumbs::register('panel.keanggotaan.anggota.edit', function($breadcrumbs, $anggota) {
+    $breadcrumbs->parent('panel.keanggotaan.anggota.show', $anggota);
+    $breadcrumbs->push('Edit Anggota');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Event

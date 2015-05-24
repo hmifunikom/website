@@ -32,6 +32,9 @@
                             <input id="fileupload" type="file" name="avatarupload">
                         </span>
                     </div>
+                    <div class="m-b-10">
+                        {!! Button::primary('Edit Profil')->asLinkTo(route('panel.keanggotaan.anggota.edit', $anggota->getWrappedObject()))->withAttributes(['data-pjax'])->block()->small() !!}
+                    </div>
                 </div>
                 <!-- end profile-left -->
                 <!-- begin profile-right -->
@@ -81,6 +84,14 @@
                                     <td>{{ $anggota->jenis_kelamin or 'Tidak diketahui' }}</td>
                                 </tr>
                                 <tr>
+                                    <td class="field">Tempat, Tanggal Lahir</td>
+                                    <td>{{ $anggota->tempat_lahir or '-' }} @ {{ $anggota->tanggal_lahir_full or '-' }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="field">Agama</td>
+                                    <td>{{ $anggota->agama or 'Tidak diketahui' }}</td>
+                                </tr>
+                                <tr>
                                     <td class="field">Alamat Saat Ini</td>
                                     <td>{{ $anggota->alamat or '-' }}</td>
                                 </tr>
@@ -99,11 +110,11 @@
                                 </tr>
                                 <tr>
                                     <td class="field">{!! Icon::facebook() !!}</td>
-                                    <td>{!! $anggota->facebook or '-' !!}</td>
+                                    <td>{!! $anggota->link_facebook or '-' !!}</td>
                                 </tr>
                                 <tr>
                                     <td class="field">{!! Icon::twitter() !!}</td>
-                                    <td>{!! $anggota->twitter or '-' !!}</td>
+                                    <td>{!! $anggota->link_twitter or '-' !!}</td>
                                 </tr>
                                 </tbody>
                             </table>

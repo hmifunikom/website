@@ -31,8 +31,8 @@
                     <span>Keanggotaan</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="{{ menu_active('panel.keanggotaan.anggota.index') }}"><a href="{{ route('panel.keanggotaan.anggota.index') }}">Anggota</a></li>
-                    <li><a href="ui_general.html">Divisi</a></li>
+                    <li class="{{ menu_active('panel.keanggotaan.anggota.index') }}"><a href="{{ route('panel.keanggotaan.anggota.index') }}" data-toggle="ajax">Anggota</a></li>
+                    <li><a href="ui_general.html" data-toggle="ajax">Divisi</a></li>
                 </ul>
             </li>
             <li class="{{ menu_active('panel.event.index') }}">

@@ -1,5 +1,6 @@
 <?php namespace HMIF\Modules\Keanggotaan\Entities;
 
+use Date;
 use HMIF\Entities\SoftDeleteBaseModel;
 use HMIF\Modules\Keanggotaan\Presenters\AnggotaPresenter;
 use McCool\LaravelAutoPresenter\HasPresenter;
@@ -9,16 +10,13 @@ class Anggota extends SoftDeleteBaseModel implements HasPresenter {
     protected $table      = 'tb_keanggotaan';
     protected $primaryKey = 'id_anggota';
 
-    protected $fillable = ['nim', 'nama', 'alamat', 'asal', 'status_hima'];
+    protected $fillable = ['nim', 'nama', 'jenis_kelamin', 'tempat_lahir', 'tanggal_lahir', 'agama', 'alamat', 'email', 'no_hp', 'facebook', 'twitter', 'status_hima'];
 
-    protected $dates = ['deleted_at'];
+    protected $dates = ['tanggal_lahir', 'deleted_at'];
 
     protected $casts = [
-        'nim'         => 'string',
-        'nama'        => 'string',
-        'alamat'      => 'string',
-        'asal'        => 'string',
-        'status_hima' => 'string',
+        'nim'   => 'string',
+        'no_hp' => 'string',
     ];
 
     protected $with = ['divisi'];
@@ -41,6 +39,11 @@ class Anggota extends SoftDeleteBaseModel implements HasPresenter {
     public function getRouteKey()
     {
         return $this->nim;
+    }
+
+    public function setTanggalLahirAttribute($value)
+    {
+        $this->attributes['tanggal_lahir'] = Date::parse($value);
     }
 
 }

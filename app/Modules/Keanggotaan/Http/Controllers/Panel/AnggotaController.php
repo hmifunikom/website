@@ -51,7 +51,7 @@ class AnggotaController extends PanelController {
 
     public function update($anggotaId, StoreanggotaPostRequest $request)
     {
-        $anggota = $this->anggotaRepository->update($request->all(), $anggotaId);
+        $anggota = $this->anggotaRepository->updateByField($request->all(), 'nim', $anggotaId);
 
         flash_success_update('Data anggota sukses diubah.');
 
