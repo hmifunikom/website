@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7a03248b7f7b3056f69b2532398210f4",
+    "hash": "9c98dcbddbcbad6ffecafd0cf4281c90",
     "packages": [
         {
             "name": "anahkiasen/former",
@@ -1698,16 +1698,16 @@
         },
         {
             "name": "google/apiclient",
-            "version": "1.1.3",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client.git",
-                "reference": "523430f21a92c54172099d12d0f31d40f3de67e9"
+                "reference": "2adb5ba90612858d4add0342eee6b8b9aaca398d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/523430f21a92c54172099d12d0f31d40f3de67e9",
-                "reference": "523430f21a92c54172099d12d0f31d40f3de67e9",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/2adb5ba90612858d4add0342eee6b8b9aaca398d",
+                "reference": "2adb5ba90612858d4add0342eee6b8b9aaca398d",
                 "shasum": ""
             },
             "require": {
@@ -1736,7 +1736,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2015-05-17 00:43:01"
+            "time": "2015-05-21 19:35:32"
         },
         {
             "name": "graham-campbell/binput",
@@ -2695,12 +2695,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/laravel-rollbar.git",
-                "reference": "ed6d75b827a6b9f4a784bbfa39671de1ff0f2ca9"
+                "reference": "58cb2db22ff7e7f671dcaf4c766883a3c5ae4d2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-rollbar/zipball/ed6d75b827a6b9f4a784bbfa39671de1ff0f2ca9",
-                "reference": "ed6d75b827a6b9f4a784bbfa39671de1ff0f2ca9",
+                "url": "https://api.github.com/repos/jenssegers/laravel-rollbar/zipball/58cb2db22ff7e7f671dcaf4c766883a3c5ae4d2c",
+                "reference": "58cb2db22ff7e7f671dcaf4c766883a3c5ae4d2c",
                 "shasum": ""
             },
             "require": {
@@ -2737,7 +2737,7 @@
                 "monitoring",
                 "rollbar"
             ],
-            "time": "2015-05-09 20:10:00"
+            "time": "2015-05-24 09:40:39"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -3654,16 +3654,16 @@
         },
         {
             "name": "php-mime-mail-parser/php-mime-mail-parser",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-mime-mail-parser/php-mime-mail-parser.git",
-                "reference": "70b520a0a9a2602cc40b92f62430599dd2043d89"
+                "reference": "02528fe3ec9f862dfaa65ffa9d67977d073ffa13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-mime-mail-parser/php-mime-mail-parser/zipball/70b520a0a9a2602cc40b92f62430599dd2043d89",
-                "reference": "70b520a0a9a2602cc40b92f62430599dd2043d89",
+                "url": "https://api.github.com/repos/php-mime-mail-parser/php-mime-mail-parser/zipball/02528fe3ec9f862dfaa65ffa9d67977d073ffa13",
+                "reference": "02528fe3ec9f862dfaa65ffa9d67977d073ffa13",
                 "shasum": ""
             },
             "require": {
@@ -3730,7 +3730,7 @@
                 "mailparse",
                 "mime"
             ],
-            "time": "2015-04-26 15:48:27"
+            "time": "2015-05-23 13:53:57"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -3893,12 +3893,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pingpong-labs/modules.git",
-                "reference": "419481ed704424dd663754ec0e549f1570945173"
+                "reference": "fac1d35ef6ff73d87311f08267aedab0d4b2afcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/419481ed704424dd663754ec0e549f1570945173",
-                "reference": "419481ed704424dd663754ec0e549f1570945173",
+                "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/fac1d35ef6ff73d87311f08267aedab0d4b2afcf",
+                "reference": "fac1d35ef6ff73d87311f08267aedab0d4b2afcf",
                 "shasum": ""
             },
             "require": {
@@ -3942,20 +3942,20 @@
                 "modules",
                 "pingpong"
             ],
-            "time": "2015-05-21 04:41:20"
+            "time": "2015-05-22 03:10:57"
         },
         {
             "name": "pingpong/support",
-            "version": "2.0.6",
+            "version": "2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pingpong-labs/support.git",
-                "reference": "22b2c64bac74e6aefbf024e764ecf3ea8104c72b"
+                "reference": "9401c19b1dbdff01606e7362b931fcffade38fb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pingpong-labs/support/zipball/22b2c64bac74e6aefbf024e764ecf3ea8104c72b",
-                "reference": "22b2c64bac74e6aefbf024e764ecf3ea8104c72b",
+                "url": "https://api.github.com/repos/pingpong-labs/support/zipball/9401c19b1dbdff01606e7362b931fcffade38fb2",
+                "reference": "9401c19b1dbdff01606e7362b931fcffade38fb2",
                 "shasum": ""
             },
             "require": {
@@ -3984,7 +3984,7 @@
                 }
             ],
             "description": "Support Component of Pingpong Sky Package",
-            "time": "2015-05-19 16:21:15"
+            "time": "2015-05-19 16:37:52"
         },
         {
             "name": "predis/predis",
@@ -4658,13 +4658,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/freekmurze/laravel-analytics.git",
-                "reference": "c323d4826242889a6b460aff4757c4c1504baa97"
+                "url": "https://github.com/spatie/laravel-analytics.git",
+                "reference": "564bf4d919fcdbc0de0be592ae31cb19ef66e0a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/freekmurze/laravel-analytics/zipball/c323d4826242889a6b460aff4757c4c1504baa97",
-                "reference": "c323d4826242889a6b460aff4757c4c1504baa97",
+                "url": "https://api.github.com/repos/spatie/laravel-analytics/zipball/564bf4d919fcdbc0de0be592ae31cb19ef66e0a2",
+                "reference": "564bf4d919fcdbc0de0be592ae31cb19ef66e0a2",
                 "shasum": ""
             },
             "require": {
@@ -4691,7 +4691,7 @@
             ],
             "authors": [
                 {
-                    "name": "Freek Van der Herten",
+                    "name": "Freek Van Der Herten",
                     "email": "freek@spatie.be",
                     "homepage": "https://murze.be",
                     "role": "Developer"
@@ -4704,7 +4704,7 @@
                 }
             ],
             "description": "An opinionated Laravel 5 package to retrieve Google Analytics data.",
-            "homepage": "https://github.com/freekmurze/laravel-analytics",
+            "homepage": "https://github.com/spatie/laravel-analytics",
             "keywords": [
                 "analytics",
                 "google",
@@ -4713,7 +4713,7 @@
                 "retrieve",
                 "spatie"
             ],
-            "time": "2015-03-19 08:22:15"
+            "time": "2015-05-22 21:05:36"
         },
         {
             "name": "swiftmailer/swiftmailer",
