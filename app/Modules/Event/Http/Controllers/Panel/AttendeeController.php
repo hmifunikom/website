@@ -18,6 +18,7 @@ class AttendeeController extends PanelController {
     public function __construct(AttendeeRepository $attendeeRepository, TicketRepository $ticketRepository)
     {
         parent::__construct();
+        $this->authorizeResource(['class' => $attendeeRepository->model(), 'key' => 'attendee']);
         $this->attendeeRepository = $attendeeRepository;
         $this->ticketRepository = $ticketRepository;
         $this->attendeeRepository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));

@@ -10,6 +10,10 @@ class UserPresenter extends BasePresenter {
         $this->wrappedObject = $resource;
     }
 
+    public function dibuat()
+    {
+        return $this->wrappedObject->created_at->format('l, j F Y @ H:i');
+    }
 
 
 }

@@ -18,6 +18,7 @@ class AnggotaController extends PanelController {
     public function __construct(AnggotaRepository $anggotaRepository)
     {
         parent::__construct();
+        $this->authorizeResource(['class' => $anggotaRepository->model(), 'key' => 'anggota']);
         $this->anggotaRepository = $anggotaRepository;
         $this->anggotaRepository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
     }
@@ -33,7 +34,7 @@ class AnggotaController extends PanelController {
 
         $divisi = app('HMIF\Modules\Keanggotaan\Repositories\DivisiRepository')->all();
 
-        head_title('Daftar anggota HMIF');
+        head_title('Daftar Anggota HMIF');
         return view('keanggotaan::panel.anggota.index')->with(compact('anggota', 'divisi'));
     }
 
@@ -45,7 +46,7 @@ class AnggotaController extends PanelController {
 
     public function edit($anggota)
     {
-        head_title('Edit anggota');
+        head_title('Edit Anggota');
         return view('keanggotaan::panel.anggota.edit')->with(compact('anggota'));
     }
 

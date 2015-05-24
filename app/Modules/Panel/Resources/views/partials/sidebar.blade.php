@@ -24,7 +24,7 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li class="has-sub active">
+            <li class="has-sub {{ menu_active('panel.keanggotaan.index') }}">
                 <a href="javascript:;">
                     <b class="caret pull-right"></b>
                     <i class="fa fa-group"></i>

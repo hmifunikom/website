@@ -13,6 +13,7 @@ class EventController extends PanelController {
     public function __construct(EventRepository $eventRepository)
     {
         parent::__construct();
+        $this->authorizeResource(['class' => $eventRepository->model(), 'key' => 'event']);
         $this->eventRepository = $eventRepository;
     }
 

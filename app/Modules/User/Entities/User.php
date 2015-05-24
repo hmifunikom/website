@@ -7,6 +7,7 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use McCool\LaravelAutoPresenter\HasPresenter;
+use Hash;
 
 class User extends BaseModel implements AuthenticatableContract, CanResetPasswordContract, HasPresenter {
 
@@ -25,7 +26,7 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password'];
+	protected $fillable = ['email', 'password'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -34,7 +35,7 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
-    protected $with = ['userable'];
+    protected $with = ['userable', 'roles'];
 
     public function userable()
     {
@@ -44,6 +45,35 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
     public function getPresenterClass()
     {
         return UserPresenter::class;
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany('HMIF\Modules\User\Entities\Role');
+    }
+
+    public function permissions()
+    {
+        return $this->hasMany('HMIF\Modules\User\Entities\Permission');
+    }
+
+    public function hasRole($key)
+    {
+        $hasRole = false;
+        foreach ($this->roles as $role) {
+            if ($role->name === $key) {
+                $hasRole = true;
+                break;
+            }
+        }
+
+        return $hasRole;
+    }
+
+    public function setPasswordAttribute($pass){
+
+        $this->attributes['password'] = Hash::make($pass);
+
     }
 
 }

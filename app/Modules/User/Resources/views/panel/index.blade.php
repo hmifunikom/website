@@ -32,7 +32,9 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Username</th>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>Tanggal Dibuat</th>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -41,11 +43,13 @@
                                 @foreach($users as $user)
                                     <tr>
                                         <td>{{ $i++ }}</td>
-                                        <td>{{ $user->username }}</td>
+                                        <td>{{ $user->userable->nama }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->dibuat }}</td>
                                         <td class="text-right">
                                             {!! Former::inline_open()->route('panel.user.destroy', $user->getWrappedObject())->data_pjax()->data_confirm('Hapus user ini?') !!}
                                             {{--{!! Button::withValue(Icon::eye())->small()->asLinkTo(route('user.show', [$user->getWrappedObject(), $user->slug]))->withAttributes(['target' => '_blank']) !!}--}}
-                                            {{--{!! Button::primary(Icon::pencil())->small()->asLinkTo(route('panel.user.show', $user->getWrappedObject()))->withAttributes(['data-pjax']) !!}--}}
+                                            {!! Button::primary(Icon::pencil())->small()->asLinkTo(route('panel.user.edit', $user->getWrappedObject()))->withAttributes(['data-pjax']) !!}
                                             {!! Button::danger(Icon::trashO())->small()->submit() !!}
                                             {!! Former::close() !!}
                                         </td>
