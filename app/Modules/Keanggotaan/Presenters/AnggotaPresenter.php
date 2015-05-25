@@ -35,13 +35,13 @@ class AnggotaPresenter extends BasePresenter {
 
             if ( ! preg_match($reg_exUrl, $this->wrappedObject->facebook, $url))
             {
-                return preg_replace(['/^([a-z0-9_]+)/i'],
+                return preg_replace(['/^([a-z0-9_\-\.]+)/i'],
                                     ['<a href="https://www.facebook.com/$1" target="_blank">$1</a>'],
                                     $this->wrappedObject->facebook);
             }
             else
             {
-                return preg_replace(['/^(http|https):\/\/(www\.)?facebook.com\/([a-z0-9_]+)/i'],
+                return preg_replace(['/^(http|https):\/\/(www\.)?facebook.com\/([a-z0-9_\-\.]+)/i'],
                                     ['<a href="https://www.facebook.com/$3" target="_blank">$3</a>'],
                                     $this->wrappedObject->facebook);
             }
