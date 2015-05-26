@@ -35,7 +35,7 @@ class Attendee extends SoftDeleteBaseModel implements HasPresenter, Invoiceable,
 
     public function invoice()
     {
-        return $this->morphOne('HMIF\Modules\Invoice\Entities\Invoice', 'invoiceable');
+        return $this->morphOne('HMIF\Modules\Invoice\Entities\InvoiceRaw', 'invoiceable');
     }
 
     public function getPresenterClass()

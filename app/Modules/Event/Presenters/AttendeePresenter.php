@@ -32,8 +32,7 @@ class AttendeePresenter extends BasePresenter {
 
     public function dibayar()
     {
-        $invoice =  $this->wrappedObject->invoice()->first();
-        return $invoice['dibayar'];
+        return $this->wrappedObject->invoice['attributes']['dibayar'];
     }
 
 }
