@@ -11,6 +11,8 @@ class BookEventTicketCommandHandler {
 
     use DispatchesCommands;
 
+    public  $command;
+
     public $attendeeRepository;
     public $pdfGenerator;
     public $ticketGenerator;
@@ -36,6 +38,8 @@ class BookEventTicketCommandHandler {
      */
     public function handle(BookEventTicketCommand $command)
     {
+        $this->command = $command;
+
         $ticket = $this->saveEntity($command);
         $ticket->load('ticket.event');
 
@@ -73,7 +77,7 @@ class BookEventTicketCommandHandler {
 
     private function sendInvoice($ticket)
     {
-        $makeInvoiceCommand = new MakeInvoiceCommand($ticket->nama_peserta, $ticket->alamat, $ticket->no_hp, $ticket->email);
+        $makeInvoiceCommand = new MakeInvoiceCommand($ticket->nama_peserta, $ticket->alamat, $ticket->no_hp, $ticket->email, $this->command->bayar);
         $makeInvoiceCommand->setTitle('Invoice ' . $ticket->getItemName());
         $makeInvoiceCommand->setItem($ticket);
         $this->dispatch($makeInvoiceCommand);
@@ -82,6 +86,8 @@ class BookEventTicketCommandHandler {
     private function sendTicket($ticket)
     {
         $this->sendInvoice($ticket);
+
+        $ticket->load('invoice');
 
         event('mail.ticket.pay', $ticket);
     }

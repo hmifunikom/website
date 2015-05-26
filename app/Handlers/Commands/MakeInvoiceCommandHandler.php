@@ -49,6 +49,7 @@ class MakeInvoiceCommandHandler {
         ];
 
         $invoice = $this->invoiceRepository->makeModel()->fill($dataInvoice);
+        $invoice->dibayar = $command->paid;
         $command->item->invoice()->save($invoice);
 
         return $invoice;

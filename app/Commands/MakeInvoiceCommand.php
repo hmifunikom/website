@@ -10,6 +10,7 @@ class MakeInvoiceCommand extends Command {
     public $alamat;
     public $no_hp;
     public $email;
+    public $paid;
 
     /**
      * @var Invoiceable
@@ -17,12 +18,13 @@ class MakeInvoiceCommand extends Command {
     public $item;
     public $jumlah;
 
-	public function __construct($nama_penerima, $alamat, $no_hp, $email)
+	public function __construct($nama_penerima, $alamat, $no_hp, $email, $paid = false)
 	{
         $this->nama_penerima = $nama_penerima;
         $this->alamat = $alamat;
         $this->no_hp = $no_hp;
         $this->email = $email;
+        $this->paid = $paid;
 	}
 
     public function setTitle($judul)
