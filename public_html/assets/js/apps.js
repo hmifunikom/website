@@ -1168,6 +1168,10 @@ var App = function () {
                 },
                 cache: true
             });
+
+            if(typeof phpdebugbar !== 'undefined') {
+                phpdebugbar.ajaxHandler.bindToJquery(jQuery);
+            }
 		},
 		setPageTitle: function(pageTitle) {
 		    document.title = pageTitle;
