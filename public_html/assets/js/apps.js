@@ -731,44 +731,44 @@ var handleSidebarAjaxClick = function() {
         if(method == 'GET') {
             var url = target.attr('action') + '?' + target.serialize();
             $.pjax({url: url, container: '#ajax-content'});
+        } else {
+            var options = {
+                dataType: 'json',
+
+                beforeSubmit: function () {
+                    Pace.restart();
+                },
+
+                success: function (data, status, xhr) {
+                    if (xhr.status == 200) {
+                        if (target.data('pjax-success')) {
+                            window[target.data('pjax-success')](data, status, xhr);
+                        } else {
+                            $.pjax({url: data.url, container: '#ajax-content'})
+                        }
+
+                        if (data.msg) {
+                            handleParseNotification(data.msg);
+                        }
+                    }
+                },
+
+                error: function (xhr, status, error) {
+                    if (xhr.status == 422) {
+                        var error_data = jQuery.parseJSON(xhr.responseText)
+                        handleFormAjaxError(error_data);
+                    }
+
+                    if (xhr.status == 500) {
+                        handleErrorNotification('Baru saja sistem gagal melakukan operasi. Silahkan ulangi atau tunggu beberapa saat. Jika masih terjadi kesalahan silahkan hubungi administrator.');
+                    }
+                }
+            };
+
+            handleConfirmation(target, function () {
+                target.ajaxSubmit(options);
+            });
         }
-
-        var options = {
-            dataType: 'json',
-
-            beforeSubmit: function() {
-                Pace.restart();
-            },
-
-            success: function(data, status, xhr) {
-                if(xhr.status == 200) {
-                    if(target.data('pjax-success')) {
-                        window[target.data('pjax-success')](data, status, xhr);
-                    } else {
-                        $.pjax({url: data.url, container: '#ajax-content'})
-                    }
-
-                    if(data.msg) {
-                        handleParseNotification(data.msg);
-                    }
-                }
-            },
-
-            error: function(xhr, status, error) {
-                if(xhr.status == 422) {
-                    var error_data = jQuery.parseJSON(xhr.responseText)
-                    handleFormAjaxError(error_data);
-                }
-
-                if(xhr.status == 500) {
-                    handleErrorNotification('Baru saja sistem gagal melakukan operasi. Silahkan ulangi atau tunggu beberapa saat. Jika masih terjadi kesalahan silahkan hubungi administrator.');
-                }
-            }
-        };
-
-        handleConfirmation(target, function() {
-            target.ajaxSubmit(options);
-        });
 
         event.preventDefault();
     });
