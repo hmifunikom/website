@@ -224,9 +224,16 @@ var handleSidebarAjaxClick = function() {
     $(document).on('pjax:beforeReplace', function() {
         scrollingTextStop();
 
-        $('html, body').animate({
+        var viewport = $('html, body');
+        viewport.animate({
             scrollTop: window.targetTop.offset().top
         }, 250);
+
+        viewport.bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(e){
+            if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"){
+                viewport.stop().unbind('scroll mousedown DOMMouseScroll mousewheel keyup'); // This identifies the scroll as a user action, stops the animation, then unbinds the event straight after (optional)
+            }
+        });
     });
 
     $(document).on('pjax:success', function() {
