@@ -170,7 +170,7 @@ var handleSidebarAjaxClick = function() {
         var target = $(event.currentTarget);
 
         var method = target.attr('method');
-        
+
         window.targetTop = target.closest('.content').attr('id');
         window.typeAjax = 'partial';
 
