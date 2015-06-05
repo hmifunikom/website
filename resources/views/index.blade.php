@@ -122,7 +122,7 @@
                         </div>
                         <div class="author">
                             <div class="image">
-                                <img src="https://hmifunikom.ngrok.io/media/thumbs/10112337_67k.jpg" alt="Muhammad Irham Halid" />
+                                <img src="https://hmifunikom.org/l5/public_html/media/thumbs/10112337_NI5.1433164421.jpg" alt="Muhammad Irham Halid" />
                             </div>
                             <div class="info">
                                 Muhammad Irham Halid
