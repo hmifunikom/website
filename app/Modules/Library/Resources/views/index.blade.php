@@ -35,7 +35,7 @@
                     <div class="text-right">
                         <div class="row">
                             <div class="col-md-12">
-                                <form class="form-inline" method="GET" id="search" action="{{ route('panel.library.index') }}" data-pjax="true" style="display: inline-block;">
+                                <form class="form-inline" method="GET" id="search" action="{{ route('library.index') }}" data-pjax="true" style="display: inline-block;">
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Cari buku..." name="s" value="{{ Input::get('s') }}">
                                         <div class="input-group-btn">

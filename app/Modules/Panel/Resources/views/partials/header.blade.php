@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <!-- begin mobile sidebar expand / collapse button -->
         <div class="navbar-header">
-            <a href="index.html" class="navbar-brand">
+            <a href="{{ route('panel.index') }}" class="navbar-brand">
                 <span class="navbar-logo no-border">
                     <img src="{{ asset_version('assets/images/logo-sm.png') }}" class="m-b-10">
                 </span> HMIF Unikom

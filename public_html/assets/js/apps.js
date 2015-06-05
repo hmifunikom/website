@@ -147,7 +147,7 @@ var handleSidebarAjaxClick = function() {
         var container = $('#ajax-content');
         $.pjax.click(event, {container: container});
 
-        window.targetTop = container;
+        window.targetTop = 'ajax-content';
         window.typeAjax = 'full';
 
         var navbar_toggle = $(".navbar-toggle")
@@ -162,7 +162,7 @@ var handleSidebarAjaxClick = function() {
         var container = $('#ajax-content');
         $.pjax.click(event, {container: container});
 
-        window.targetTop = target.closest('.content');
+        window.targetTop = target.closest('.content').attr('id');
         window.typeAjax = 'partial';
     });
 
@@ -170,6 +170,9 @@ var handleSidebarAjaxClick = function() {
         var target = $(event.currentTarget);
 
         var method = target.attr('method');
+        
+        window.targetTop = target.closest('.content').attr('id');
+        window.typeAjax = 'partial';
 
         if(method == 'GET') {
             var url = target.attr('action') + '?' + target.serialize();
@@ -223,22 +226,20 @@ var handleSidebarAjaxClick = function() {
 
     $(document).on('pjax:beforeReplace', function() {
         scrollingTextStop();
+    });
 
+    $(document).on('pjax:success', function() {
+        targetTop = $('#' + targetTop);
         var viewport = $('html, body');
         viewport.animate({
-            scrollTop: window.targetTop.offset().top
-        }, 250);
+            scrollTop: targetTop.offset().top
+        }, 0);
 
         viewport.bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(e){
             if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"){
                 viewport.stop().unbind('scroll mousedown DOMMouseScroll mousewheel keyup'); // This identifies the scroll as a user action, stops the animation, then unbinds the event straight after (optional)
             }
         });
-    });
-
-    $(document).on('pjax:success', function() {
-        window.targetTop = null;
-        window.typeAjax = null;
     });
 };
 
