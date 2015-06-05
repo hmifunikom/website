@@ -29,7 +29,9 @@
                 <!-- begin login-header -->
                 <div class="login-header">
                     <div class="brand">
-                        <span class="logo"></span> HMIF Unikom
+                        <span class="brand-logo no-border">
+                    <img src="{{ asset_version('assets/images/logo.png') }}" class="m-b-10" height="30px">
+                </span> HMIF Unikom
                         <small>Halaman login</small>
                     </div>
                     <div class="icon">
@@ -79,7 +81,7 @@
     @include('panel::partials.javascript')
 
     <!-- ================== BEGIN PAGE LEVEL JS ================== -->
-    <script src="{{ asset_version('assets/js/apps.min.js') }}"></script>
+    <script src="{{ asset_version('assets/admin/js/apps.min.js') }}"></script>
     <!-- ================== END PAGE LEVEL JS ================== -->
 
     <script>

@@ -6,9 +6,9 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <link href="{{ asset_version('assets/css/style.min.css') }}" rel="stylesheet"/>
-    <link href="{{ asset_version('assets/css/theme/blue.css') }}" rel="stylesheet" id="theme"/>
-    <link href="{{ asset_version('assets/css/ticket.css') }}" rel="stylesheet">
+    <link href="{{ asset_version('assets/admin/css/style.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset_version('assets/admin/css/theme/blue.css') }}" rel="stylesheet" id="theme"/>
+    <link href="{{ asset_version('assets/admin/css/ticket.css') }}" rel="stylesheet">
     <style>
         body {
             background: #fff;

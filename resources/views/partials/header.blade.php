@@ -1,16 +1,34 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="{{ Config::get('cms.description') }}">
-<meta name="author" content="{{ Config::get('cms.author') }}">
-
-{!! HTML::style('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css') !!}
-{!! HTML::style('//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css') !!}
-{!! HTML::style(asset('assets/css/main.css')) !!}
-@section('css')
-@show
-
-<!--[if lt IE 9]>
-  {!! HTML::script('//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js') !!}
-  {!! HTML::script('//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js') !!}
-<![endif]-->
-
-<link rel="shortcut icon" href="{!! asset('favicon.ico') !!}">
+<div id="header" class="header navbar navbar-inverse navbar-fixed-top">
+    <!-- begin container -->
+    <div class="container">
+        <!-- begin navbar-header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand">
+                <span class="brand-logo no-border">
+                    <img src="{{ asset_version('assets/images/logo.png') }}" class="m-b-10" height="30px">
+                </span>
+                <span class="brand-text">
+                    <span class="text-theme">HMIF</span> Unikom
+                </span>
+            </a>
+        </div>
+        <!-- end navbar-header -->
+        <!-- begin navbar-collapse -->
+        <div class="collapse navbar-collapse" id="header-navbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="{{ menu_home('index') }}" ><a data-toggle="ajax" href="{{ route('index') }}">HOME</a></li>
+                <li><a href="{{ route('index') }}">KEANGGOTAAN</a></li>
+                <li><a href="{{ route('index') }}">EVENT</a></li>
+                <li class="{{ menu_active('library.index') }}" ><a data-toggle="ajax" href="{{ route('library.index') }}">PERPUSTAKAAN</a></li>
+                <li><a href="{{ route('index') }}">CONTACT</a></li>
+            </ul>
+        </div>
+        <!-- end navbar-collapse -->
+    </div>
+    <!-- end container -->
+</div>

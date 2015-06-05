@@ -1,6 +1,14 @@
 <?php
 
 // http://www.laravel-tricks.com/tricks/active-states-based-on-route-names
+function menu_home($route, $class = false)
+{
+    if (Request::url() == route($route))
+    {
+        return ($class) ? 'class="active"' : 'active';
+    }
+}
+
 function menu_active($route, $class = false)
 {
     if (menu_is_active($route))
