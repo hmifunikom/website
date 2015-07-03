@@ -26,7 +26,7 @@ class Handler extends ExceptionHandler {
      */
     public function report(Exception $e)
     {
-        if ($this->app->environment() === 'production')
+        if (app()->environment() === 'production')
         {
             Log::error($e);
         }
