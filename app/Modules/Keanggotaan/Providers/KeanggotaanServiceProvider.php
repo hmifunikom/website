@@ -1,6 +1,8 @@
 <?php namespace HMIF\Modules\Keanggotaan\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Lang;
+use View;
 
 class KeanggotaanServiceProvider extends ServiceProvider {
 
@@ -10,6 +12,13 @@ class KeanggotaanServiceProvider extends ServiceProvider {
 	 * @var bool
 	 */
 	protected $defer = false;
+
+    public function boot()
+    {
+        Lang::addNamespace('keanggotaan', __DIR__.'/../Resources/lang');
+
+        View::addNamespace('keanggotaan', __DIR__.'/../Resources/views');
+    }
 
 	/**
 	 * Register the service provider.

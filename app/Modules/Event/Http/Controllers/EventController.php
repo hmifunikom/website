@@ -48,4 +48,13 @@ class EventController extends Controller {
         head_title($event->nama_acara);
         return view('event::item')->with(['pagetitle' => $event->nama_acara, 'event' => $event]);
     }
+
+    public function create($eventId, $slug = null)
+    {
+        $event = $this->eventRepository->find($eventId);
+
+        if ( $event->slug !== $slug ) {
+            return Redirect::route('event.show', ['event' => $event, 'slug' => $event->slug], 301);
+        }
+    }
 }

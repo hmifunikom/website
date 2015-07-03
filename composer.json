@@ -20,8 +20,8 @@
 		"qwildz/localized-eloquent-date": "dev-master",
 		
 		"graham-campbell/binput": "~3.0",
-		"graham-campbell/core": "~2.0",
-		"graham-campbell/exceptions": "~1.0",
+		"graham-campbell/core": "~4.1",
+		"graham-campbell/exceptions": "~2.0.1",
 		
 		"mccool/laravel-auto-presenter": "~3.0",
 		"cviebrock/eloquent-sluggable": "dev-master",
@@ -42,20 +42,19 @@
 		"intervention/image": "~2.1.1",
 		"Chumper/Zipper": "dev-master",
 
-        "pingpong/generators": "2.0.*@dev",
-		"pingpong/modules": "2.0.*@dev",
+		"pingpong/modules": "~2.0",
 
-        "efficiently/authority-controller": "2.0.*@dev",
+        "efficiently/authority-controller": "~2.0.0",
         "venturecraft/revisionable": "1.*",
-        "prettus/l5-repository": "2.0.*",
+        "prettus/l5-repository": "2.1.*",
         "sleeping-owl/with-join": "1.*",
-        "vinkla/hashids": "~1.0@dev",
+        "vinkla/hashids": "~2.0.0",
 		
 		"guzzlehttp/guzzle": "~4.0",
 
 		"maatwebsite/excel": "~2.0.0",
         "endroid/qrcode": "1.*",
-		"barryvdh/laravel-dompdf": "0.5.*",
+		"barryvdh/laravel-dompdf": "0.6.*",
 		"sabre/vobject" : "~3.3",
         "erusev/parsedown": "~1.4",
 
@@ -83,7 +82,10 @@
 		],
 		"psr-4": {
 			"HMIF\\": "app/"
-		}
+		},
+        "files": [
+            "app/Helpers/helpers.php"
+        ]
 	},
 	"autoload-dev": {
 		"classmap": [

@@ -1,6 +1,8 @@
 <?php namespace HMIF\Modules\Library\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Lang;
+use View;
 
 class LibraryServiceProvider extends ServiceProvider {
 
@@ -10,6 +12,13 @@ class LibraryServiceProvider extends ServiceProvider {
 	 * @var bool
 	 */
 	protected $defer = false;
+
+    public function boot()
+    {
+        Lang::addNamespace('library', __DIR__.'/../Resources/lang');
+
+        View::addNamespace('library', __DIR__.'/../Resources/views');
+    }
 
 	/**
 	 * Register the service provider.

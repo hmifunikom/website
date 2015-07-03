@@ -2,7 +2,7 @@
 
 Route::group(['namespace' => 'HMIF\Modules\Event\Http\Controllers'], function()
 {
-    Former::setOption('translate_from', 'event::validation.attributes');
+    Config::set('former.translate_from', 'event::validation.attributes');
 
     route_prefix('event', function() {
         Route::bind('event', function($value)

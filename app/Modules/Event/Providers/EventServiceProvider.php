@@ -1,6 +1,8 @@
 <?php namespace HMIF\Modules\Event\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Lang;
+use View;
 
 class EventServiceProvider extends ServiceProvider {
 
@@ -10,6 +12,13 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var bool
 	 */
 	protected $defer = false;
+
+    public function boot()
+    {
+        Lang::addNamespace('event', __DIR__.'/../Resources/lang');
+
+        View::addNamespace('event', __DIR__.'/../Resources/views');
+    }
 
 	/**
 	 * Register the service provider.

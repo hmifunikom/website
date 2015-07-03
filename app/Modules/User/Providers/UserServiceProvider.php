@@ -1,6 +1,8 @@
 <?php namespace HMIF\Modules\User\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Lang;
+use View;
 
 class UserServiceProvider extends ServiceProvider {
 
@@ -10,6 +12,13 @@ class UserServiceProvider extends ServiceProvider {
 	 * @var bool
 	 */
 	protected $defer = false;
+
+    public function boot()
+    {
+        Lang::addNamespace('user', __DIR__.'/../Resources/lang');
+
+        View::addNamespace('user', __DIR__.'/../Resources/views');
+    }
 
 	/**
 	 * Register the service provider.

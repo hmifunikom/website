@@ -1,6 +1,8 @@
 <?php namespace HMIF\Modules\Email\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Lang;
+use View;
 
 class EmailServiceProvider extends ServiceProvider {
 
@@ -10,6 +12,13 @@ class EmailServiceProvider extends ServiceProvider {
 	 * @var bool
 	 */
 	protected $defer = false;
+
+    public function boot()
+    {
+        Lang::addNamespace('email', __DIR__.'/../Resources/lang');
+
+        View::addNamespace('email', __DIR__.'/../Resources/views');
+    }
 
 	/**
 	 * Register the service provider.

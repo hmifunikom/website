@@ -178,7 +178,6 @@ return [
         'HMIF\Providers\EventServiceProvider',
         'HMIF\Providers\RouteServiceProvider',
         'HMIF\Providers\DropboxFilesystemServiceProvider',
-        'HMIF\Providers\HelperServiceProvider',
         'HMIF\Providers\ValidatorServiceProvider',
 
     ],

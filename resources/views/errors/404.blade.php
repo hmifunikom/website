@@ -5,11 +5,11 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>Oops... Maintenance | HMIF Unikom</title>
+    <title>Halaman tidak ditemukan | HMIF Unikom</title>
     <meta name="description" content="HMIF Unikom Official Website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="robots" content="none">
-    <meta name="twitter:title" content="Oops... Maintenance | HMIF Unikom">
+    <meta name="twitter:title" content="Halaman tidak ditemukan | HMIF Unikom">
     <meta name="twitter:description" content="HMIF Unikom Official Website">
     <meta name="twitter:site" content="@hmifunikom">
     <meta name="twitter:creator" content="@hmifunikom">
@@ -21,7 +21,7 @@
     <meta property="og:url" content="<?php echo URL::current(); ?>">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="HMIF Unikom">
-    <meta property="og:title" content="Oops... Maintenance | HMIF Unikom">
+    <meta property="og:title" content="Halaman tidak ditemukan | HMIF Unikom">
     <meta property="og:description" content="HMIF Unikom Official Website">
     <link rel="shortcut icon" href="<?php echo asset_version('favicon.ico'); ?>">
     <link rel="icon" href="<?php echo asset_version('favicon.ico'); ?>" type="image/x-icon">
@@ -62,12 +62,15 @@
     <div id="page-container" class="fade">
         <!-- begin error -->
         <div class="error">
-            <div class="error-code m-b-10">503 <i class="fa fa-warning"></i></div>
+            <div class="error-code m-b-10">404 <i class="fa fa-warning"></i></div>
             <div class="error-content">
-                <div class="error-message">Maintenance...</div>
+                <div class="error-message">Halaman tidak ditemukan...</div>
                 <div class="error-desc m-b-20">
-                    Oops.. Sedang melakukan perawatan. <br/>
-                    Silahkan kembali beberapa saat lagi.
+                    Sepertinya anda tersesat. <br />
+                    Halaman yang diminta tidak ditemukan.
+                </div>
+                <div>
+                    <a href="<?php echo route('index'); ?>" class="btn btn-success">Kembali ke Home</a>
                 </div>
             </div>
         </div>

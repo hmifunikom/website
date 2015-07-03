@@ -12,8 +12,4 @@
 |
 */
 
-Lang::addNamespace('event', __DIR__.'/Resources/lang');
-
-View::addNamespace('event', __DIR__.'/Resources/views');
-
 require __DIR__ . '/Http/routes.php';

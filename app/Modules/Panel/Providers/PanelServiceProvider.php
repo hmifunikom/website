@@ -1,6 +1,8 @@
 <?php namespace HMIF\Modules\Panel\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Lang;
+use View;
 
 class PanelServiceProvider extends ServiceProvider {
 
@@ -10,6 +12,13 @@ class PanelServiceProvider extends ServiceProvider {
 	 * @var bool
 	 */
 	protected $defer = false;
+
+    public function boot()
+    {
+        Lang::addNamespace('panel', __DIR__.'/../Resources/lang');
+
+        View::addNamespace('panel', __DIR__.'/../Resources/views');
+    }
 
 	/**
 	 * Register the service provider.

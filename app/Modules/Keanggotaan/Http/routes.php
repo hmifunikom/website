@@ -2,7 +2,7 @@
 
 Route::group(['namespace' => 'HMIF\\Modules\Keanggotaan\Http\Controllers'], function()
 {
-    Former::setOption('translate_from', 'keanggotaan::validation.attributes');
+    Config::set('former.translate_from', 'keanggotaan::validation.attributes');
 
     route_prefix('keanggotaan', function() {
         //Route::bind('event', function($value)

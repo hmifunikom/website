@@ -1,6 +1,8 @@
 <?php namespace HMIF\Modules\Invoice\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Lang;
+use View;
 
 class InvoiceServiceProvider extends ServiceProvider {
 
@@ -10,6 +12,13 @@ class InvoiceServiceProvider extends ServiceProvider {
 	 * @var bool
 	 */
 	protected $defer = false;
+
+    public function boot()
+    {
+        Lang::addNamespace('invoice', __DIR__.'/../Resources/lang');
+
+        View::addNamespace('invoice', __DIR__.'/../Resources/views');
+    }
 
 	/**
 	 * Register the service provider.

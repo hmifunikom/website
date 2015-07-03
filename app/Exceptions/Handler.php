@@ -1,5 +1,6 @@
 <?php namespace HMIF\Exceptions;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Log;
 use Exception;
 use GrahamCampbell\Exceptions\ExceptionHandler as ExceptionHandler;
@@ -25,7 +26,10 @@ class Handler extends ExceptionHandler {
      */
     public function report(Exception $e)
     {
-        Log::error($e);
+        if ($this->app->environment() === 'production')
+        {
+            Log::error($e);
+        }
 
         foreach ($this->dontReport as $type)
         {
@@ -45,6 +49,16 @@ class Handler extends ExceptionHandler {
      */
     public function render($request, Exception $e)
     {
+        if ($this->isHttpException($e))
+        {
+            return $this->renderHttpException($e);
+        }
+
+        if ($e instanceof ModelNotFoundException)
+        {
+            return response()->view("errors.404", [], 404);
+        }
+
         return parent::render($request, $e);
     }
 
