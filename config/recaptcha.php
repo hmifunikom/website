@@ -35,7 +35,7 @@ return array(
     | Only applies to v2.
     |    
     */    
-    'driver'       => 'curl',
+    'driver'       => 'native',
 
     /*
     |--------------------------------------------------------------------------
@@ -47,7 +47,7 @@ return array(
     */    
     'options'       => array(
         
-        'curl_timeout' => 1,
+        'curl_timeout' => 10,
         
     ),
 
