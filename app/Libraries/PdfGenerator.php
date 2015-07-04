@@ -13,7 +13,7 @@ class PdfGenerator {
 
     public function __construct()
     {
-        $this->pdf = app('dompdf');
+        $this->pdf = app('dompdf.wrapper');
 
     }
 

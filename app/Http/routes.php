@@ -17,7 +17,7 @@ Route::controllers([
 
 Route::get('/', ['uses' => 'HomeController@index', 'as' => 'index']);
 
-Route::post('queue/receive', function()
-{
-    return Queue::marshal();
-});
+//Route::post('queue/receive', function()
+//{
+//    return Queue::marshal();
+//});

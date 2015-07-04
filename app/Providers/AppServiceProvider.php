@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-        $this->turnOffIronSllVerifypeer();
+        //$this->turnOffIronSllVerifypeer();
         $this->addHeadMeta();
 	}
 
