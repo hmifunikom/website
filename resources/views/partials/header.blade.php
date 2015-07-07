@@ -25,7 +25,7 @@
                 <li><a href="{{ route('index') }}">KEANGGOTAAN</a></li>
                 <li><a href="{{ route('index') }}">EVENT</a></li>
                 <li class="{{ menu_active('library.index') }}" ><a data-toggle="ajax" href="{{ route('library.index') }}">PERPUSTAKAAN</a></li>
-                <li><a href="{{ route('index') }}">CONTACT</a></li>
+                <li><a href="{{ route('contact.index') }}">CONTACT</a></li>
             </ul>
         </div>
         <!-- end navbar-collapse -->

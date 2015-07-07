@@ -17,6 +17,8 @@ Route::controllers([
 
 Route::get('/', ['uses' => 'HomeController@index', 'as' => 'index']);
 
+Route::get('contact', ['uses' => 'ContactController@index', 'as' => 'contact.index']);
+
 //Route::post('queue/receive', function()
 //{
 //    return Queue::marshal();
