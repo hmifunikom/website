@@ -11,6 +11,7 @@
             z-index: 100;
         }
         #divisi .btn {padding: 10px 20px;}
+        .divisi-nav {overflow-x: auto;}
 
         .team .image img {width: 100%;}
 
@@ -27,6 +28,10 @@
         .lowteam .name {font-size: 18px;}
 
         @media only screen and (min-width : 320px) {
+            #divisi {
+                padding-bottom: 20px;
+                padding-top: 20px;
+            }
             .lowteam .info {width: 210px;}
         }
         @media only screen and (max-width : 767px) {
@@ -233,6 +238,15 @@
                     $('.divisi-nav a').removeClass('active');
                 }
             });
+
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                var divisi_nav_width = 0;
+                $('.divisi-nav .nav a').each(function() {
+                    divisi_nav_width += $(this).outerWidth();
+                });
+
+                $('.divisi-nav .nav').width(divisi_nav_width);
+            }
 
             $.getScript('{{ asset_version('assets/plugins/jquery-sticky/jquery.sticky.min.js') }}').done(function() {
                 $("#divisi").sticky({topSpacing:50});

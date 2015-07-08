@@ -422,7 +422,7 @@
                 <!-- end col-9 -->
                 <!-- begin col-3 -->
                 <div class="col-md-3 col-sm-3">
-                    <a href="#" class="btn btn-primary btn-block">Lihat Kepengurusan <span class="fa fa-angle-double-right"></span></a>
+                    <a href="{{ route('keanggotaan.index') }}" data-pjax="true" class="btn btn-primary btn-block">Lihat Kepengurusan <span class="fa fa-angle-double-right"></span></a>
                 </div>
                 <!-- end col-3 -->
             </div>
@@ -483,28 +483,6 @@
 
 @section('javascript')
     <script>
-        var handleGoogleMapSetting = function() {
-            "use strict";
-            var mapDefault;
-            var icyBlueStyles = [{"stylers":[{"hue":"#2c3e50"},{"saturation":250}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":50},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]}];
-
-            function initialize() {
-                var mapOptions = {
-                    zoom: 17,
-                    center: new google.maps.LatLng(-6.8866056, 107.6124143),
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    disableDefaultUI: true,
-                };
-                mapDefault = new google.maps.Map(document.getElementById('google-map-default'), mapOptions);
-                mapDefault.setOptions({styles: icyBlueStyles});
-            }
-            google.maps.event.addDomListener(window, 'load', initialize);
-
-            $(window).resize(function() {
-                google.maps.event.trigger(mapDefault, "resize");
-            });
-        };
-
         var handleSwipeCarousel = function() {
             $('.carousel').bcSwipe({
                 threshold: 50,
