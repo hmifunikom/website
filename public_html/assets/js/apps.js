@@ -229,7 +229,7 @@ var handleSidebarAjaxClick = function() {
     });
 
     $(document).on('pjax:success', function() {
-        targetTop = $('#' + targetTop);
+        var targetTop = $('#' + window.targetTop);
         var viewport = $('html, body');
         viewport.animate({
             scrollTop: targetTop.offset().top
