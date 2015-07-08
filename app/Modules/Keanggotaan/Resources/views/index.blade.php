@@ -23,11 +23,12 @@
         .subteam .info {margin-left: 20px;}
 
         .lowteam .image img {max-width: 64px;}
-
         .lowteam .info {margin-top: 10px;}
-
         .lowteam .name {font-size: 18px;}
 
+        @media only screen and (min-width : 320px) {
+            .lowteam .info {width: 210px;}
+        }
         @media only screen and (max-width : 767px) {
             .sublead .pull-left {float: none !important;}
             .sublead .subteam {text-align:center}
