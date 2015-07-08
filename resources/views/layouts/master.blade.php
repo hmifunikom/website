@@ -9,7 +9,7 @@
     @yield('head')
     <meta name="_token" content="{{ csrf_token() }}" />
 </head>
-<body data-spy="scroll" data-target="#header-navbar" data-offset="51">
+<body>
     <!-- begin #page-container -->
     <div id="page-container" class="fade">
         <!-- begin #header -->

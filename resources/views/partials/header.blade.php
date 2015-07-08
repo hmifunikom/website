@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="header-navbar">
             <ul class="nav navbar-nav navbar-right">
                 <li class="{{ menu_home('index') }}" ><a data-toggle="ajax" href="{{ route('index') }}">HOME</a></li>
-                <li><a href="{{ route('index') }}">KEANGGOTAAN</a></li>
+                <li class="{{ menu_active('keanggotaan.index') }}" ><a data-toggle="ajax" href="{{ route('keanggotaan.index') }}">KEANGGOTAAN</a></li>
                 <li><a href="{{ route('index') }}">EVENT</a></li>
                 <li class="{{ menu_active('library.index') }}" ><a data-toggle="ajax" href="{{ route('library.index') }}">PERPUSTAKAAN</a></li>
                 <li class="{{ menu_home('contact.index') }}" ><a data-toggle="ajax" href="{{ route('contact.index') }}">CONTACT</a></li>

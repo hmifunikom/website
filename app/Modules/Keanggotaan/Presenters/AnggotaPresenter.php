@@ -26,7 +26,7 @@ class AnggotaPresenter extends BasePresenter {
         return $this->wrappedObject->tanggal_lahir->format('l, j F Y');
     }
 
-    public function link_facebook()
+    public function link_facebook($withTag = false)
     {
         if ($this->wrappedObject->facebook)
         {
@@ -35,28 +35,55 @@ class AnggotaPresenter extends BasePresenter {
 
             if ( ! preg_match($reg_exUrl, $this->wrappedObject->facebook, $url))
             {
-                return preg_replace(['/^([a-z0-9_\-\.]+)/i'],
-                                    ['<a href="https://www.facebook.com/$1" target="_blank">$1</a>'],
-                                    $this->wrappedObject->facebook);
+                if($withTag)
+                {
+                    return preg_replace(['/^([a-z0-9_\-\.]+)/i'],
+                                        ['<a href="https://www.facebook.com/$1" target="_blank">$1</a>'],
+                                        $this->wrappedObject->facebook);
+                }
+                else
+                {
+                    return preg_replace(['/^([a-z0-9_\-\.]+)/i'],
+                                        ['https://www.facebook.com/$1'],
+                                        $this->wrappedObject->facebook);
+                }
             }
             else
             {
-                return preg_replace(['/^(http|https):\/\/(www\.)?facebook.com\/([a-z0-9_\-\.]+)/i'],
-                                    ['<a href="https://www.facebook.com/$3" target="_blank">$3</a>'],
-                                    $this->wrappedObject->facebook);
+                if($withTag)
+                {
+                    return preg_replace(['/^(http|https):\/\/(www\.)?facebook.com\/([a-z0-9_\-\.\?\=]+)/i'],
+                                        ['<a href="https://www.facebook.com/$3" target="_blank">$3</a>'],
+                                        $this->wrappedObject->facebook);
+                }
+                else
+                {
+                    return preg_replace(['/^(http|https):\/\/(www\.)?facebook.com\/([a-z0-9_\-\.\?\=]+)/i'],
+                                        ['https://www.facebook.com/$3'],
+                                        $this->wrappedObject->facebook);
+                }
             }
         }
 
         return null;
     }
 
-    public function link_twitter()
+    public function link_twitter($withTag = false)
     {
         if ($this->wrappedObject->twitter)
         {
-            return preg_replace(['/(^|\s)@([a-z0-9_]+)/i', '/^(http|https):\/\/(www\.)?twitter.com\/([a-z0-9_]+)/i'],
-                                ['$1<a href="https://twitter.com/$2" target="_blank">@$2</a>', '<a href="https://twitter.com/$3" target="_blank">@$3</a>'],
-                                $this->wrappedObject->twitter);
+            if($withTag)
+            {
+                return preg_replace(['/(^|\s)@([a-z0-9_]+)/i', '/^(http|https):\/\/(www\.)?twitter.com\/([a-z0-9_]+)/i'],
+                                    ['$1<a href="https://twitter.com/$2" target="_blank">@$2</a>', '<a href="https://twitter.com/$3" target="_blank">@$3</a>'],
+                                    $this->wrappedObject->twitter);
+            }
+            else
+            {
+                return preg_replace(['/(^|\s)@([a-z0-9_]+)/i', '/^(http|https):\/\/(www\.)?twitter.com\/([a-z0-9_]+)/i'],
+                                    ['https://twitter.com/$2', 'https://twitter.com/$3'],
+                                    $this->wrappedObject->twitter);
+            }
         }
 
         return null;

@@ -110,11 +110,23 @@
                                 </tr>
                                 <tr>
                                     <td class="field">{!! Icon::facebook() !!}</td>
-                                    <td>{!! $anggota->link_facebook or '-' !!}</td>
+                                    <td>
+                                        @if($anggota->link_facebook)
+                                            {!! $anggota->link_facebook(true) !!}
+                                        @else
+                                            -
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="field">{!! Icon::twitter() !!}</td>
-                                    <td>{!! $anggota->link_twitter or '-' !!}</td>
+                                    <td>
+                                        @if($anggota->link_twitter)
+                                            {!! $anggota->link_twitter(true) !!}
+                                        @else
+                                            -
+                                        @endif
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -138,7 +150,7 @@
             'use strict';
 
             // Change this to the location of your server-side upload handler:
-            var url = '{{ route('panel.event.avatar.store', $anggota->getWrappedObject()) }}';
+            var url = '{{ route('panel.keanggotaan.avatar.store', $anggota->getWrappedObject()) }}';
 
             $('#fileupload').fileupload({
                 url: url,

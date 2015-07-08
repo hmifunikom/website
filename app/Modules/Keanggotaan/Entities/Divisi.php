@@ -18,7 +18,12 @@ class Divisi extends BaseModel implements HasPresenter {
 
     public function anggota()
     {
-        return $this->hasMany('HMIF\Modules\Keanggotaan\Entities\Divisi', 'id_divisi')->where('id_anggota', '!=', $this->id_penanggung_jawab);
+        if($this->id_penanggung_jawab)
+        {
+            return $this->hasMany('HMIF\Modules\Keanggotaan\Entities\Anggota', 'id_divisi')->where('id_anggota', '!=', $this->id_penanggung_jawab);
+        }
+
+        return $this->hasMany('HMIF\Modules\Keanggotaan\Entities\Anggota', 'id_divisi');
     }
 
     public function penanggung_jawab()

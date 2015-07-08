@@ -166,6 +166,7 @@ p {
     animation-fill-mode: both;
 }
 
+.clear {clear: both;}
 
 /* 1.2 Page Setting */
 
