@@ -117,17 +117,17 @@
     </div>
     <!-- end #divisi -->
 
-    <?php $i = 0; ?>
+    <?php $j = 0; ?>
     @foreach($divisi as $div)
-        <?php $i++; ?>
-        <?php if($i < 5) continue; ?>
+        <?php $j++; ?>
+        <?php if($j < 5) continue; ?>
     <!-- begin #{{ $div->singkatan }} -->
     <div id="{{ $div->singkatan }}" class="content divisi-container" data-scrollview="true">
         <!-- begin container -->
         <div class="container">
-            <h2 class="content-title">{{ $div->divisi }}</h2>
+            <h2 class="content-title" data-animation="true" data-animation-type="fadeInDown">{{ $div->divisi }}</h2>
             <!-- begin row -->
-            <div class="row sublead">
+            <div class="row sublead" data-animation="true" data-animation-type="@if($j%2) fadeInLeft @else fadeInRight @endif">
                 <div class="col-md-12">
                     <div class="pull-left">
                         <div class="team subteam">
@@ -157,7 +157,7 @@
             <!-- end row -->
 
             <!-- begin row -->
-            <div class="row">
+            <div class="row" data-animation="true" data-animation-type="@if($j%2) fadeInLeft @else fadeInRight @endif">
                 <?php $i = 1; ?>
                 @foreach($div->anggota->sortBy('nama') as $anggota)
                     <?php if($anggota->id_anggota == $div->id_penanggung_jawab) continue; ?>
