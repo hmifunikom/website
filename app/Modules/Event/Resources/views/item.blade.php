@@ -130,7 +130,7 @@
                 @if($event->poster)
                 <div class="col-md-3">
                     <div class="poster-container" data-animation="true" data-animation-type="fadeInUp">
-                        <img src="{{ asset_version('media/images/'.$event->poster) }}" class="poster" alt="{{ $event->nama_acara }}" />
+                        <img data-src="{{ asset_version('media/images/'.$event->poster) }}" class="poster" alt="{{ $event->nama_acara }}" />
                     </div>
                 </div>
                 @endif
@@ -288,6 +288,35 @@
             $('#event-hero .polygon-bg').append(pattern.canvas());
         }
 
+        var imageLoaded = false, scriptLoaded = false;
+        function fireImage(source) {
+            if(source == 'img') {
+                imageLoaded = true;
+            }
+
+            if(source == 'script') {
+                scriptLoaded = true;
+            }
+
+            if(imageLoaded && scriptLoaded) {
+                if($('.poster').length) {
+                    var poster = $('.poster');
+                    poster = poster[0];
+
+                    var colorThief = new ColorThief();
+                    palette = colorThief.getPalette(poster, 4);
+
+                    for (var i = 0; i < palette.length; i++) {
+                        palette[i] = rgb2hex(palette[i]);
+                    }
+                }
+
+                poly();
+                $('#event-hero .polygon-bg canvas').addClass('animated fadeIn');
+                $('#event-hero .polygon-bg').removeClass('loading');
+            }
+        }
+
         var handleDaftar = function(data, status, xhr) {
             var email = $('[name=email]').val();
 
@@ -298,23 +327,19 @@
         }
 
         $(document).ready(function() {
+            if($('.poster').length) {
+                var poster = $('.poster');
+                poster.load(function () {
+                    fireImage('img');
+                });
+                poster.attr('src', poster.data('src'));
+            } else {
+                fireImage('img');
+            }
+
             $.getScript('{{ asset_version('assets/plugins/color-thief/color-thief.min.js') }}').done(function() {
                 $.getScript('{{ asset_version('assets/plugins/trianglify/trianglify.min.js') }}').done(function() {
-                    if($('.poster').length) {
-                        var poster = $('.poster');
-                        poster = poster[0];
-
-                        var colorThief = new ColorThief();
-                        palette = colorThief.getPalette(poster, 4);
-
-                        for (var i = 0; i < palette.length; i++) {
-                            palette[i] = rgb2hex(palette[i]);
-                        }
-                    }
-
-                    poly();
-                    $('#event-hero .polygon-bg canvas').addClass('animated fadeIn');
-                    $('#event-hero .polygon-bg').removeClass('loading');
+                    fireImage('script');
                 });
             });
 
@@ -328,7 +353,9 @@
             });
 
             $(window).on('resize', function() {
-                poly();
+                if(imageLoaded && scriptLoaded) {
+                    poly();
+                }
             });
         });
     </script>
