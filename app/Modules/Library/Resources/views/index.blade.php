@@ -90,9 +90,5 @@
 @stop
 
 @section('javascript')
-    <script>
-        $(document).ready(function() {
-            App.init();
-        });
-    </script>
+
 @stop

@@ -208,8 +208,6 @@
 @section('javascript')
     <script>
         $(document).ready(function() {
-            App.init();
-
             $('.divisi-nav a').on('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();

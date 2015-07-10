@@ -491,7 +491,6 @@
         }
 
         $(document).ready(function() {
-            App.init();
             App.scrollingText();
 
             $.getScript('{{ asset_version('assets/plugins/jquery-bcSwipe/jquery.bcSwipe.min.js') }}').done(function() {
