@@ -23,6 +23,9 @@
             padding-top: 320px;
             text-align: left;
         }
+        .event-content.no-poster {
+            padding-top: 600px;
+        }
         .event-content .poster-container .poster {
             width:100%;
             width: 100%;
@@ -81,6 +84,7 @@
 
         }
         @media only screen and (min-width : 992px) {
+            .event-content.no-poster {padding-top: 320px;}
             .event-content .poster-container .poster {margin-bottom:0;}
             .event-content .event-info {height: 250px;}
             .event-content .event-info .event-info-container {margin-bottom:0;}
@@ -121,7 +125,7 @@
 @section('content')
     <div id="event-hero" class="content has-bg hero" data-scrollview="true">
         <div class="polygon-bg loading"></div>
-        <div class="container home-content event-content">
+        <div class="container home-content event-content @if(!$event->poster) no-poster @endif">
             <div class="row">
                 @if($event->poster)
                 <div class="col-md-3">
@@ -158,7 +162,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 event-info-container">
-                            @if($event->open_register)
+                            @if($event->open_register && $tickets->count())
                             <a id="register-btn" href="#register" data-click="scroll-to-target" class="event-book-btn btn btn-white btn-block">Daftar Sekarang</a>
                             @endif
                         </div>
@@ -225,7 +229,7 @@
         <!-- end container -->
     </div>
 
-    @if($event->open_register)
+    @if($event->open_register && $tickets->count())
     <div id="register" class="content" data-scrollview="true">
         <!-- begin container -->
         <div class="container">

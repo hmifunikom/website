@@ -37,6 +37,7 @@
                                     <th>Kuota</th>
                                     <th>Terjual</th>
                                     <th>Harga</th>
+                                    <th>KTM</th>
                                     <th>Status</th>
                                     <th></th>
                                 </tr>
@@ -50,6 +51,13 @@
                                         <td>{{ $ticket->kuota }}</td>
                                         <td>{{ $ticket->terjual }}</td>
                                         <td>{{ $ticket->harga_rp }}</td>
+                                        <td>
+                                            @if($ticket->ktm)
+                                                {!! Icon::check() !!}
+                                            @else
+                                                {!! Icon::times() !!}
+                                            @endif
+                                        </td>
                                         <td>
                                             @if($ticket->aktif)
                                                 {!! Former::inline_open()->route('panel.event.ticket.status', [$event->getWrappedObject(), $ticket->getWrappedObject(), 'status' => false])->data_pjax()->data_confirm('Nonaktifkan tiket ini?') !!}
