@@ -1,19 +1,25 @@
 <?php namespace HMIF\Modules\Event\Http\Controllers;
 
 use Date;
+use HMIF\Commands\BookEventTicketCommand;
+use HMIF\Http\Controllers\Controller;
+use HMIF\Modules\Event\Http\Requests\StoreAttendeePostRequest;
+use HMIF\Modules\Event\Repositories\Criterias\AvailableKuotaCriteria;
 use HMIF\Modules\Event\Repositories\Criterias\DateRangeCriteria;
 use HMIF\Modules\Event\Repositories\EventRepository;
+use HMIF\Modules\Event\Repositories\TicketRepository;
 use Input;
 use Redirect;
-use Illuminate\Routing\Controller;
 
 class EventController extends Controller {
 
     private $eventRepository;
+    private $ticketRepository;
 
-    public function __construct(EventRepository $eventRepository)
+    public function __construct(EventRepository $eventRepository, TicketRepository $ticketRepository)
     {
         $this->eventRepository = $eventRepository;
+        $this->ticketRepository = $ticketRepository;
     }
 
 	public function index()
@@ -40,21 +46,47 @@ class EventController extends Controller {
     public function show($eventId, $slug = null)
     {
         $event = $this->eventRepository->find($eventId);
+        $tickets = $this->ticketRepository->parentModel($event)
+            ->pushCriteria(new AvailableKuotaCriteria())
+            ->all();
 
         if ( $event->slug !== $slug ) {
             return Redirect::route('event.show', ['event' => $event, 'slug' => $event->slug], 301);
         }
 
         head_title($event->nama_acara);
-        return view('event::item')->with(['pagetitle' => $event->nama_acara, 'event' => $event]);
+        head_description(parsedown($event->info));
+
+        if($event->poster)
+        {
+            $image = asset_version('media/images/'.$event->poster);
+            head_meta('property', 'og:image', $image);
+            head_meta('name', 'twitter:image:src', $image);
+        }
+
+        return view('event::item')->with(compact('event', 'tickets'));
     }
 
-    public function create($eventId, $slug = null)
+    public function store($eventId, $slug = null, StoreAttendeePostRequest $request)
     {
         $event = $this->eventRepository->find($eventId);
 
         if ( $event->slug !== $slug ) {
             return Redirect::route('event.show', ['event' => $event, 'slug' => $event->slug], 301);
+        }
+
+        $bayar = 0;
+        $this->dispatchFrom(BookEventTicketCommand::class, $request, compact($bayar));
+
+        flash_success_store('Data peserta sukses ditambah.');
+
+        if ($request->ajax())
+        {
+            return redirect_ajax_notification('event.show', ['event' => $event, 'slug' => $event->slug]);
+        }
+        else
+        {
+            return redirect_ajax('event.show', ['event' => $event, 'slug' => $event->slug]);
         }
     }
 }

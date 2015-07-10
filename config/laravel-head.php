@@ -120,7 +120,7 @@ return array(
 
 		'active' => true,
 
-		'page_id' => '433175063394714',
+		'page_id' => '',
 
 		'app_id' => '1576946569237047',
 

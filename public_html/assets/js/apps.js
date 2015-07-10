@@ -192,10 +192,6 @@ var handleSidebarAjaxClick = function() {
                         } else {
                             $.pjax({url: data.url, container: '#ajax-content'})
                         }
-
-                        if (data.msg) {
-                            handleParseNotification(data.msg);
-                        }
                     }
                 },
 
@@ -303,6 +299,85 @@ var scrollingText = function() {
 
 var scrollingTextStop = function() {
     clearInterval(scrollingTextInt);
+}
+
+var keys = [];
+var handleFormAjaxError = function(data) {
+    for(var i = 0; i< keys.length; i++) {
+        formClearError(keys[i]);
+    }
+
+    keys = [];
+    for (var key in data) {
+        if (data.hasOwnProperty(key)) keys.push(key);
+    }
+
+    for(var i = 0; i< keys.length; i++) {
+        formShowError(keys[i], data[keys[i]]);
+    }
+
+};
+
+var temphints = {};
+var formShowError = function(key, hint) {
+    var e = $('[name='+key+']');
+
+    var group = e.closest('.form-group');
+    group.addClass('has-error');
+
+    if(group.find('.help-block').length) {
+        if(! temphints.hasOwnProperty(key)) temphints[key] = group.find('.help-block').text();
+        group.find('.help-block').text(hint);
+    } else {
+        var hint = $('<span />').text(hint).addClass('help-block');
+        if(group.children().last().is('input') || group.children().last().is('select') || group.children().last().is('textarea')) {
+            group.append(hint);
+        } else {
+            group.children().last().append(hint);
+        }
+    }
+};
+
+var formClearError = function(key) {
+    var e = $('[name='+key+']');
+
+    var group = e.closest('.form-group');
+    group.removeClass('has-error');
+
+    if(temphints.hasOwnProperty(key)) {
+        group.find('.help-block').text(temphints[key]);
+    } else {
+        group.find('.help-block').remove();
+    }
+};
+
+var handleErrorNotification = function (message) {
+    bootbox.alert("Baru saja sistem gagal melakukan operasi. Silahkan ulangi atau tunggu beberapa saat.");
+};
+
+var handleConfirmation = function(target, callback) {
+    if(target.data('confirm')) {
+        bootbox.dialog({
+            message: target.data('confirm'),
+            title: "Konfirmasi",
+            buttons: {
+                main: {
+                    label: "Tidak",
+                    className: "btn-default btn-sm",
+                    callback: function() {
+
+                    }
+                },
+                success: {
+                    label: "Ya",
+                    className: "btn-danger btn-sm",
+                    callback: callback
+                }
+            }
+        });
+    } else {
+        callback();
+    }
 }
 
 

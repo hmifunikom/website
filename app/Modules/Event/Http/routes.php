@@ -12,10 +12,7 @@ Route::group(['namespace' => 'HMIF\Modules\Event\Http\Controllers'], function()
 
         Route::get('/', ['uses' => 'EventController@index', 'as' => 'event.index']);
         Route::get('{event}/{slug?}', ['uses' => 'EventController@show', 'as' => 'event.show']);
-        Route::get('{event}/{slug?}/book', ['uses' => 'EventBookController@create', 'as' => 'event.book.create']);
-        //Route::post('{event}/book', ['uses' => 'EventBookController@store', 'as' => 'event.book.store']);
-        //Route::get('{event}/book/{ticket}', ['uses' => 'EventBookController@show', 'as' => 'event.book.show']);
-        //Route::get('{event}/book/{ticket}/download', ['uses' => 'EventBookController@download', 'as' => 'event.book.download']);
+        Route::post('{event}/{slug?}', ['uses' => 'EventController@store', 'as' => 'event.store']);
     });
 });
 

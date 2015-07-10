@@ -1,93 +1,333 @@
-@extends(((Request::ajax()) ? 'layouts.ajax' : 'layouts.default'))
+@extends(((Request::ajax()) ? 'layouts.ajax' : 'layouts.master'))
 
 @section('head')
-    <meta property="fb:profile_id"   content="433175063394714" /> 
-    <meta property="og:type"   content="website" /> 
-    <meta property="og:url"    content="{{ Request::url() }}" /> 
-    <meta property="og:site_name"  content="Event HMIF Unikom" /> 
-    <meta property="og:title"  content="{{ $event->nama_acara }}" /> 
-    @if($event->poster)
-    <meta property="og:image"  content="{{ asset('media/images/'.$event->poster) }}" /> 
-    @endif
-    <meta property="og:description" content="{{ $event->nama_acara }} by HMIF Unikom"/>
+    <style>
+        #event-hero {
+            height: auto;
+            position: relative;
+        }
+
+        .polygon-bg {
+            background-color: #444;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 510px;
+        }
+        .polygon-bg.loading canvas {
+            opacity: 0;
+        }
+
+        .event-content {
+            padding-top: 320px;
+            text-align: left;
+        }
+        .event-content .poster-container .poster {
+            width:100%;
+            width: 100%;
+            border: 5px #fff solid;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .event-content .event-info {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .event-content .event-info .event-info-container {
+            height: 100%;
+            margin-bottom:30px;
+        }
+        .event-content .event-info h1 {
+            color:#333;
+            font-size: 48px;
+            line-height: 52px;
+        }
+        .event-content .event-info .event-time .icon-holder,
+        .event-content .event-info .event-place .icon-holder {
+            background-color: #333;
+            color:#fff;
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 1.5em;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .event-time div:not(.clear),
+        .event-place div:not(.clear) {
+            float: left;
+            margin-top: 15px;
+        }
+        .event-time div p, .event-place div p {
+            color:#333;
+            font-size: 14px;
+            margin:0;
+        }
+
+        .event-content .event-desc p {margin-bottom: 15px;}
+
+        @media only screen and (min-width : 320px) {
+        }
+        @media only screen and (max-width : 767px) {
+            .event-content .event-info h1 {
+                font-size: 38px;
+                line-height: 42px;
+            }
+        }
+        @media only screen and (min-width : 768px) {
+
+        }
+        @media only screen and (min-width : 992px) {
+            .event-content .poster-container .poster {margin-bottom:0;}
+            .event-content .event-info {height: 250px;}
+            .event-content .event-info .event-info-container {margin-bottom:0;}
+            .event-content .event-info h1 {
+                font-size: 38px;
+                line-height: 42px;
+                color:#fff;
+            }
+            .event-content .event-info .event-time .icon-holder,
+            .event-content .event-info .event-place .icon-holder {
+                background-color: #fff;
+                color: #333;
+            }
+            .event-content .event-info .event-time {
+                position: absolute;
+                bottom: 75px;
+            }
+            .event-content .event-info .event-place,
+            .event-content .event-info .event-book-btn {
+                position: absolute;
+                bottom: 10px;
+            }
+            .event-content .event-info .event-place {
+                position: absolute;
+                bottom: 10px;
+            }
+            .event-time div p, .event-place div p {color: #fff;}
+        }
+        @media only screen and (min-width : 1200px) {
+            .event-content .event-info h1 {
+                font-size: 48px;
+                line-height: 52px;
+            }
+        }
+    </style>
 @stop
 
 @section('content')
-    @if(!Request::ajax())
-    <div class="jumbotron event">
+    <div id="event-hero" class="content has-bg hero" data-scrollview="true">
+        <div class="polygon-bg loading"></div>
+        <div class="container home-content event-content">
+            <div class="row">
+                @if($event->poster)
+                <div class="col-md-3">
+                    <div class="poster-container" data-animation="true" data-animation-type="fadeInUp">
+                        <img src="{{ asset_version('media/images/'.$event->poster) }}" class="poster" alt="{{ $event->nama_acara }}" />
+                    </div>
+                </div>
+                @endif
+                <div class="@if($event->poster) col-md-9 @else col-md-12 @endif">
+                    <div class="row event-info" data-animation="true" data-animation-type="fadeInRight">
+                        <div class="col-md-8 event-info-container">
+                            <h1>{{ $event->nama_acara }}</h1>
+
+                            <div class="event-time">
+                                <div class="icon-holder">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Waktu</strong></p>
+                                    <p>{{ $event->mulai_full }}</p>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+                            <div class="event-place">
+                                <div class="icon-holder">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Tempat</strong></p>
+                                    <p>{{ $event->tempat }}</p>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 event-info-container">
+                            @if($event->open_register)
+                            <a id="register-btn" href="#register" data-click="scroll-to-target" class="event-book-btn btn btn-white btn-block">Daftar Sekarang</a>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row event-desc" data-animation="true" data-animation-type="fadeIn">
+                        <div class="col-md-12 event-desc-container">
+                            {!! parsedown($event->info) !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="countdown" class="content bg-black-darker has-bg" data-scrollview="true">
+        <!-- begin container -->
         <div class="container">
-            <h2>Event HMIF</h2>
-            <!--p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p-->
+            <!-- begin row -->
+            <div class="row">
+                @if($event->open_register)
+                <?php $now = Date::now(); ?>
+                <!-- begin col-3 -->
+                <div class="col-md-3 col-sm-3 milestone-col">
+                    <div class="milestone" data-animation="true" data-animation-type="fadeInLeft">
+                        <div class="number hari">{{ $event->mulai->diff($now)->format('%a') }}</div>
+                        <div class="title">Hari</div>
+                    </div>
+                </div>
+                <!-- end col-3 -->
+                <!-- begin col-3 -->
+                <div class="col-md-3 col-sm-3 milestone-col">
+                    <div class="milestone" data-animation="true" data-animation-type="fadeInLeft">
+                        <div class="number jam">{{ $event->mulai->diff($now)->format('%H') }}</div>
+                        <div class="title">Jam</div>
+                    </div>
+                </div>
+                <!-- end col-3 -->
+                <!-- begin col-3 -->
+                <div class="col-md-3 col-sm-3 milestone-col">
+                    <div class="milestone" data-animation="true" data-animation-type="fadeInLeft">
+                        <div class="number menit">{{ $event->mulai->diff($now)->format('%I') }}</div>
+                        <div class="title">Menit</div>
+                    </div>
+                </div>
+                <!-- end col-3 -->
+                <!-- begin col-3 -->
+                <div class="col-md-3 col-sm-3 milestone-col">
+                    <div class="milestone" data-animation="true" data-animation-type="fadeInLeft">
+                        <div class="number detik">{{ $event->mulai->diff($now)->format('%S') }}</div>
+                        <div class="title">Detik</div>
+                    </div>
+                </div>
+                <!-- end col-3 -->
+                @else
+                <div class="col-md-12 col-sm-12 milestone-col">
+                    <div class="milestone" data-animation="true" data-animation-type="fadeInLeft">
+                        <div class="number">Event Telah Berakhir</div>
+                    </div>
+                </div>
+                @endif
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+
+    @if($event->open_register)
+    <div id="register" class="content" data-scrollview="true">
+        <!-- begin container -->
+        <div class="container">
+            <h2 class="content-title" data-animation="true" data-animation-type="fadeInDown">Form Pendaftaran Peserta</h2>
+            <!-- begin row -->
+            <div class="row" data-animation="true" data-animation-type="fadeInDown">
+                {!! Former::vertical_open()->route('event.store', [$event->getWrappedObject(), $event->slug])->data_pjax()->data_pjax_success('handleDaftar')->data_confirm('Anda yakin data yang diberikan sudah benar?') !!}
+                <div class="col-md-6">
+                    {!! Former::text('nama_peserta') !!}
+                    {!! Former::text('alamat') !!}
+                    {!! Former::email('email') !!}
+                </div>
+                <div class="col-md-6">
+                    {!! Former::text('nim')->label('NIM *Isi jika mahasiswa Unikom') !!}
+                    {!! Former::text('no_hp') !!}
+                    {!! Former::select('tiket')->fromQuery($tickets, 'nama_tiket_full', 'id_tiket')->placeholder('Pilih tiket...') !!}
+                </div>
+                <div class="col-md-12">
+                    <p></p><small>*</small> Konfirmasi dan tiket akan dikirimkan melalui alamat e-mail yang diberikan. Pastikan alamat e-mail tersebut aktif.</p>
+                    {!! Former::actions( Button::primary('Daftar')->submit(), Button::withValue('Reset')->reset() ) !!}
+                </div>
+                {!! Former::close() !!}
+            </div>
         </div>
     </div>
     @endif
-
-    <div id="event" class="big-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    {!!
-                        Button::withValue('&laquo Kembali')->asLinkTo(route('event.index', array('month' => $event->mulai->month, 'year' => $event->mulai->year)).'#event')->large()
-                    !!}
-                </div>
-                <div class="col-md-6 right">
-                    <div class="social-buttons">
-                        <div class="btn-fb">
-                            <div class="fb-share-button" data-href="{{ Request::url() }}" data-type="button"></div>
-                        </div>
-
-                        <div class="btn-tw">
-                            <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ Request::url() }}" data-text="{{ $event->nama_acara }} - HMIF Unikom" data-via="hmifunikom" data-lang="id" data-related="hmifunikom" data-count="none" data-hashtags="EventHMIFUnikom">Tweet</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="event-view">
-                <div class="event-item-container">
-                    <div class="event-container js-affix-top">
-                        <div class="info-container pull-left js-affix">
-                            <div class="row"><div class="date">
-                                <div class="day">{{ $event->mulai->day }}</div>
-                                <div class="month-year">
-                                    <div class="month">{{ $event->mulai->formatLocalized('%b') }}</div>
-                                    <div class="year">{{ $event->mulai->year }}</div>
-                                </div>
-                            </div></div>
-                            <div class="row"><div class="time"><span class="fa fa-clock-o"></span>
-                                {{--<span class="text">{{ Helper::implode($event->waktu, 'waktu') }}</span>--}}
-                            </div></div>
-                            <div class="row"><div class="place"><span class="fa fa-map-marker"></span><span class="text">{{ $event->tempat }}</span></div></div>
-                        </div>
-                        <div class="detail-container pull-right">
-                            <div class="name-description">
-                                <div class="name">
-                                    <span>{{ $event->nama_acara }}</span>
-                                </div>
-                                <div class="description">
-                                    {!! parsedown($event->info) !!}
-                                </div>
-
-                                @if($event->poster)
-                                <div class="poster">
-                                    <img src="{{ asset('media/images/'.$event->poster) }}" alt="{{ $event->nama_acara }} Poster" class="img-thumbnail">
-                                </div>
-                                @endif
-
-                                
-                                <a class="btn btn-default btn-lg book-btn" href="{{ route('event.book.create', $event->slug) }}" role="button">{!! fa('ticket') !!} Pesan Tiket</a>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-
-                        <div class="clearfix js-affix-bottom"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 @stop
 
-@section('tagline')
-    @include('includes.tagline', array('invert' => true))
+@section('javascript')
+    <script>
+        function rgb2hex(rgbarray) {
+            return '#' + rgbToHex(rgbarray[0], rgbarray[1], rgbarray[2]);
+        }
+
+        function rgbToHex(R, G, B) {
+            return toHex(R) + toHex(G) + toHex(B)
+        }
+
+        function toHex(n) {
+            n = parseInt(n, 10);
+            if (isNaN(n)) return "00";
+            n = Math.max(0, Math.min(n, 255));
+            return "0123456789ABCDEF".charAt((n - n % 16) / 16) + "0123456789ABCDEF".charAt(n % 16);
+        }
+
+        var palette = ["#048CCC", "#04A4EB", "#242424", "#146848"];
+        function poly() {
+            var pattern = Trianglify({
+                width: window.innerWidth,
+                height: 510,
+                seed: '{{ Hashids::encode($event->getKey()) }}',
+                x_colors: palette,
+            });
+
+            $('#event-hero .polygon-bg').empty();
+            $('#event-hero .polygon-bg').append(pattern.canvas());
+        }
+
+        var handleDaftar = function(data, status, xhr) {
+            var email = $('[name=email]').val();
+
+            bootbox.alert("Terima Kasih! E-mail konfirmasi sudah dikirimkan ke " + email + ".");
+            $('#register, #register-btn').fadeOut(300, function() {
+                $(this).remove();
+            });
+        }
+
+        $(document).ready(function() {
+            $.getScript('{{ asset_version('assets/plugins/color-thief/color-thief.min.js') }}').done(function() {
+                $.getScript('{{ asset_version('assets/plugins/trianglify/trianglify.min.js') }}').done(function() {
+                    if($('.poster').length) {
+                        var poster = $('.poster');
+                        poster = poster[0];
+
+                        var colorThief = new ColorThief();
+                        palette = colorThief.getPalette(poster, 4);
+
+                        for (var i = 0; i < palette.length; i++) {
+                            palette[i] = rgb2hex(palette[i]);
+                        }
+                    }
+
+                    poly();
+                    $('#event-hero .polygon-bg canvas').addClass('animated fadeIn');
+                    $('#event-hero .polygon-bg').removeClass('loading');
+                });
+            });
+
+            $.getScript('{{ asset_version('assets/plugins/jquery-countdown/jquery.countdown.min.js') }}').done(function() {
+                $('#countdown').countdown('{{ $event->mulai }}', function(event) {
+                    $('.milestone .hari').text(event.strftime('%D'));
+                    $('.milestone .jam').text(event.strftime('%H'));
+                    $('.milestone .menit').text(event.strftime('%M'));
+                    $('.milestone .detik').text(event.strftime('%S'));
+                });
+            });
+
+            $(window).on('resize', function() {
+                poly();
+            });
+        });
+    </script>
+    <script src="{{ asset_version('assets/plugins/bootstrap-bootbox/bootbox.min.js') }}"></script>
+    <script src="{{ asset_version('assets/plugins/form/jquery.form.js') }}"></script>
 @stop
