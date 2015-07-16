@@ -422,7 +422,7 @@
                 <!-- end col-9 -->
                 <!-- begin col-3 -->
                 <div class="col-md-3 col-sm-3">
-                    <a href="{{ route('keanggotaan.index') }}" data-pjax="true" class="btn btn-primary btn-block">Lihat Kepengurusan <span class="fa fa-angle-double-right"></span></a>
+                    <a href="{{ route('keanggotaan.index') }}" data-toggle="ajax" class="btn btn-primary btn-block">Lihat Kepengurusan <span class="fa fa-angle-double-right"></span></a>
                 </div>
                 <!-- end col-3 -->
             </div>
