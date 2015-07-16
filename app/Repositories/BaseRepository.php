@@ -122,5 +122,17 @@ abstract class BaseRepository extends PrettusBaseRepository {
         return $this;
     }
 
+    public function orderBy($column, $direction = 'asc')
+    {
+        $this->model = $this->model->orderBy($column, $direction);
+        return $this;
+    }
+
+    public function limit($limit = null)
+    {
+        $this->model = $this->model->take($limit);
+        return $this;
+    }
+
 
 }

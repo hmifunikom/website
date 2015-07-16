@@ -1,11 +1,10 @@
 <?php namespace HMIF\Modules\Event\Http\Controllers;
 
-use Date;
 use HMIF\Commands\BookEventTicketCommand;
 use HMIF\Http\Controllers\Controller;
 use HMIF\Modules\Event\Http\Requests\StoreAttendeePostRequest;
 use HMIF\Modules\Event\Repositories\Criterias\AvailableKuotaCriteria;
-use HMIF\Modules\Event\Repositories\Criterias\DateRangeCriteria;
+use HMIF\Modules\Event\Repositories\Criterias\UpcomingEventCriteria;
 use HMIF\Modules\Event\Repositories\EventRepository;
 use HMIF\Modules\Event\Repositories\TicketRepository;
 use Input;
@@ -24,23 +23,11 @@ class EventController extends Controller {
 
 	public function index()
 	{
-        $date = Date::now();
-
-        if(Input::has('month'))
-        {
-            $date = $date->month(Input::get('month'));
-        }
-
-        if(Input::has('year'))
-        {
-            $date = $date->year(Input::get('year'));
-        }
-
-        $event = $this->eventRepository->pushCriteria(new DateRangeCriteria($date))->paginate();
-        $total = $this->eventRepository->reset()->pushCriteria(new DateRangeCriteria($date, 'year'))->count();
+        $upcoming = $this->eventRepository->pushCriteria(new UpcomingEventCriteria(6))->all();
+        $events = $this->eventRepository->reset()->orderBy('mulai', 'desc')->limit(6)->all();
 
         head_title('Event');
-		return view('event::index')->with(['pagetitle' => 'Event' , 'date' => $date, 'listacara' => $event, 'total' => $total]);
+		return view('event::index')->with(compact('upcoming', 'events'));
 	}
 
     public function show($eventId, $slug = null)

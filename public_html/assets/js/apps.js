@@ -143,7 +143,7 @@ var handleSidebarAjaxClick = function() {
 
     $.pjax.defaults.timeout = 10000;
 
-    $(document).on('click', '#header [data-toggle=ajax]', function(event) {
+    $(document).on('click', '#header [data-toggle=ajax], #ajax-content [data-toggle=ajax]', function(event) {
         var container = $('#ajax-content');
         $.pjax.click(event, {container: container});
 
