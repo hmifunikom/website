@@ -280,7 +280,7 @@
             var pattern = Trianglify({
                 width: window.innerWidth,
                 height: 510,
-                seed: '{{ Hashids::encode($event->getKey()) }}',
+                seed: '{{ $event->getRouteKey() }}',
                 x_colors: palette,
             });
 
