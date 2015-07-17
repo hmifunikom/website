@@ -41,11 +41,21 @@
         .event-content .event-info .event-info-container {
             height: 100%;
             margin-bottom:30px;
+            position:relative;
         }
         .event-content .event-info h1 {
             color:#333;
             font-size: 48px;
             line-height: 52px;
+        }
+        .event-content .event-info .event-info-container .row,
+        .event-content .event-info .event-info-container .row .col-md-8,
+        .event-content .event-info .event-info-container .row .col-md-4 {
+            height: 100%;
+            position:relative;
+        }
+        .event-content .event-info .event-info-container .row .col-md-8 {
+            margin-bottom:30px;
         }
         .event-content .event-info .event-time .icon-holder,
         .event-content .event-info .event-place .icon-holder {
@@ -92,7 +102,9 @@
                 font-size: 38px;
                 line-height: 42px;
                 color:#fff;
+                position:absolute;
             }
+            .event-content .event-info .event-info-container .row .col-md-8 {margin-bottom:0;}
             .event-content .event-info .event-time .icon-holder,
             .event-content .event-info .event-place .icon-holder {
                 background-color: #fff;
@@ -136,35 +148,38 @@
                 @endif
                 <div class="@if($event->poster) col-md-9 @else col-md-12 @endif">
                     <div class="row event-info" data-animation="true" data-animation-type="fadeInRight">
-                        <div class="col-md-8 event-info-container">
+                        <div class="col-md-12 event-info-container">
                             <h1>{{ $event->nama_acara }}</h1>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="event-time">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <div>
+                                            <p><strong>Waktu</strong></p>
+                                            <p>{{ $event->mulai_full }}</p>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
 
-                            <div class="event-time">
-                                <div class="icon-holder">
-                                    <i class="fa fa-calendar"></i>
+                                    <div class="event-place">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div>
+                                            <p><strong>Tempat</strong></p>
+                                            <p>{{ $event->tempat }}</p>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p><strong>Waktu</strong></p>
-                                    <p>{{ $event->mulai_full }}</p>
+                                <div class="col-md-4">
+                                    @if($event->open_register && $tickets->count())
+                                        <a id="register-btn" href="#register" data-click="scroll-to-target" class="event-book-btn btn btn-white btn-block">Daftar Sekarang</a>
+                                    @endif
                                 </div>
-                                <div class="clear"></div>
                             </div>
-
-                            <div class="event-place">
-                                <div class="icon-holder">
-                                    <i class="fa fa-map-marker"></i>
-                                </div>
-                                <div>
-                                    <p><strong>Tempat</strong></p>
-                                    <p>{{ $event->tempat }}</p>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 event-info-container">
-                            @if($event->open_register && $tickets->count())
-                            <a id="register-btn" href="#register" data-click="scroll-to-target" class="event-book-btn btn btn-white btn-block">Daftar Sekarang</a>
-                            @endif
                         </div>
                     </div>
                     <div class="row event-desc" data-animation="true" data-animation-type="fadeIn">

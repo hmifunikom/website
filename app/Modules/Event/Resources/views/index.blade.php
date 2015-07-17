@@ -9,52 +9,6 @@
         .event .quote small {
             color: #000;
         }
-
-        .event a, .event a:hover {text-decoration: none;}
-        .event .event-container {
-            border: #DCDCDC solid 1px;
-            margin-bottom: 20px;
-        }
-        .event .event-container:hover {
-            box-shadow: #DCDCDC 0 0 5px;
-        }
-        .event .event-container .event-poster {
-            background-color: #444;
-            height: 200px;
-            overflow: hidden;
-            width: 100%;
-        }
-        .event .event-container .event-poster img,
-        .event .event-container .event-poster canvas {
-            width: 100%;
-        }
-        .event .event-container .event-poster.loading img,
-        .event .event-container .event-poster.loading canvas {
-            opacity: 0;
-        }
-        .event .event-container h3 {
-            font-size:18px;
-            padding: 10px;
-            margin: 0;
-        }
-        .event .event-container .event-place,
-        .event .event-container .event-time {
-            border-top: #DCDCDC solid 1px;
-        }
-        .event .event-container .fa {
-            background-color: #F7F7F7;
-            width: 35px;
-            line-height: 35px;
-            margin-right: 10px;
-            display: inline-block;
-            text-align: center;
-            color: #333;
-        }
-        .event .event-container span {
-            display: inline-block;
-            color:#666;
-        }
-
     </style>
     @stop
 

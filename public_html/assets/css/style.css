@@ -3141,98 +3141,58 @@ a.list-group-item.active:focus {
     background-repeat: no-repeat;
 }
 
-.event-list-container .event-container {
-    color:#fff;
-    margin-bottom: 50px;
+.event a, .event a:hover {text-decoration: none;}
+.event .event-container {
+    background-color:#fff;
+    border: #DCDCDC solid 1px;
+    margin-bottom: 20px;
 }
-.event-list-container .event-container .date-container {
-    width: 20%;
-    margin-right: 15px;
-    text-align: center;
+.event .event-container:hover {
+    box-shadow: #DCDCDC 0 0 5px;
 }
-@media (min-width: 768px) {
-    .event-list-container .event-container .date-container {
-        width: 130px;
-        height: 130px;
-    }
+.event .event-container .event-poster {
+    background-color: #444;
+    height: 200px;
+    overflow: hidden;
+    width: 100%;
 }
-.event-list-container .event-container .date-container .date {
-    background-color: #2c3e50;
-    padding-top: 5px;
-    font-size: 27px;
+.event .event-container .event-poster img,
+.event .event-container .event-poster canvas {
+    width: 100%;
 }
-@media (min-width: 768px) {
-    .event-list-container .event-container .date-container .date {
-        font-size: 32px;
-    }
+.event .event-container .event-poster.loading img,
+.event .event-container .event-poster.loading canvas {
+    opacity: 0;
 }
-
-.event-list-container .event-container .date-container .date {
-    height: 65px;
-}
-.event-list-container .event-container .date-container .month-year {
-    background-color: #6382a1;
-    padding-top: 3px;
-    height: 65px;
-}
-.event-list-container .event-container .date-container .month-year .month {
-    font-size: 20px;
-}
-
-@media (min-width: 768px) {
-    .event-list-container .event-container .date-container .month-year .month {
-        font-size: 28px;
-    }
-}
-.event-list-container .event-container .date-container .month-year .year {
-    margin-top: -10px;
-    font-size: 18px;
-}
-.event-list-container .event-container.red .date-container .date,
-.event-list-container .event-container:nth-child(3n+1) .date-container .date {
-    background-color: #c0392b;
-}
-.event-list-container .event-container.red .date-container .month-year,
-.event-list-container .event-container:nth-child(3n+1) .date-container .month-year {
-    background-color: #e74c3c;
-}
-.event-list-container .event-container .name-place {
-    width: 75%;
-}
-@media (min-width: 768px) {
-    .event-list-container .event-container .name-place {
-        width: 545px;
-    }
-}
-@media (min-width: 992px) {
-    .event-list-container .event-container .name-place {
-        width: 765px;
-    }
-}
-.event-list-container .event-container .name-place .name {
-    text-transform: uppercase;
-    margin: 10px 0 10px 0;
-    font-size: 20px;
-}
-@media (min-width: 768px) {
-    .event-list-container .event-container .name-place .name {
-        font-size: 32px;
-    }
-}
-
-.event-list-container .event-container .name-place .name {
+.event .event-container h3 {
+    font-size:18px;
+    padding: 10px;
     margin: 0;
-    height: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-
-.event-list-container .event-container .name-place .place-time {
-    margin-top: 12px;
+.event .event-container .event-place,
+.event .event-container .event-time {
+    border-top: #DCDCDC solid 1px;
 }
-
-.event-list-container .event-container .name-place .place-time .fa {
-    width: 20px;
+.event .event-container .fa {
+    background-color: #F7F7F7;
+    width: 35px;
+    line-height: 35px;
+    margin-right: 10px;
+    display: inline-block;
     text-align: center;
+    color: #333;
 }
+.event .event-container span {
+    display: inline-block;
+    color:#666;
+}
+
+.event.event-dark .event-container {border: #102A38 solid 1px;}
+.event.event-dark .event-container:hover {box-shadow: #102A38 0 0 5px;}
+.event.event-dark .event-container h3 {color: #242a30;}
 
 .form-inline .btn {
     padding: 6px 12px;
