@@ -62,6 +62,53 @@
         #event .content-bg {
             background-image: url({{ asset_version('assets/images/event-bg.jpg') }});
         }
+
+        .event a, .event a:hover {text-decoration: none;}
+        .event .event-container {
+            background-color:#fff;
+            border: #102A38 solid 1px;
+            margin-bottom: 20px;
+        }
+        .event .event-container:hover {
+            box-shadow: #102A38 0 0 5px;
+        }
+        .event .event-container .event-poster {
+            background-color: #444;
+            height: 200px;
+            overflow: hidden;
+            width: 100%;
+        }
+        .event .event-container .event-poster img,
+        .event .event-container .event-poster canvas {
+            width: 100%;
+        }
+        .event .event-container .event-poster.loading img,
+        .event .event-container .event-poster.loading canvas {
+            opacity: 0;
+        }
+        .event .event-container h3 {
+            color: #242a30;
+            font-size:18px;
+            padding: 10px;
+            margin: 0;
+        }
+        .event .event-container .event-place,
+        .event .event-container .event-time {
+            border-top: #DCDCDC solid 1px;
+        }
+        .event .event-container .fa {
+            background-color: #F7F7F7;
+            width: 35px;
+            line-height: 35px;
+            margin-right: 10px;
+            display: inline-block;
+            text-align: center;
+            color: #333;
+        }
+        .event .event-container span {
+            display: inline-block;
+            color:#666;
+        }
     </style>
 @stop
 
@@ -442,30 +489,32 @@
             <div class="container">
                 <h2 class="content-title">Event</h2>
             </div>
-            <div class="row">
-                @if($acara)
-                <div class="col-md-12">
-                    <div class="event-list-container">
-                        <div class="event-container">
-                            <div class="date-container pull-left">
-                                <div class="date">{{ $acara->mulai->format('d') }}</div>
-                                <div class="month-year">
-                                    <div class="month">{{ $acara->mulai->format('M') }}</div>
-                                    <div class="year">{{ $acara->mulai->format('Y') }}</div>
+            <div class="row event">
+                @if($upcoming)
+                    @foreach($upcoming as $event)
+                    <div class="col-md-4">
+                        <a href="{{ route('event.show', [$event->getWrappedObject(), $event->slug]) }}" data-toggle="ajax">
+                            <div class="event-container">
+                                <div class="event-poster" data-seed="{{ $event->getRouteKey() }}">
+                                    @if($event->poster)
+                                        <img src="{{ asset_version('media/images/'.$event->poster) }}" class="poster" alt="{{ $event->nama_acara }}" />
+                                    @endif
+                                </div>
+                                <h3>{{ $event->nama_acara }}</h3>
+                                <div class="event-info">
+                                    <div class="event-time">
+                                        <i class="fa fa-calendar"></i>
+                                        <span>{{ $event->mulai_full }}</span>
+                                    </div>
+                                    <div class="event-place">
+                                        <i class="fa fa-map-marker"></i>
+                                        <span>{{ $event->tempat }}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="name-place pull-left">
-                                <div class="name">{{ $acara->nama_acara }}</div>
-                                <div class="place-time pull-left">
-                                    <div class="place"><span class="fa fa-map-marker"></span>{{ $acara->tempat }}</div>
-                                    <div class="time"><span class="fa fa-clock-o"></span>{{ $acara->mulai->format('H:i') }}</div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
+                        </a>
                     </div>
-                </div>
+                    @endforeach
                 @else
                 <!-- begin col-12 -->
                 <div class="col-md-12 quote">
@@ -490,11 +539,42 @@
             });
         }
 
+        var palette = ["#048CCC", "#04A4EB", "#242424", "#146848"];
+        function poly() {
+            $('.event-container').each(function(i) {
+                var thiss = $(this);
+                var poster = thiss.find('.event-poster');
+
+                if(poster.has('img').length < 1) {
+                    var pattern = Trianglify({
+                        width: poster.width(),
+                        height: poster.height(),
+                        seed: poster.data('seed'),
+                        x_colors: palette,
+                        color_space: 'rgb'
+                    });
+
+                    poster.empty();
+                    poster.append(pattern.canvas());
+                }
+            });
+        }
+
         $(document).ready(function() {
             App.scrollingText();
 
             $.getScript('{{ asset_version('assets/plugins/jquery-bcSwipe/jquery.bcSwipe.min.js') }}').done(function() {
                 handleSwipeCarousel();
+            });
+
+            $.getScript('{{ asset_version('assets/plugins/trianglify/trianglify.min.js') }}').done(function() {
+                poly();
+                $('.event-poster canvas, .event-poster img').addClass('animated fadeIn');
+                $('.event-poster').removeClass('loading');
+            });
+
+            $(window).on('resize', function() {
+                poly();
             });
         });
     </script>

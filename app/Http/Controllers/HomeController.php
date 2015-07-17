@@ -34,8 +34,8 @@ class HomeController extends Controller {
      */
 	public function index(EventRepository $eventRepository)
 	{
-        $upcoming = $eventRepository->pushCriteria(new UpcomingEventCriteria())->all()->first();
-        return view('index')->with('acara', $upcoming);
+		$upcoming = $eventRepository->pushCriteria(new UpcomingEventCriteria(3))->all();
+        return view('index')->with(compact('upcoming'));
 	}
 
 }
