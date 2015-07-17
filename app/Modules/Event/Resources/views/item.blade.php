@@ -282,6 +282,7 @@
                 height: 510,
                 seed: '{{ $event->getRouteKey() }}',
                 x_colors: palette,
+                color_space: 'rgb'
             });
 
             $('#event-hero .polygon-bg').empty();
