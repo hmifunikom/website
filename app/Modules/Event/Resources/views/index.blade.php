@@ -79,7 +79,7 @@
         <div class="container">
             <h2 class="content-title">Event Mendatang</h2>
             <div class="row event">
-                @if($upcoming)
+                @if($upcoming->count())
                     @foreach($upcoming as $event)
                         <div class="col-md-4">
                             <a href="{{ route('event.show', [$event->getWrappedObject(), $event->slug]) }}" data-toggle="ajax">
