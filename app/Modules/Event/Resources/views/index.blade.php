@@ -6,6 +6,10 @@
             background-image: url({{ asset_version('assets/images/event-bg.jpg') }});
         }
 
+        .event .quote small {
+            color: #000;
+        }
+
         .event a, .event a:hover {text-decoration: none;}
         .event .event-container {
             border: #DCDCDC solid 1px;
@@ -75,30 +79,36 @@
         <div class="container">
             <h2 class="content-title">Event Mendatang</h2>
             <div class="row event">
-                @foreach($upcoming as $event)
-                    <div class="col-md-4">
-                        <a href="{{ route('event.show', [$event->getWrappedObject(), $event->slug]) }}" data-toggle="ajax">
-                            <div class="event-container">
-                                <div class="event-poster" data-seed="{{ $event->getRouteKey() }}">
-                                    @if($event->poster)
-                                    <img src="{{ asset_version('media/images/'.$event->poster) }}" class="poster" alt="{{ $event->nama_acara }}" />
-                                    @endif
-                                </div>
-                                <h3>{{ $event->nama_acara }}</h3>
-                                <div class="event-info">
-                                    <div class="event-time">
-                                        <i class="fa fa-calendar"></i>
-                                        <span>{{ $event->mulai_full }}</span>
+                @if($upcoming)
+                    @foreach($upcoming as $event)
+                        <div class="col-md-4">
+                            <a href="{{ route('event.show', [$event->getWrappedObject(), $event->slug]) }}" data-toggle="ajax">
+                                <div class="event-container">
+                                    <div class="event-poster" data-seed="{{ $event->getRouteKey() }}">
+                                        @if($event->poster)
+                                        <img src="{{ asset_version('media/images/'.$event->poster) }}" class="poster" alt="{{ $event->nama_acara }}" />
+                                        @endif
                                     </div>
-                                    <div class="event-place">
-                                        <i class="fa fa-map-marker"></i>
-                                        <span>{{ $event->tempat }}</span>
+                                    <h3>{{ $event->nama_acara }}</h3>
+                                    <div class="event-info">
+                                        <div class="event-time">
+                                            <i class="fa fa-calendar"></i>
+                                            <span>{{ $event->mulai_full }}</span>
+                                        </div>
+                                        <div class="event-place">
+                                            <i class="fa fa-map-marker"></i>
+                                            <span>{{ $event->tempat }}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
+                    @endforeach
+                @else
+                    <div class="col-md-12 quote">
+                        <small>Tidak ada event yang akan datang. Stay tuned.</small>
                     </div>
-                @endforeach
+                @endif
             </div>
         </div>
         <!-- end container -->
@@ -156,6 +166,7 @@
                         height: poster.height(),
                         seed: poster.data('seed'),
                         x_colors: palette,
+                        color_space: 'rgb'
                     });
 
                     poster.empty();
