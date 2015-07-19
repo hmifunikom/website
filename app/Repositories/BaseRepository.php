@@ -134,5 +134,11 @@ abstract class BaseRepository extends PrettusBaseRepository {
         return $this;
     }
 
+    public function lockUpdate()
+    {
+        $this->model = $this->model->lockForUpdate();
+        return $this;
+    }
+
 
 }

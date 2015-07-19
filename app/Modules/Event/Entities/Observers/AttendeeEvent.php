@@ -3,36 +3,40 @@
 use HMIF\Entities\Observers\ModelEvent;
 use HMIF\Modules\Event\Repositories\AttendeeRepository;
 use HMIF\Modules\Event\Repositories\Criterias\ByEventTicketCriteria;
+use DB;
 
 class AttendeeEvent extends ModelEvent {
 
     protected $softDeleteChild = [];
 
-    public function saving($model)
+    public function creating($model)
     {
-        $exist = $model->exists;
+        DB::beginTransaction();
 
-        if ( ! $exist)
+        $attendeeRepository = app(AttendeeRepository::class);
+        $model->load('ticket.event');
+
+        $result = $attendeeRepository->pushCriteria(new ByEventTicketCriteria($model->ticket->event->id_acara, null))
+            ->limit(1)
+            ->orderBy('kode', 'desc')
+            ->lockUpdate()
+            ->all(['kode'])
+            ->first();
+
+        if ($result)
         {
-            $attendeeRepository = app(AttendeeRepository::class);
-            $model->load('ticket.event');
-
-            $result = $attendeeRepository->pushCriteria(new ByEventTicketCriteria($model->ticket->event->id_acara, null))
-                ->limit(1)
-                ->orderBy('kode', 'desc')
-                ->all(['kode'])
-                ->first();
-
-            if ($result)
-            {
-                $model->kode = $result->kode + 1;
-            }
-            else
-            {
-                $model->kode = 1;
-            }
-
-            $model->ticket->increment('terjual');
+            $model->kode = $result->kode + 1;
         }
+        else
+        {
+            $model->kode = 1;
+        }
+
+        $model->ticket->increment('terjual');
+    }
+
+    public function created($model)
+    {
+        DB::commit();
     }
 }
