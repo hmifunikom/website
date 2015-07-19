@@ -34,7 +34,9 @@ class AttendeeController extends PanelController {
         }
 
         $tickets = $this->ticketRepository->parentModel($event)->all();
-        $attendees = $this->attendeeRepository->pushCriteria(new ByEventTicketCriteria($event->id_acara, $id_tiket))->paginate();
+        $attendees = $this->attendeeRepository->pushCriteria(new ByEventTicketCriteria($event->id_acara, $id_tiket))
+            ->orderBy('kode', 'desc')
+            ->paginate();
 
         head_title('Daftar Peserta - ' . $event->nama_acara);
         return view('event::panel.attendee.index')->with(compact('event', 'tickets', 'attendees'));
