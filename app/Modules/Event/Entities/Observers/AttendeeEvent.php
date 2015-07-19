@@ -1,8 +1,8 @@
 <?php namespace HMIF\Modules\Event\Entities\Observers;
 
 use HMIF\Entities\Observers\ModelEvent;
-use Input;
-use DB;
+use HMIF\Modules\Event\Repositories\AttendeeRepository;
+use HMIF\Modules\Event\Repositories\Criterias\ByEventTicketCriteria;
 
 class AttendeeEvent extends ModelEvent {
 
@@ -14,16 +14,18 @@ class AttendeeEvent extends ModelEvent {
 
         if ( ! $exist)
         {
-            $result = DB::table($model->getTable())
-                ->select('kode')
-                ->where('id_tiket', $model->id_tiket)
+            $attendeeRepository = app(AttendeeRepository::class);
+            $model->load('ticket.event');
+
+            $result = $attendeeRepository->pushCriteria(new ByEventTicketCriteria($model->ticket->event->id_acara, null))
+                ->limit(1)
                 ->orderBy('kode', 'desc')
-                ->take(1)
-                ->get();
+                ->all(['kode'])
+                ->first();
 
             if ($result)
             {
-                $model->kode = $result[0]->kode + 1;
+                $model->kode = $result->kode + 1;
             }
             else
             {
