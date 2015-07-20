@@ -103,6 +103,7 @@
                 line-height: 42px;
                 color:#fff;
                 position:absolute;
+                text-shadow:#333 0 0 3px;
             }
             .event-content .event-info .event-info-container .row .col-md-8 {margin-bottom:0;}
             .event-content .event-info .event-time .icon-holder,
@@ -123,7 +124,10 @@
                 position: absolute;
                 bottom: 10px;
             }
-            .event-time div p, .event-place div p {color: #fff;}
+            .event-time div p, .event-place div p {
+                color: #fff;
+                text-shadow:#333 0 0 3px;
+            }
         }
         @media only screen and (min-width : 1200px) {
             .event-content .event-info h1 {
