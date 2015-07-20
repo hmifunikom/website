@@ -41,6 +41,7 @@ class EventController extends PanelController {
         {
             $addtionalData = new stdClass();
             $addtionalData->nextaction = route('panel.event.ticket.store', [$event, 'wizard' => true]);
+            $addtionalData->linkevent = route('event.show', [$event, $event->slug]);
 
             return redirect_ajax_notification('panel.event.ticket.create', [$event, 'wizard' => true], $addtionalData);
         }

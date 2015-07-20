@@ -44,7 +44,6 @@ class TicketController extends PanelController {
             if($request->ajax())
             {
                 $addtionalData = new stdClass();
-                $addtionalData->linkevent = route('event.show', [$eventId]);
                 $addtionalData->linkaddmore = route('panel.event.show', [$eventId]);
 
                 return redirect_ajax_notification('panel.event.show', [$eventId], $addtionalData);

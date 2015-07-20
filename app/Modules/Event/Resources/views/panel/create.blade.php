@@ -75,7 +75,8 @@
                                         <!-- begin col-12 -->
                                         <div class="col-md-12">
                                             @include('event::panel.ticket.form')
-                                            <span>*Tiket tambahan bisa dibuat ketika wizard ini selesai.</span>
+                                            <span>*Tiket tambahan bisa dibuat ketika wizard ini selesai.</span> <hr/>
+                                            <a class="skip-wizard-step-2 btn btn-primary">Lewati, Buat acara tanpa tiket.</a>
                                         </div>
                                         <!-- end col-12 -->
                                     </div>
@@ -138,7 +139,6 @@
                 nextBtnText: '',
 
                 validating: function (e, ui) {
-                    console.log(e, ui);
                     if (ui.nextIndex == 0) {
                         return false;
                     } else if (ui.nextIndex == 1) {
@@ -161,6 +161,7 @@
             wizard_step[0] = true;
 
             $('#form-ticket').attr('action', data.nextaction);
+            $('#link-event').attr('href', data.linkevent);
 
             $('#wizard').bwizard('next');
         };
@@ -168,11 +169,18 @@
         var handleSuccessStep1 = function(data, status, xhr) {
             wizard_step[1] = true;
 
-            $('#link-event').attr('href', data.linkevent);
             $('#link-add-more').attr('href', data.linkaddmore);
 
             $('#wizard').bwizard('next');
         };
+
+        $('.skip-wizard-step-2').on('click', function() {
+            wizard_step[1] = true;
+
+            $('#link-add-more').remove();
+
+            $('#wizard').bwizard('next');
+        });
 
         $.getScript('{{ asset_version('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}', function () {
             handleDatepicker();
