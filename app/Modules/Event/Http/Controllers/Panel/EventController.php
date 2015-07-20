@@ -19,7 +19,7 @@ class EventController extends PanelController {
 
     public function index()
     {
-        $events = $this->eventRepository->paginate();
+        $events = $this->eventRepository->orderBy('mulai', 'desc')->paginate();
 
         head_title('Daftar Event');
         return view('event::panel.index')->with(['events' => $events]);
