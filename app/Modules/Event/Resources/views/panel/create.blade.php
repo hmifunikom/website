@@ -7,6 +7,7 @@
     <link href="{{ asset_version('assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}"
           rel="stylesheet"/>
     <link href="{{ asset_version('assets/plugins/bootstrap-wizard/css/bwizard.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset_version('assets/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css') }}" rel="stylesheet"/>
     <!-- ================== END PAGE LEVEL STYLE ================== -->
 @endsection
 
@@ -182,6 +183,8 @@
         $.getScript('{{ asset_version('assets/plugins/bootstrap-wizard/js/bwizard.js') }}').done(function () {
             handleBootstrapWizardsValidation();
         });
+        $.getScript('{{ asset_version('assets/plugins/bootstrap-markdown/js/bootstrap-markdown.js') }}');
+        $.getScript('{{ asset_version('assets/plugins/marked/marked.min.js') }}');
     </script>
     <!-- ================== END PAGE LEVEL JS ================== -->
 @endsection
