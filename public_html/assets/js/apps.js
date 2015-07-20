@@ -170,6 +170,7 @@ var handleSidebarAjaxClick = function() {
         var target = $(event.currentTarget);
 
         var method = target.attr('method');
+        var form_btn = target.find('[type=submit], [type=reset]');
 
         window.targetTop = target.closest('.content').attr('id');
         window.typeAjax = 'partial';
@@ -183,6 +184,7 @@ var handleSidebarAjaxClick = function() {
 
                 beforeSubmit: function () {
                     Pace.restart();
+                    form_btn.prop('disabled', true);
                 },
 
                 success: function (data, status, xhr) {
@@ -204,6 +206,8 @@ var handleSidebarAjaxClick = function() {
                     if (xhr.status == 500) {
                         handleErrorNotification('Baru saja sistem gagal melakukan operasi. Silahkan ulangi atau tunggu beberapa saat. Jika masih terjadi kesalahan silahkan hubungi administrator.');
                     }
+
+                    form_btn.prop('disabled', false);
                 }
             };
 
