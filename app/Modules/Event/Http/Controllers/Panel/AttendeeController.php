@@ -28,9 +28,9 @@ class AttendeeController extends PanelController {
     {
         $id_tiket = hashids_model_key_decode('event_ticket', Input::get('ticket'));
 
-        if(Input::get('paid'))
+        if(Input::has('paid'))
         {
-            $this->attendeeRepository->pushCriteria(new PaidAttendeeCriteria());
+            $this->attendeeRepository->pushCriteria(new PaidAttendeeCriteria(Input::get('paid')));
         }
 
         $tickets = $this->ticketRepository->parentModel($event)->all();

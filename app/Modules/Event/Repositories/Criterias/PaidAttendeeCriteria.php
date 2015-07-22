@@ -5,10 +5,12 @@ use Prettus\Repository\Contracts\RepositoryInterface;
 
 class PaidAttendeeCriteria implements CriteriaInterface {
 
+    private $paid;
     private $invoice;
 
-    public function __construct()
+    public function __construct($paid = 1)
     {
+        $this->paid = $paid;
         $this->invoice = app('HMIF\Modules\Invoice\Entities\Invoice');
     }
 
@@ -19,12 +21,12 @@ class PaidAttendeeCriteria implements CriteriaInterface {
         $invoiceableType = $invoiceTable . '.invoiceable_type';
         $invoiceDibayar = $invoiceTable . '.dibayar';
 
-        $attendeeTable = $model->getTable();
-        $attendeeKey = $attendeeTable.'.'.$model->getKeyName();
+        $attendeeTable = $model->getModel()->getTable();
+        $attendeeKey = $attendeeTable.'.'.$model->getModel()->getKeyName();
 
         $query = $model->join($invoiceTable, $invoiceableId, '=', $attendeeKey)
                     ->where($invoiceableType, $repository->model())
-                    ->where($invoiceDibayar, 1);
+                    ->where($invoiceDibayar, $this->paid);
 
         return $query;
     }
