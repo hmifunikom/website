@@ -8,6 +8,10 @@
 		{
 			"type": "git",
 			"url": "git@github.com:jamisonvalenta/Laravel-4-Generators.git"
+		},
+		{
+			"type": "pear",
+			"url": "http://pear.php.net"
 		}
     ],
 	"require": {
@@ -70,7 +74,11 @@
 
 		"xethron/migrations-generator": "dev-l5",
 		"way/generators": "dev-feature/laravel-five-stable",
-		"felixkiss/uniquewith-validator": "2.*"
+		"felixkiss/uniquewith-validator": "2.*",
+		"barryvdh/laravel-elfinder": "^0.3.4",
+		"pear-pear.php.net/PEAR": "*@stable",
+		"pear-pear.php.net/HTTP_OAUTH": "*@stable",
+		"dropbox-php/dropbox-php": "1.*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
@@ -97,8 +105,10 @@
 			"php artisan clear-compiled",
 			"php artisan optimize"
 		],
+		"pre-update-cmd": [
+			"php artisan clear-compiled"
+		],
 		"post-update-cmd": [
-			"php artisan clear-compiled",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
