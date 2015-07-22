@@ -3,8 +3,6 @@
 use Hashids;
 use HMIF\Entities\SoftDeleteBaseModel;
 use HMIF\Modules\Email\Entities\EmailAttachmentable;
-use HMIF\Modules\Invoice\Presenters\InvoicePresenter;
-use McCool\LaravelAutoPresenter\HasPresenter;
 
 class InvoiceRaw extends SoftDeleteBaseModel implements EmailAttachmentable {
 
@@ -28,11 +26,6 @@ class InvoiceRaw extends SoftDeleteBaseModel implements EmailAttachmentable {
     public function invoiceable()
     {
         return $this->morphTo('invoiceable');
-    }
-
-    public function getPresenterClass()
-    {
-        return InvoicePresenter::class;
     }
 
     public function getRouteKey()
