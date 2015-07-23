@@ -25,7 +25,7 @@ class InvoiceRaw extends SoftDeleteBaseModel implements EmailAttachmentable {
 
     public function invoiceable()
     {
-        return $this->morphTo('invoiceable');
+        return $this->morphTo('invoiceable')->withTrashed();
     }
 
     public function getRouteKey()
