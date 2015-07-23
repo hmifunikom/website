@@ -30,7 +30,7 @@ class Attendee extends SoftDeleteBaseModel implements HasPresenter, Invoiceable,
 
     public function ticket()
     {
-        return $this->belongsTo('HMIF\Modules\Event\Entities\Ticket', 'id_tiket');
+        return $this->belongsTo('HMIF\Modules\Event\Entities\Ticket', 'id_tiket')->withTrashed();
     }
 
     public function invoice()

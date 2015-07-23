@@ -23,7 +23,7 @@ class Ticket extends SoftDeleteBaseModel implements HasPresenter {
 
     public function event()
     {
-        return $this->belongsTo('HMIF\Modules\Event\Entities\Event', 'id_acara');
+        return $this->belongsTo('HMIF\Modules\Event\Entities\Event', 'id_acara')->withTrashed();
     }
 
     public function attendee()
