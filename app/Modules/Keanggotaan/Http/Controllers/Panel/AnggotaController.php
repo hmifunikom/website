@@ -61,7 +61,7 @@ class AnggotaController extends PanelController {
 
     public function destroy($anggotaId)
     {
-        $this->anggotaRepository->delete($anggotaId);
+        $this->anggotaRepository->updateByField(['status_hima' => 'Dropout'], 'nim', $anggotaId);
 
         flash_success('Anggota sukses dihapus.');
 
