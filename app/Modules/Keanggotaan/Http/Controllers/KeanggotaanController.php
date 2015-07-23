@@ -19,9 +19,20 @@ class KeanggotaanController extends Controller {
 
 	public function index()
 	{
-        $divisi = app('HMIF\Modules\Keanggotaan\Repositories\DivisiRepository')->with(['anggota', 'penanggung_jawab'])->all();
+        $anggota = $this->anggotaRepository
+            ->pushCriteria(new ActiveCriteria())
+            ->pushCriteria(new OrganigramCriteria())
+            ->all();
 
-		return view('keanggotaan::index')->with(compact('anggota', 'divisi'));
+        $inti = $anggota->filter(function($item) {
+            return $item->id_anggota == $item->divisi->id_penanggung_jawab;
+        })->keyBy('id_divisi');
+
+        $anggota =  $anggota->reject(function($item) {
+            return $item->id_anggota == $item->divisi->id_penanggung_jawab;
+        })->groupBy('id_divisi');
+
+		return view('keanggotaan::index')->with(compact('anggota', 'inti'));
 	}
 	
 }
