@@ -53,8 +53,8 @@
                     <span>Email</span>
                 </a>
             </li>
-            <li class="{{ menu_active('panel.user.index') }}">
-                <a href="{{ route('panel.user.index') }}" data-toggle="ajax">
+            <li class="{{ menu_active('panel.invoice.index') }}">
+                <a href="{{ route('panel.invoice.index') }}" data-toggle="ajax">
                     <i class="fa fa-file-text-o"></i>
                     <span>Invoice</span>
                 </a>

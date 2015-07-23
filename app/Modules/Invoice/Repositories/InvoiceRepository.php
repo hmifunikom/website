@@ -5,7 +5,9 @@ use HMIF\Repositories\BaseRepository;
 class InvoiceRepository extends BaseRepository {
 
     protected $fieldSearchable = [
-
+        'judul' => 'like',
+        'nama_penerima' => 'like',
+        'email' => 'like'
     ];
 
     function model()
