@@ -17,12 +17,6 @@ class EmailStorer {
 
     private $emailModel;
 
-    private $from;
-    private $to;
-    private $subject;
-    private $text;
-    private $date;
-
     public function __construct(Parser $parser, EmailRepository $emailRepository, AttachmentRepository $attachmentRepository)
     {
         $this->parser = $parser;
@@ -53,23 +47,30 @@ class EmailStorer {
     private function saveEmail()
     {
         $this->parser->setText($this->message);
-        $this->to = $this->parser->getHeader('to');
-        $this->from = $this->parser->getHeader('from');
-        $this->subject = $this->parser->getHeader('subject');
-        $this->text = $this->parser->getMessageBody('htmlEmbedded');
-        $this->date = Date::parse($this->parser->getHeader('date'));
+
+        $read = ($this->type == 'out') ? 1 : 0;
 
         $data = [
-            'from'    => $this->from,
-            'to'      => $this->to,
-            'subject' => $this->subject,
-            'text'    => $this->text,
-            'date'    => $this->date,
-            'type'    => $this->type,
+            'email_from' => $this->parser->getHeader('from'),
+            'email_to'   => $this->parser->getHeader('to'),
+            'subject'    => $this->parser->getHeader('subject'),
+            'header'     => $this->parser->getHeaders(),
+            'text'       => $this->parser->getMessageBody('text'),
+            'html'       => $this->parser->getMessageBody('htmlEmbedded'),
+            'type'       => $this->type,
+            'date'       => Date::parse($this->parser->getHeader('date')),
+            'readed'     => $read
         ];
 
-        $this->emailModel = $this->emailRepository->create($data);
-
+        if($this->type == 'out')
+        {
+            $id = $this->parser->getHeader('x-hmif-idout');
+            $this->emailModel = $this->emailRepository->update($data, $id);
+        }
+        else
+        {
+            $this->emailModel = $this->emailRepository->create($data);
+        }
     }
 
     private function saveAttachment()
@@ -79,8 +80,6 @@ class EmailStorer {
         {
             return false;
         }
-
-        var_dump('disini');
 
         foreach ($attachments as $attachment)
         {
@@ -92,15 +91,6 @@ class EmailStorer {
             $attachment_path = 'mail/' . $filename;
 
             Storage::put($attachment_path, $attachment->getContent());
-
-            //if ($fp = fopen($attachment_path, 'w')) {
-            //    while ($bytes = $attachment->read()) {
-            //        fwrite($fp, $bytes);
-            //    }
-            //    fclose($fp);
-            //} else {
-            //    throw new \Exception('Could not write attachments. Your directory may be unwritable by PHP.');
-            //}
 
             $data = [
                 'filename' => $attachment->getFilename(),

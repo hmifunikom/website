@@ -1,0 +1,1 @@
+{!! strip_tags(br2nl($data->html)) !!}

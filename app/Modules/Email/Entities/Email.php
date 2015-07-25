@@ -1,26 +1,27 @@
 <?php namespace HMIF\Modules\Email\Entities;
 
 use Hashids;
-use HMIF\Entities\BaseModel;
+use HMIF\Entities\SoftDeleteBaseModel;
 use HMIF\Modules\Email\Presenters\EmailPresenter;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
-class Email extends BaseModel implements HasPresenter {
+class Email extends SoftDeleteBaseModel implements HasPresenter {
 
     protected $table      = 'tb_email';
     protected $primaryKey = 'id_email';
 
-    protected $fillable = ['from', 'to', 'subject', 'text', 'type', 'date'];
+    protected $fillable = ['email_from', 'email_to', 'subject', 'header', 'text', 'html', 'type', 'readed', 'date'];
 
-    public $timestamps = false;
-
-    protected $dates = ['date'];
+    protected $dates = ['date', 'deleted_at'];
 
     protected $casts = [
-        'from'    => 'string',
-        'top'     => 'string',
-        'subject' => 'string',
-        'text'    => 'string',
+        'email_from' => 'string',
+        'email_to'   => 'string',
+        'subject'    => 'string',
+        'header'     => 'array',
+        'text'       => 'string',
+        'html'       => 'string',
+        'readed'       => 'boolean'
     ];
 
     public function attachment()

@@ -15,6 +15,7 @@ class SendEmailCommand extends Command implements ShouldBeQueued {
     public $to;
     public $subject;
     public $attachment = [];
+    public $header = [];
 
     public function __construct()
     {
@@ -62,6 +63,13 @@ class SendEmailCommand extends Command implements ShouldBeQueued {
     public function addAttachment($attachment)
     {
         $this->attachment[] = $attachment;
+
+        return $this;
+    }
+
+    public function addHeader($key, $value)
+    {
+        $this->header[] = compact('key', 'value');
 
         return $this;
     }

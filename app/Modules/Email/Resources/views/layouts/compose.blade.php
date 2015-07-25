@@ -5,7 +5,7 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
-    <title>{{ $data->title }}</title>
+    <title>{{ $data->subject }}</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 
     <style type="text/css">
@@ -966,7 +966,6 @@
                                                 <table class="six columns">
                                                     <tr>
                                                         <td class="text-right valign-middle">
-                                                            <span class="template-label">{{ $data->email_type }}</span>
                                                         </td>
                                                         <td class="expander"></td>
                                                     </tr>
@@ -1023,9 +1022,6 @@
                                                 </tr>
                                             </table>
                                             <!-- end twelve columns -->
-                                            <p>
-                                                <i>Email ini dibuat secara otomatis oleh sistem. Mohon tidak mengirimkan balasan ke email ini.</i>
-                                            </p>
                                         </td>
                                         <!-- end wrapper -->
                                     </tr>
