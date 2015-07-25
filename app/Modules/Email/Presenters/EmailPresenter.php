@@ -71,7 +71,7 @@ class EmailPresenter extends BasePresenter {
 
     public function shortText()
     {
-        return limit_text($this->wrappedObject->text, 30);
+        return limit_text($this->wrappedObject->text, 20);
     }
 
     public function sign()
