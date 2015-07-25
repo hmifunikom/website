@@ -47,8 +47,8 @@
                     <span>Perpustakaan</span>
                 </a>
             </li>
-            <li class="{{ menu_active('panel.user.index') }}">
-                <a href="{{ route('panel.user.index') }}" data-toggle="ajax">
+            <li class="{{ menu_active('panel.email.index') }}">
+                <a href="{{ route('panel.email.index') }}" data-toggle="ajax">
                     <i class="fa fa-envelope"></i>
                     <span>Email</span>
                 </a>
