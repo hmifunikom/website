@@ -50,7 +50,7 @@
                             <!-- begin email to -->
                             <label class="control-label">To:</label>
                             <div class="m-b-15">
-                                <input type="text" name="email_to" class="form-control" value="{{ $message->email_to or '' }}" />
+                                <input type="text" name="email_to" class="form-control" value="{{ $message->subjectEmail or '' }}" />
                             </div>
                             <!-- end email to -->
                             <!-- begin email subject -->
