@@ -28,7 +28,7 @@
 		
 		"barryvdh/laravel-debugbar": "~2.0",
 		"barryvdh/laravel-ide-helper": "~2.0",
-		"rap2hpoutre/laravel-log-viewer": "0.1.*",
+		"rap2hpoutre/laravel-log-viewer": "~0.4.0",
 
         "yocmen/html-minify": "2.*",
         "jenssegers/date": "3.*",

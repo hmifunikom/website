@@ -168,6 +168,7 @@ return [
         'FloatingPoint\Gravatar\LaravelGravatarServiceProvider',
         'Yocmen\HtmlMinify\HtmlMinifyServiceProvider',
         'Felixkiss\UniqueWithValidator\UniqueWithValidatorServiceProvider',
+        'Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider',
 
         /*
          * Application Service Providers...
