@@ -62,9 +62,9 @@ class EmailStorer {
             'readed'     => $read
         ];
 
-        if($this->type == 'out')
+        $id = $this->parser->getHeader('x-hmif-idout');
+        if($this->type == 'out' && $id)
         {
-            $id = $this->parser->getHeader('x-hmif-idout');
             $this->emailModel = $this->emailRepository->update($data, $id);
         }
         else

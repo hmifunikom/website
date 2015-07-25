@@ -15,6 +15,7 @@ class EmailDisplayer {
 
     public function setHtml($html)
     {
+        $html = '<meta charset="utf-8">'.$html;
         $this->css2inline->setHTML($html);
 
         return $this;
