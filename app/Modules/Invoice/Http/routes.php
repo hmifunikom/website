@@ -1,10 +1,5 @@
 <?php
 
-Route::group(['prefix' => 'invoice', 'namespace' => 'HMIF\\Modules\Invoice\Http\Controllers'], function()
-{
-	Route::get('/', 'InvoiceController@index');
-});
-
 Route::group(['namespace' => 'HMIF\Modules\Invoice\Http\Controllers\Panel'], function()
 {
 	route_panel(function() {
