@@ -74,7 +74,8 @@ class EmailController extends PanelController {
         $sendEmail->setTemplate(['html' => 'email::emails.compose', 'text' => 'email::emails.text.compose'])
             ->setSubject($email->subject)
             ->setData(compact('data'))
-            ->setTo($email->email_to);
+            ->setTo($email->email_to)
+            ->setFrom('humas@hmifunikom.org', 'Humas HMIF Unikom');
 
         if(count($messageReplyId))
         {
