@@ -25,6 +25,7 @@
                 <li class="{{ menu_active('keanggotaan.index') }}"><a data-toggle="ajax" href="{{ route('keanggotaan.index') }}">KEANGGOTAAN</a></li>
                 <li class="{{ menu_active('event.index') }}"><a data-toggle="ajax" href="{{ route('event.index') }}">EVENT</a></li>
                 <li class="{{ menu_active('library.index') }}"><a data-toggle="ajax" href="{{ route('library.index') }}">PERPUSTAKAAN</a></li>
+                <li><a href="http://blog.hmifunikom.org">BLOG</a></li>
                 <li class="{{ menu_home('contact.index') }}"><a data-toggle="ajax" href="{{ route('contact.index') }}">CONTACT</a></li>
             </ul>
         </div>
