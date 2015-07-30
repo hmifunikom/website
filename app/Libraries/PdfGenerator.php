@@ -1,20 +1,19 @@
 <?php namespace HMIF\Libraries;
 
-use Barryvdh\DomPDF\PDF;
 use HMIF\Modules\Email\Entities\EmailAttachmentable;
+use mikehaertl\wkhtmlto\Pdf;
 
 class PdfGenerator {
 
     protected $pdf;
     protected $entity;
     protected $template;
-
     protected $isRendered = false;
 
     public function __construct()
     {
-        $this->pdf = app('dompdf.wrapper');
-
+        $this->pdf = new Pdf;
+        $this->pdf->binary = env('WKHTMLTOPDF_PATH');
     }
 
     public function setEntity($entity)
@@ -44,7 +43,7 @@ class PdfGenerator {
             $filename = storage_path('pdf/' . str_random());
         }
 
-        $this->pdf->save($filename);
+        $this->pdf->saveAs($filename);
 
         return $filename;
     }
@@ -53,28 +52,28 @@ class PdfGenerator {
     {
         $this->render($this->entity);
 
-        return $this->pdf->download($filename);
+        return $this->pdf->send($filename);
     }
 
-    public function stream($filename = 'document.pdf')
+    public function stream()
     {
         $this->render($this->entity);
-
-        return $this->pdf->stream($filename);
+//return view($this->template)->with(['entity' => $this->entity])->render();
+        return $this->pdf->send();
     }
 
     public function output()
     {
         $this->render($this->entity);
 
-        return $this->pdf->output();
+        return $this->pdf->toString();
     }
 
     protected function render($entity)
     {
         if($this->isRendered) return;
 
-        $this->pdf->loadHTML(view($this->template)->with(compact('entity'))->render());
+        $this->pdf->addPage(view($this->template)->with(compact('entity'))->render());
         $this->isRendered = true;
     }
 

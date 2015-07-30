@@ -37,7 +37,7 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
     }
     .invoice-header {
         margin: 0 !important;
-        padding: 0 !important;
+        padding: 15px !important;
     }
     .table-responsive {
         border: none !important;
@@ -51,12 +51,12 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
         border: 1px solid #e2e7eb !important;
         float: left !important;
         width: 100% !important;
-        display: block !important;
+
     }
     .invoice .invoice-price .invoice-price-left,
     .invoice .invoice-price .invoice-price-right {
-        display: block !important;
-        float: left !important;
+
+
         width: 75% !important;
     }
     .invoice .invoice-price .invoice-price-right {

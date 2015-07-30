@@ -70,7 +70,8 @@
 
 		"xethron/migrations-generator": "dev-l5",
 		"way/generators": "dev-feature/laravel-five-stable",
-		"felixkiss/uniquewith-validator": "2.*"
+		"felixkiss/uniquewith-validator": "2.*",
+		"mikehaertl/phpwkhtmltopdf": "^2.1"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

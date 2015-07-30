@@ -1,11 +1,15 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 table td {
     vertical-align: top;
-    border:5px solid #ccc;
+}
+
+table.noborder {
+    height: 100px;
 }
 
 table.noborder td {
-    border:none;   
+    border:none;
+    vertical-align: middle;
 }
 
 .center {

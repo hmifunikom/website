@@ -12,20 +12,20 @@
     <style>
         body {
             background: #fff;
+            font-size:18px;
         }
     </style>
 </head>
 <body class="no-bg">
     <div class="container">
         <div class="ticket">
-            <table width="100%" cellpadding="10" cellspacing="0">
+            <table width="100%" cellpadding="10" cellspacing="0" border="2">
                 <tr>
                     <td>
-                        <br>
                         <table class="noborder">
                             <tr>
                                 <td width="100px">
-                                    <img src="{{ asset_version('assets/images/logo.png') }}"/>
+                                    <img src="{{ asset_version('assets/images/logo.png') }}" style="line-height: 100px; padding-top:10px;"/>
                                 </td>
                                 <td>
                                     <div class="big-title">HMIF Unikom</div>
@@ -45,7 +45,7 @@
                         <div class="big-title">{{ $entity->ticket->event->nama_acara }}</div>
                         <table class="noborder" width="100%">
                             <tr>
-                                <td width="20%">
+                                <td width="30%">
                                     <dt>Tempat</dt>
                                     <dd>{{ $entity->ticket->event->tempat }}</dd>
                                 </td>
@@ -59,7 +59,7 @@
                                     <dt>Kode Peserta</dt>
                                     <dd>{{ $entity->kode }}</dd>
                                 </td>
-                                <td width="30%">
+                                <td width="35%">
                                     <dt>Nama Peserta</dt>
                                     <dd>{{ $entity->nama_peserta }}</dd>
                                 </td>
