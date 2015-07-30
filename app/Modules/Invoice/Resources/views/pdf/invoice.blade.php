@@ -6,10 +6,11 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <link href="{{ asset_version('assets/admin/css/style.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset_version('assets/admin/css/invoice-print.min.css') }}" rel="stylesheet"/>
-    <link href="{{ asset_version('assets/admin/css/theme/blue.css') }}" rel="stylesheet" id="theme"/>
     <style>
+        {{ asset_include('assets/admin/css/style.min.css') }}
+        {{ asset_include('assets/admin/css/invoice-print.min.css') }}
+        {{ asset_include('assets/admin/css/theme/blue.css') }}
+
         body {
             background: #fff;
             font-size:18px !important;

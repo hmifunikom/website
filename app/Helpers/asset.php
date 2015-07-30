@@ -14,3 +14,13 @@ function asset_version($path)
         return asset($path, Request::secure());
     }
 }
+
+function asset_include($path)
+{
+    $file = public_path($path);
+
+    if (file_exists($file))
+    {
+        return file_get_contents($file);
+    }
+}

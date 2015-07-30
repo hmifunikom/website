@@ -33,16 +33,12 @@ class InvoiceController extends PanelController {
 	public function show($invoice)
 	{
 		$invoice->load('invoiceable');
-        $invoice->invoiceable->load('ticket.event');
+
 		$pdfGenerator = app('HMIF\Libraries\PdfGenerator');
 		$pdfGenerator->setTemplate('invoice::pdf.invoice');
 		$pdfGenerator->setEntity($invoice);
 
-		$ticketGenerator = app('HMIF\Libraries\TicketGenerator');
-		$ticketGenerator->setTemplate('event::pdf.ticket');
-		$ticketGenerator->setEntity($invoice->invoiceable);
-
-		return $ticketGenerator->stream();
+		return $pdfGenerator->stream();
 	}
 	
 }
