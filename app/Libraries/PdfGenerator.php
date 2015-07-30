@@ -58,7 +58,7 @@ class PdfGenerator {
     public function stream()
     {
         $this->render($this->entity);
-//return view($this->template)->with(['entity' => $this->entity])->render();
+
         return $this->pdf->send();
     }
 

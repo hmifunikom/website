@@ -13,7 +13,7 @@
 
         body {
             background: #fff;
-            font-size:18px;
+            font-size:13px;
         }
     </style>
 </head>

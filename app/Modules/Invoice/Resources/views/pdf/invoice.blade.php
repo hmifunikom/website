@@ -13,7 +13,16 @@
 
         body {
             background: #fff;
-            font-size:18px !important;
+        }
+        .invoice-header {
+            margin-bottom: 20px !important;
+        }
+        .invoice-price {
+            margin-top: 20px !important;
+        }
+        .invoice-price .invoice-price-right {
+            width: 40% !important;
+            font-size: 18px !important;
         }
     </style>
 </head>
@@ -72,8 +81,8 @@
             </div>
             <table class="invoice-price">
                 <tr>
-                <td class="invoice-price-left">Total</td>
-                <td class="invoice-price-right">
+                <td class="invoice-price-left">TOTAL</td>
+                <td width="40%" class="invoice-price-right">
                     {{ $entity->total_rp }}
                 </td>
                 </tr>
