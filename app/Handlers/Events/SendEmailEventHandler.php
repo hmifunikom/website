@@ -36,7 +36,8 @@ class SendEmailEventHandler {
 
     public function sendEventTicket(Attendee $ticket)
     {
-        $invoice = $ticket->invoice;
+        $invoiceRepo = app('HMIF\Modules\Invoice\Repositories\InvoiceRepository');
+        $invoice = $invoiceRepo->find($ticket->invoice->id_invoice);
 
         $data = [
             'title' => 'Terima kasih telah melakukan pembayarannya Invoice #'. $invoice->getRouteKey(),
