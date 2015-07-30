@@ -59,7 +59,7 @@ class PdfGenerator {
     {
         $this->render($this->entity);
 
-        return $this->pdf->send();
+        return response($this->pdf->toString(), 200, ['Content-Type' => 'application/pdf']) ;
     }
 
     public function output()
