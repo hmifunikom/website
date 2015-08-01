@@ -19,7 +19,7 @@ return [
 
             'animate'              => [
                 'local' => 'assets/css/animate.css',
-                'cdn'   => 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css'
+                'cdn'   => 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css'
             ],
 
             'jquery-ui'            => [
