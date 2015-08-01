@@ -130,7 +130,7 @@
         }
 
         $(document).ready(function() {
-            $.getScript('{{ asset_version('assets/plugins/trianglify/trianglify.min.js') }}').done(function() {
+            $.getScript('{{ asset_link('js.trianglify') }}').done(function() {
                 poly();
                 $('.event-poster canvas, .event-poster img').addClass('animated fadeIn');
                 $('.event-poster').removeClass('loading');

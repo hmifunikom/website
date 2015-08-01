@@ -1,7 +1,7 @@
 @extends(((Request::ajax()) ? 'panel::layouts.ajax' : 'panel::layouts.master'))
 
 @section('head')
-    <link href="{{ asset_version('assets/plugins/jquery-file-upload/css/jquery.fileupload.css') }}" rel="stylesheet"/>
+    <link href="{{ asset_link('css.jquery-fileupload') }}" rel="stylesheet"/>
 
 @endsection
 
@@ -227,13 +227,13 @@
             handleNotification(data.msg.title, data.msg.text, data.msg.sticky);
         }
 
-        $.getScript('{{ asset_version('assets/plugins/jquery-file-upload/js/vendor/tmpl.min.js') }}').done(function() {
-            $.getScript('{{ asset_version('assets/plugins/jquery-file-upload/js/jquery.iframe-transport.js') }}').done(function() {
-                $.getScript('{{ asset_version('assets/plugins/jquery-file-upload/js/jquery.fileupload.js') }}').done(function() {
-                    $.getScript('{{ asset_version('assets/plugins/jquery-file-upload/js/jquery.fileupload-process.js') }}').done(function () {
-                        $.getScript('{{ asset_version('assets/plugins/jquery-file-upload/js/jquery.fileupload-validate.js') }}').done(function () {
+        $.getScript('{{ asset_link('js.jquery-fileupload-tmpl') }}').done(function() {
+            $.getScript('{{ asset_link('js.jquery-fileupload-iframe') }}').done(function() {
+                $.getScript('{{ asset_link('js.jquery-fileupload') }}').done(function() {
+                    $.getScript('{{ asset_link('js.jquery-fileupload-process') }}').done(function () {
+                        $.getScript('{{ asset_link('js.jquery-fileupload-validate') }}').done(function () {
                             if ($.browser.msie && parseFloat($.browser.version) >= 8 && parseFloat($.browser.version) < 10) {
-                                $.getScript('{{ asset_version('assets/plugins/jquery-file-upload/js/cors/jquery.xdr-transport.js') }}').done(function () {
+                                $.getScript('{{ asset_link('js.jquery-fileupload-xdr') }}').done(function () {
                                     handleJqueryFileUpload();
                                 });
                             } else {

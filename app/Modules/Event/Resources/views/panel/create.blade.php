@@ -2,12 +2,11 @@
 
 @section('head')
     <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
-    <link href="{{ asset_version('assets/plugins/bootstrap-datepicker/css/datepicker.css') }}" rel="stylesheet"/>
-    <link href="{{ asset_version('assets/plugins/bootstrap-datepicker/css/datepicker3.css') }}" rel="stylesheet"/>
-    <link href="{{ asset_version('assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}"
-          rel="stylesheet"/>
-    <link href="{{ asset_version('assets/plugins/bootstrap-wizard/css/bwizard.min.css') }}" rel="stylesheet"/>
-    <link href="{{ asset_version('assets/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset_link('css.datepicker') }}" rel="stylesheet"/>
+    <link href="{{ asset_link('css.datepicker3') }}" rel="stylesheet"/>
+    <link href="{{ asset_link('css.bootstrap-timepicker') }}" rel="stylesheet"/>
+    <link href="{{ asset_link('css.bwizard') }}" rel="stylesheet"/>
+    <link href="{{ asset_link('css.bootstrap-markdown') }}" rel="stylesheet"/>
     <!-- ================== END PAGE LEVEL STYLE ================== -->
 @endsection
 
@@ -182,17 +181,17 @@
             $('#wizard').bwizard('next');
         });
 
-        $.getScript('{{ asset_version('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}', function () {
+        $.getScript('{{ asset_link('js.bootstrap-datepicker') }}', function () {
             handleDatepicker();
         });
-        $.getScript('{{ asset_version('assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}', function () {
+        $.getScript('{{ asset_link('js.bootstrap-timepicker') }}', function () {
             handleFormTimePicker();
         });
-        $.getScript('{{ asset_version('assets/plugins/bootstrap-wizard/js/bwizard.js') }}').done(function () {
+        $.getScript('{{ asset_link('js.bwizard') }}').done(function () {
             handleBootstrapWizardsValidation();
         });
-        $.getScript('{{ asset_version('assets/plugins/bootstrap-markdown/js/bootstrap-markdown.js') }}');
-        $.getScript('{{ asset_version('assets/plugins/marked/marked.min.js') }}');
+        $.getScript('{{ asset_link('js.bootstrap-markdown') }}');
+        $.getScript('{{ asset_link('js.marked') }}');
     </script>
     <!-- ================== END PAGE LEVEL JS ================== -->
 @endsection

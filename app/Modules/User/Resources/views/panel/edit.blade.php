@@ -2,7 +2,7 @@
 
 @section('head')
     <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
-    <link href="{{ asset_version('assets/plugins/password-indicator/css/password-indicator.css') }}" rel="stylesheet" />
+    <link href="{{ asset_link('css.password-indicator') }}" rel="stylesheet" />
     <!-- ================== END PAGE LEVEL STYLE ================== -->
 @endsection
 
@@ -49,7 +49,7 @@
             $('#password-indicator-default').passwordStrength();
         };
 
-        $.getScript('{{ asset_version('assets/plugins/password-indicator/js/password-indicator.js') }}', function() {
+        $.getScript('{{ asset_link('js.password-indicator') }}', function() {
             handleFormPasswordIndicator();
         });
     </script>

@@ -2,10 +2,10 @@
 
 @section('head')
     <!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
-    <link href="{{ asset_version('assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" />
-    <link href="{{ asset_version('assets/plugins/bootstrap-calendar/css/bootstrap_calendar.css') }}" rel="stylesheet" />
-    <link href="{{ asset_version('assets/plugins/morris/morris.css') }}" rel="stylesheet" />
-    <link href="{{ asset_version('assets/plugins/bootstrap-datepicker/css/datepicker3.css') }}" rel="stylesheet" />
+    <link href="{{ asset_link('css.jquery-jvectormap') }}" rel="stylesheet" />
+    <link href="{{ asset_link('css.bootstrap-calendar') }}" rel="stylesheet" />
+    <link href="{{ asset_link('css.morris') }}" rel="stylesheet" />
+    <link href="{{ asset_link('css.datepicker3') }}" rel="stylesheet" />
     <!-- ================== END PAGE LEVEL CSS STYLE ================== -->
 @endsection
 
@@ -392,14 +392,14 @@
         $(document).ready(function() {
             App.restartGlobalFunction();
 
-            $.getScript('{{ asset_version('assets/plugins/morris/raphael.min.js') }}').done(function() {
-                $.getScript('{{ asset_version('assets/plugins/morris/morris.js') }}').done(function() {
+            $.getScript('{{ asset_link('js.morris-raphael') }}').done(function() {
+                $.getScript('{{ asset_link('js.morris') }}').done(function() {
                     handleVisitorsLineChart();
                     handleVisitorsDonutChart();
                 });
             });
 
-            $.getScript('{{ asset_version('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}').done(function() {
+            $.getScript('{{ asset_link('js.bootstrap-datepicker') }}').done(function() {
                 handleDashboardDatepicker();
             });
         });

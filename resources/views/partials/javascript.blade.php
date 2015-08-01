@@ -1,13 +1,13 @@
 <!-- ================== BEGIN BASE JS ================== -->
-<script src="{{ asset_version('assets/plugins/jquery/jquery-1.9.1.min.js') }}"></script>
-<script src="{{ asset_version('assets/plugins/jquery/jquery-migrate-1.1.0.min.js') }}"></script>
-<script src="{{ asset_version('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset_link('js.jquery') }}"></script>
+<script src="{{ asset_link('js.jquery-migrate') }}"></script>
+<script src="{{ asset_link('js.bootstrap') }}"></script>
 <!--[if lt IE 9]>
-<script src="{{ asset_version('assets/crossbrowserjs/html5shiv.js') }}"></script>
-<script src="{{ asset_version('assets/crossbrowserjs/respond.min.js') }}"></script>
-<script src="{{ asset_version('assets/crossbrowserjs/excanvas.min.js') }}"></script>
+<script src="{{ asset_link('js.html5shiv') }}"></script>
+<script src="{{ asset_link('js.respond') }}"></script>
+<script src="{{ asset_link('js.excanvas') }}"></script>
 <![endif]-->
-<script src="{{ asset_version('assets/plugins/jquery-cookie/jquery.cookie.js') }}"></script>
-<script src="{{ asset_version('assets/plugins/scrollMonitor/scrollMonitor.js') }}"></script>
-<script src="{{ asset_version('assets/plugins/jquery-pjax/jquery.pjax.js') }}"></script>
+<script src="{{ asset_link('js.jquery-cookie') }}"></script>
+<script src="{{ asset_link('js.scroll-monitor') }}"></script>
+<script src="{{ asset_link('js.jquery-pjax') }}"></script>
 <!-- ================== END BASE JS ================== -->

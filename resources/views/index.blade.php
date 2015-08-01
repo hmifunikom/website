@@ -516,11 +516,11 @@
         $(document).ready(function() {
             App.scrollingText();
 
-            $.getScript('{{ asset_version('assets/plugins/jquery-bcSwipe/jquery.bcSwipe.min.js') }}').done(function() {
+            $.getScript('{{ asset_link('js.jquery-bc-swipe') }}').done(function() {
                 handleSwipeCarousel();
             });
 
-            $.getScript('{{ asset_version('assets/plugins/trianglify/trianglify.min.js') }}').done(function() {
+            $.getScript('{{ asset_link('js.trianglify') }}').done(function() {
                 poly();
                 $('.event-poster canvas, .event-poster img').addClass('animated fadeIn');
                 $('.event-poster').removeClass('loading');

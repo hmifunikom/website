@@ -1,8 +1,8 @@
 @extends(((Request::ajax()) ? 'panel::layouts.ajax' : 'panel::layouts.master'))
 
 @section('head')
-    <link href="{{ asset_version('assets/plugins/bootstrap-datepicker/css/datepicker.css') }}" rel="stylesheet"/>
-    <link href="{{ asset_version('assets/plugins/bootstrap-datepicker/css/datepicker3.css') }}" rel="stylesheet"/>
+    <link href="{{ asset_link('css.datepicker') }}" rel="stylesheet"/>
+    <link href="{{ asset_link('css.datepicker3') }}" rel="stylesheet"/>
 @endsection
 
 @section('content')
@@ -49,7 +49,7 @@
             });
         };
 
-        $.getScript('{{ asset_version('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}', function () {
+        $.getScript('{{ asset_link('js.bootstrap-datepicker') }}', function () {
             handleDatepicker();
         });
     </script>

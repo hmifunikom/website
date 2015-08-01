@@ -30,11 +30,11 @@
 
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-    <link href="<?php echo asset_version('assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css'); ?>" rel="stylesheet" />
-    <link href="<?php echo asset_version('assets/plugins/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet" />
-    <link href="<?php echo asset_version('assets/plugins/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet" />
-    <link href="<?php echo asset_version('assets/plugins/gritter/css/jquery.gritter.css'); ?>" rel="stylesheet" />
-    <link href="<?php echo asset_version('assets/css/animate.min.css'); ?>" rel="stylesheet" />
+    <link href="<?php echo asset_link('css.jquery-ui'); ?>" rel="stylesheet" />
+    <link href="<?php echo asset_link('css.bootstrap'); ?>" rel="stylesheet" />
+    <link href="<?php echo asset_link('css.fontawesome'); ?>" rel="stylesheet" />
+    <link href="<?php echo asset_link('css.jquery-gritter'); ?>" rel="stylesheet" />
+    <link href="<?php echo asset_link('css.animate'); ?>" rel="stylesheet" />
     <link href="<?php echo asset_version('assets/admin/css/style.min.css'); ?>" rel="stylesheet" />
     <link href="<?php echo asset_version('assets/admin/css/style-responsive.min.css'); ?>" rel="stylesheet" />
     <link href="<?php echo asset_version('assets/admin/css/theme/blue.css'); ?>" rel="stylesheet" id="theme" />
@@ -50,7 +50,7 @@
             restartOnPushState: false
         }
     </script>
-    <script src="<?php echo asset_version('assets/plugins/pace/pace.min.js'); ?>"></script>
+    <script src="<?php echo asset_link('pace'); ?>"></script>
     <!-- ================== END BASE JS ================== -->
 </head>
 <body class="pace-top">
@@ -80,16 +80,16 @@
     <!-- end page container -->
 
     <!-- ================== BEGIN BASE JS ================== -->
-    <script src="<?php echo asset_version('assets/plugins/jquery/jquery-1.9.1.min.js'); ?>"></script>
-    <script src="<?php echo asset_version('assets/plugins/jquery/jquery-migrate-1.1.0.min.js'); ?>"></script>
-    <script src="<?php echo asset_version('assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js'); ?>"></script>
-    <script src="<?php echo asset_version('assets/plugins/bootstrap/js/bootstrap.min.js'); ?>"></script>
+    <script src="<?php echo asset_link('js.jquery'); ?>"></script>
+    <script src="<?php echo asset_link('js.jquery-migrate'); ?>"></script>
+    <script src="<?php echo asset_link('js.jquery-ui'); ?>"></script>
+    <script src="<?php echo asset_link('js.bootstrap'); ?>"></script>
     <!--[if lt IE 9]>
-    <script src="<?php echo asset_version('assets/crossbrowserjs/html5shiv.js'); ?>"></script>
-    <script src="<?php echo asset_version('assets/crossbrowserjs/respond.min.js'); ?>"></script>
-    <script src="<?php echo asset_version('assets/crossbrowserjs/excanvas.min.js'); ?>"></script>
+    <script src="<?php echo asset_link('js.html5shiv'); ?>"></script>
+    <script src="<?php echo asset_link('js.respond'); ?>"></script>
+    <script src="<?php echo asset_link('js.excanvas'); ?>"></script>
     <![endif]-->
-    <script src="<?php echo asset_version('assets/plugins/jquery-pjax/jquery.pjax.js'); ?>"></script>
+    <script src="<?php echo asset_link('js.jquery-pjax'); ?>"></script>
     <!-- ================== END BASE JS ================== -->
 
     <!-- ================== BEGIN PAGE LEVEL JS ================== -->

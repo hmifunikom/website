@@ -1,7 +1,7 @@
 @extends(((Request::ajax()) ? 'panel::layouts.ajax' : 'panel::layouts.master'))
 
 @section('head')
-    <link href="{{ asset_version('assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css') }}" rel="stylesheet" />
+    <link href="{{ asset_link('css.bootstrap-wysihtml5') }}" rel="stylesheet" />
 @endsection
 
 @section('content')
@@ -89,8 +89,8 @@
         };
 
         $(document).ready(function() {
-            $.getScript('{{ asset_version('assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js') }}').done(function() {
-                $.getScript('{{ asset_version('assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js') }}').done(function() {
+            $.getScript('{{ asset_link('js.wysihtml5') }}').done(function() {
+                $.getScript('{{ asset_link('js.bootstrap-wysihtml5') }}').done(function() {
                     handleEmailContent();
                 });
             });

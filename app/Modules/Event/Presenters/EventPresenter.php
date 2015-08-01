@@ -31,4 +31,9 @@ class EventPresenter extends BasePresenter {
         return $this->wrappedObject->mulai->gte(Date::now());
     }
 
+    public function mulai_utc()
+    {
+        return $this->wrappedObject->mulai->format('c');
+    }
+
 }

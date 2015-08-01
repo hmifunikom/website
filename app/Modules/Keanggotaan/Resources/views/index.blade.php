@@ -245,7 +245,7 @@
                 $('.divisi-nav .nav').width(divisi_nav_width);
             }
 
-            $.getScript('{{ asset_version('assets/plugins/jquery-sticky/jquery.sticky.min.js') }}').done(function() {
+            $.getScript('{{ asset_link('js.jquery-sticky') }}').done(function() {
                 $("#divisi").sticky({topSpacing:50});
             });
         });

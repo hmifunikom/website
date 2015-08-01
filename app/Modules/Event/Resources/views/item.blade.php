@@ -141,19 +141,19 @@
 @section('content')
     <div id="event-hero" class="content has-bg hero" data-scrollview="true">
         <div class="polygon-bg loading"></div>
-        <div class="container home-content event-content @if(!$event->poster) no-poster @endif">
+        <div itemscope itemtype="http://schema.org/Event" class="container home-content event-content @if(!$event->poster) no-poster @endif">
             <div class="row">
                 @if($event->poster)
                 <div class="col-md-3">
                     <div class="poster-container" data-animation="true" data-animation-type="fadeInUp">
-                        <img data-src="{{ asset_version('media/images/'.$event->poster) }}" class="poster" alt="{{ $event->nama_acara }}" />
+                        <img itemprop="image" content="{{ asset_version('media/images/'.$event->poster) }}" data-src="{{ asset_version('media/images/'.$event->poster) }}" class="poster" alt="{{ $event->nama_acara }}" />
                     </div>
                 </div>
                 @endif
                 <div class="@if($event->poster) col-md-9 @else col-md-12 @endif">
                     <div class="row event-info" data-animation="true" data-animation-type="fadeInRight">
                         <div class="col-md-12 event-info-container">
-                            <h1>{{ $event->nama_acara }}</h1>
+                            <h1 itemprop="name">{{ $event->nama_acara }}</h1>
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="event-time">
@@ -162,6 +162,7 @@
                                         </div>
                                         <div>
                                             <p><strong>Waktu</strong></p>
+                                            <meta itemprop="startDate" content="{{ $event->mulai_utc }}">
                                             <p>{{ $event->mulai_full }}</p>
                                         </div>
                                         <div class="clear"></div>
@@ -171,9 +172,9 @@
                                         <div class="icon-holder">
                                             <i class="fa fa-map-marker"></i>
                                         </div>
-                                        <div>
+                                        <div itemprop="location" itemscope itemtype="http://schema.org/Place">
                                             <p><strong>Tempat</strong></p>
-                                            <p>{{ $event->tempat }}</p>
+                                            <p itemprop="name">{{ $event->tempat }}</p>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -187,7 +188,7 @@
                         </div>
                     </div>
                     <div class="row event-desc" data-animation="true" data-animation-type="fadeIn">
-                        <div class="col-md-12 event-desc-container">
+                        <div itemprop="description" class="col-md-12 event-desc-container">
                             {!! parsedown($event->info) !!}
                         </div>
                     </div>
@@ -357,13 +358,13 @@
                 fireImage('img');
             }
 
-            $.getScript('{{ asset_version('assets/plugins/color-thief/color-thief.min.js') }}').done(function() {
-                $.getScript('{{ asset_version('assets/plugins/trianglify/trianglify.min.js') }}').done(function() {
+            $.getScript('{{ asset_link('js.color-thief') }}').done(function() {
+                $.getScript('{{ asset_link('js.trianglify') }}').done(function() {
                     fireImage('script');
                 });
             });
 
-            $.getScript('{{ asset_version('assets/plugins/jquery-countdown/jquery.countdown.min.js') }}').done(function() {
+            $.getScript('{{ asset_link('js.jquery-countdown') }}').done(function() {
                 $('#countdown').countdown('{{ $event->mulai }}', function(event) {
                     $('.milestone .hari').text(event.strftime('%D'));
                     $('.milestone .jam').text(event.strftime('%H'));
@@ -379,6 +380,6 @@
             });
         });
     </script>
-    <script src="{{ asset_version('assets/plugins/bootstrap-bootbox/bootbox.min.js') }}"></script>
-    <script src="{{ asset_version('assets/plugins/form/jquery.form.js') }}"></script>
+    <script src="{{ asset_link('js.bootbox') }}"></script>
+    <script src="{{ asset_link('js.jquery-form') }}"></script>
 @stop
