@@ -8,6 +8,7 @@
 
         #divisi {
             position: relative;
+            width: 100%;
             z-index: 100;
         }
         #divisi .btn {padding: 10px 20px;}
