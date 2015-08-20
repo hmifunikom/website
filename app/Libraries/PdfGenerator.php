@@ -40,7 +40,7 @@ class PdfGenerator {
         }
         else if ($filename == null)
         {
-            $filename = storage_path('pdf/' . str_random());
+            $filename = storage_file_path('pdf/' . str_random());
         }
 
         $this->pdf->saveAs($filename);

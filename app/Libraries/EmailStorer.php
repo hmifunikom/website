@@ -98,8 +98,6 @@ class EmailStorer {
                 'mime'     => $mime,
             ];
 
-            var_dump($data);
-
             $this->attachmentRepository->createRelation($data, ['id_email' => $this->emailModel->id_email]);
         }
     }

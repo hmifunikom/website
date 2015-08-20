@@ -4,7 +4,6 @@ use HMIF\Commands\SendEmailCommand;
 use HMIF\Libraries\AttachmentGenerator;
 use HMIF\Modules\Email\Entities\EmailAttachmentable;
 use Illuminate\Mail\Mailer;
-use File;
 
 class SendEmailCommandHandler {
 
@@ -17,9 +16,9 @@ class SendEmailCommandHandler {
      * @param Mailer $mailer
      * @param AttachmentGenerator $attachmentGenerator
      */
-    public function __construct(Mailer $mailer, AttachmentGenerator $attachmentGenerator)
+    public function __construct(AttachmentGenerator $attachmentGenerator)
     {
-        $this->mailer = $mailer;
+        $this->mailer = app('mailer');
         $this->attachmentGenerator = $attachmentGenerator;
     }
 
@@ -63,7 +62,7 @@ class SendEmailCommandHandler {
                 $attachment = $attachment->getAttachmentFullPath();
             }
 
-            File::delete($attachment);
+            app('files')->delete($attachment);
         }
     }
 

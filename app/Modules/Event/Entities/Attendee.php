@@ -65,7 +65,7 @@ class Attendee extends SoftDeleteBaseModel implements HasPresenter, Invoiceable,
 
     public function getAttachmentFullPath()
     {
-        return storage_path('app/tickets/' . $this->getRouteKey() . '.pdf');
+        return storage_file_path('app/tickets/' . $this->getRouteKey() . '.pdf');
     }
 
     public function getAttachmentType()

@@ -33,3 +33,15 @@ function avatar($path)
         return asset_version('media/thumbs/avatar.jpg');
     }
 }
+
+function storage_file_path($path)
+{
+    if(str_contains(app()->version(), 'Lumen'))
+    {
+        return realpath(__DIR__.'/../../../storage/').'/'.$path;
+    }
+    else
+    {
+        return storage_path($path);
+    }
+}

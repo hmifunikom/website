@@ -1,8 +1,8 @@
 <?php namespace HMIF\Console\Commands;
 
 use HMIF\Libraries\EmailStorer;
-use Storage;
 use Illuminate\Console\Command;
+
 class EmailParserCommand extends Command {
 
     /**

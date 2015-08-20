@@ -35,7 +35,7 @@ class InvoiceRaw extends SoftDeleteBaseModel implements EmailAttachmentable {
 
     public function getAttachmentFullPath()
     {
-        return storage_path('app/invoices/' . $this->getRouteKey() . '.pdf');
+        return storage_file_path('app/invoices/' . $this->getRouteKey() . '.pdf');
     }
 
     public function getAttachmentType()

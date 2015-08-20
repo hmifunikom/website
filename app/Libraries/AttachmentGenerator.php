@@ -1,16 +1,15 @@
 <?php namespace HMIF\Libraries;
 
 use HMIF\Modules\Email\Entities\EmailAttachmentable;
-use Illuminate\Contracts\Filesystem\Filesystem;
 
 class AttachmentGenerator {
 
     private $entity;
     private $filesystem;
 
-    public function __construct(Filesystem $filesystem)
+    public function __construct()
     {
-        $this->filesystem = $filesystem;
+        $this->filesystem = app('filesystem');
     }
 
     public function setEntity(EmailAttachmentable $entity)
