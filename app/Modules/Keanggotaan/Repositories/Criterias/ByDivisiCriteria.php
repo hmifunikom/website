@@ -19,25 +19,19 @@ class ByDivisiCriteria implements CriteriaInterface {
     public function apply($model, RepositoryInterface $repository)
     {
         $divisiTable = $this->divisi->getTable();
-        $divisiKey = $divisiTable . '.' . $this->divisi->getKeyName();
-
         $anggotaTable = $model->getModel()->getTable();
         $anggotaKey = $anggotaTable . '.' . $model->getModel()->getKeyName();
-        $anggotaFKey = $anggotaTable . '.' . $this->divisi->getKeyName();
-
-        $query = $model->join($divisiTable, $divisiKey, '=', $anggotaFKey);
 
         if ($this->divisi_id == 1234)
         {
-            $query = $query->whereRaw($divisiTable . '.id_penanggung_jawab = ' . $anggotaKey);
+            $model = $model->whereRaw($divisiTable . '.id_penanggung_jawab = ' . $anggotaKey);
         }
         else if ($this->divisi_id !== null)
         {
-            $query = $query->where($divisiKey, $this->divisi_id);
-            $query = $query->whereRaw($divisiTable . '.id_penanggung_jawab != ' . $anggotaKey);
+            $model = $model->where('id_divisi', $this->divisi_id);
         }
 
-        return $query;
+        return $model;
     }
 
 }
