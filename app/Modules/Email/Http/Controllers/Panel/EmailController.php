@@ -21,6 +21,8 @@ class EmailController extends PanelController {
 
     public function __construct(EmailRepository $emailRepository, AttachmentRepository $attachmentRepository)
     {
+        parent::__construct();
+        $this->authorizeResource(['class' => $emailRepository->model(), 'key' => 'email']);
         $this->emailRepository = $emailRepository;
         $this->attachmentRepository = $attachmentRepository;
     }

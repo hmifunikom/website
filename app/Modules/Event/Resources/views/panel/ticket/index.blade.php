@@ -25,7 +25,9 @@
                         <h4 class="panel-title">Table daftar tiket</h4>
                     </div>
                     <div class="panel-toolbar text-right">
+                        @if(Authority::can('manage', HMIF\Modules\Event\Entities\Ticket::class))
                         {!! Button::primary(Icon::plus() . ' Tambah tiket')->asLinkTo(route('panel.event.ticket.create', [$event->getWrappedObject()]))->withAttributes(['data-pjax']) !!}
+                        @endif
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">

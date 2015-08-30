@@ -15,11 +15,11 @@ class PanelController extends Controller {
         head_norobot();
     }
 
-    public function authorizeResource($args = null)
-    {
-        $args = is_array($args) ? $args : func_get_args();
-        $this->addBeforeFilter($this, __METHOD__, $args);
-    }
+    //public function authorizeResource($args = null)
+    //{
+    //    $args = is_array($args) ? $args : func_get_args();
+    //    $this->addBeforeFilter($this, __METHOD__, $args);
+    //}
 
     public static function addBeforeFilter($controller, $method, $args)
     {
@@ -46,12 +46,18 @@ class PanelController extends Controller {
         $router = App::make('router');
         if (! Event::hasListeners($filterPrefix.$filterName)) {
             $router->filter($filterName, function () use ($controller, $method, $resourceOptions, $resourceName) {
-                if(array_key_exists($resourceOptions['key'], $controller->getParams()))
-                {
-                    $params = $controller->getParams();
-                    $action = $params['action'];
-                    $model = $params[$resourceOptions['key']];
+                $params = $controller->getParams();
+                $action = null;
+                $model = null;
 
+                if(array_key_exists($resourceOptions['key'], $params))
+                {
+                    $action = $params['action'];
+                    $model = $params[ $resourceOptions['key'] ];
+                }
+
+                if(is_object($model))
+                {
                     $controller->authorize($action, $model);
                 }
                 else

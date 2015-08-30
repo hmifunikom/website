@@ -27,13 +27,17 @@
                     </div>
                     <!-- end profile-image -->
                     <div class="m-b-10">
+                        @if(Authority::can('update', $anggota->getWrappedObject()))
                         <span class="btn btn-warning btn-block btn-sm fileinput-button">
                             <span>Ubah Foto Profil</span>
                             <input id="fileupload" type="file" name="avatarupload">
                         </span>
+                        @endif
                     </div>
                     <div class="m-b-10">
-                        {!! Button::primary('Edit Profil')->asLinkTo(route('panel.keanggotaan.anggota.edit', $anggota->getWrappedObject()))->withAttributes(['data-pjax'])->block()->small() !!}
+                        @if(Authority::can('update', $anggota->getWrappedObject()))
+                            {!! Button::primary('Edit Profil')->asLinkTo(route('panel.keanggotaan.anggota.edit', $anggota->getWrappedObject()))->withAttributes(['data-pjax'])->block()->small() !!}
+                        @endif
                     </div>
                 </div>
                 <!-- end profile-left -->

@@ -47,24 +47,30 @@
                     <span>Perpustakaan</span>
                 </a>
             </li>
+            @if(Authority::can('read', HMIF\Modules\Email\Entities\Email::class))
             <li class="{{ menu_active('panel.email.index') }}">
                 <a href="{{ route('panel.email.index') }}" data-toggle="ajax">
                     <i class="fa fa-envelope"></i>
                     <span>Email</span>
                 </a>
             </li>
+            @endif
+            @if(Authority::can('read', HMIF\Modules\Invoice\Entities\Invoice::class))
             <li class="{{ menu_active('panel.invoice.index') }}">
                 <a href="{{ route('panel.invoice.index') }}" data-toggle="ajax">
                     <i class="fa fa-file-text-o"></i>
                     <span>Invoice</span>
                 </a>
             </li>
+            @endif
+            @if(Authority::can('read', HMIF\Modules\User\Entities\User::class))
             <li class="{{ menu_active('panel.user.index') }}">
                 <a href="{{ route('panel.user.index') }}" data-toggle="ajax">
                     <i class="fa fa-user"></i>
                     <span>User</span>
                 </a>
             </li>
+            @endif
 
             <!-- begin sidebar minify button -->
             <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>

@@ -75,7 +75,9 @@
                                 </div>
                             </div>
                             <div class="col-md-4 text-right">
+                                @if(Authority::can('manage', HMIF\Modules\Event\Entities\Attendee::class))
                                 {!! Button::primary(Icon::plus() . ' Tambah peserta')->asLinkTo(route('panel.event.attendee.create', [$event->getWrappedObject()]))->withAttributes(['data-pjax']) !!}
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -90,8 +92,10 @@
                                     <th>No. Hp</th>
                                     <th>Tanggal Daftar</th>
                                     <th>Kategori</th>
+                                    @if(Authority::can('manage', HMIF\Modules\Event\Entities\Attendee::class))
                                     <th></th>
                                     <th></th>
+                                    @endif
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -104,6 +108,7 @@
                                         <td>{{ $attendee->no_hp }}</td>
                                         <td>{{ $attendee->tanggal_daftar }}</td>
                                         <td>{{ $attendee->ticket->nama_tiket }}</td>
+                                        @if(Authority::can('manage', $attendee->getWrappedObject()))
                                         <td class="text-right">
                                             @if($attendee->dibayar)
                                                 {!! Former::inline_open()->route('panel.event.attendee.paid', [$event->getWrappedObject(), $attendee->getWrappedObject(), 'paid' => 0])->data_pjax()->data_confirm('Set status peserta menjadi belum membayar?') !!}
@@ -120,6 +125,7 @@
                                             {!! Button::danger(Icon::trashO())->small()->submit() !!}
                                             {!! Former::close() !!}
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
