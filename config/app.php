@@ -150,7 +150,6 @@ return [
         'Intervention\Image\ImageServiceProvider',
         'Chumper\Zipper\ZipperServiceProvider',
         'Gwnobots\LaravelHead\LaravelHeadServiceProvider',
-        'Barryvdh\DomPDF\ServiceProvider',
         'Greggilbert\Recaptcha\RecaptchaServiceProvider',
         'Pingpong\Modules\ModulesServiceProvider',
         'Pingpong\Modules\Providers\BootstrapServiceProvider',
