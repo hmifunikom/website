@@ -7,7 +7,7 @@ class BaseModel extends Model {
 
     use RevisionableTrait;
 
-    protected $revisionEnabled = false;
+    protected $revisionEnabled = true;
 
     public function setBoolean($coloumn, $value = true)
     {
