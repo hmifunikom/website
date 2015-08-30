@@ -24,7 +24,8 @@ class ByDivisiCriteria implements CriteriaInterface {
 
         if ($this->divisi_id == 1234)
         {
-            $model = $model->whereRaw($divisiTable . '.id_penanggung_jawab = ' . $anggotaKey);
+            $model = $model->join($divisiTable, $divisiTable . '.id_penanggung_jawab', '=', $anggotaKey);
+            $model = $model->select($model->getModel()->getTable() . '.*');
         }
         else if ($this->divisi_id !== null)
         {
