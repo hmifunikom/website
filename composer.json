@@ -70,7 +70,8 @@
 		"xethron/migrations-generator": "dev-l5",
 		"way/generators": "dev-feature/laravel-five-stable",
 		"felixkiss/uniquewith-validator": "2.*",
-        "tijsverkoyen/css-to-inline-styles": "~1.5.4"
+        "tijsverkoyen/css-to-inline-styles": "~1.5.4",
+		"efriandika/laravel-settings": "1.0.1"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

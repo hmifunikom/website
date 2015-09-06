@@ -168,6 +168,7 @@ return [
         'Yocmen\HtmlMinify\HtmlMinifyServiceProvider',
         'Felixkiss\UniqueWithValidator\UniqueWithValidatorServiceProvider',
         'Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider',
+        'Efriandika\LaravelSettings\SettingsServiceProvider',
 
         /*
          * Application Service Providers...
@@ -272,6 +273,7 @@ return [
         'Hashids'          => 'Vinkla\Hashids\Facades\Hashids',
         'LaravelAnalytics' => 'Spatie\LaravelAnalytics\LaravelAnalyticsFacade',
         'Gravatar'         => 'FloatingPoint\Gravatar\Facades\Gravatar',
+        'Settings'         => 'Efriandika\LaravelSettings\Facades\Settings',
     ],
 
 ];

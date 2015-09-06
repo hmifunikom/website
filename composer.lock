@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0b29284e4fd3c7417c4311d61d28c0dd",
+    "hash": "94e7203d0cf7e6c90bf9f737bd7cf453",
     "packages": [
         {
             "name": "anahkiasen/former",
@@ -519,12 +519,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cviebrock/eloquent-sluggable.git",
-                "reference": "a83919243c99ec101c43c58b0b72cc5f868d8cd4"
+                "reference": "39108118f0a53f2869cd98d9b3e1cafa50bc32a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/a83919243c99ec101c43c58b0b72cc5f868d8cd4",
-                "reference": "a83919243c99ec101c43c58b0b72cc5f868d8cd4",
+                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/39108118f0a53f2869cd98d9b3e1cafa50bc32a2",
+                "reference": "39108118f0a53f2869cd98d9b3e1cafa50bc32a2",
                 "shasum": ""
             },
             "require": {
@@ -561,7 +561,7 @@
                 "laravel",
                 "slug"
             ],
-            "time": "2015-08-21 16:40:44"
+            "time": "2015-09-02 03:16:59"
         },
         {
             "name": "danielstjules/stringy",
@@ -703,16 +703,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.2.6",
+            "version": "v1.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "f4a91702ca3cd2e568c3736aa031ed00c3752af4"
+                "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/f4a91702ca3cd2e568c3736aa031ed00c3752af4",
-                "reference": "f4a91702ca3cd2e568c3736aa031ed00c3752af4",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
+                "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
                 "shasum": ""
             },
             "require": {
@@ -767,20 +767,20 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2015-06-17 12:21:22"
+            "time": "2015-08-31 12:32:49"
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.4.1",
+            "version": "v1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "c9eadeb743ac6199f7eec423cb9426bc518b7b03"
+                "reference": "8c434000f420ade76a07c64cbe08ca47e5c101ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/c9eadeb743ac6199f7eec423cb9426bc518b7b03",
-                "reference": "c9eadeb743ac6199f7eec423cb9426bc518b7b03",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/8c434000f420ade76a07c64cbe08ca47e5c101ca",
+                "reference": "8c434000f420ade76a07c64cbe08ca47e5c101ca",
                 "shasum": ""
             },
             "require": {
@@ -837,7 +837,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-04-15 00:11:59"
+            "time": "2015-08-31 12:36:41"
         },
         {
             "name": "doctrine/collections",
@@ -907,16 +907,16 @@
         },
         {
             "name": "doctrine/common",
-            "version": "v2.5.0",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "cd8daf2501e10c63dced7b8b9b905844316ae9d3"
+                "reference": "0009b8f0d4a917aabc971fb089eba80e872f83f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/cd8daf2501e10c63dced7b8b9b905844316ae9d3",
-                "reference": "cd8daf2501e10c63dced7b8b9b905844316ae9d3",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/0009b8f0d4a917aabc971fb089eba80e872f83f9",
+                "reference": "0009b8f0d4a917aabc971fb089eba80e872f83f9",
                 "shasum": ""
             },
             "require": {
@@ -976,7 +976,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-04-02 19:55:44"
+            "time": "2015-08-31 13:00:22"
         },
         {
             "name": "doctrine/dbal",
@@ -1259,16 +1259,16 @@
         },
         {
             "name": "efficiently/authority-controller",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/authority-controller.git",
-                "reference": "d4d474adfaabda6750d0f557d161ff9874a68bfb"
+                "reference": "80768a2da347abccc5e530710f2acf9a02ca359f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/authority-controller/zipball/d4d474adfaabda6750d0f557d161ff9874a68bfb",
-                "reference": "d4d474adfaabda6750d0f557d161ff9874a68bfb",
+                "url": "https://api.github.com/repos/efficiently/authority-controller/zipball/80768a2da347abccc5e530710f2acf9a02ca359f",
+                "reference": "80768a2da347abccc5e530710f2acf9a02ca359f",
                 "shasum": ""
             },
             "require": {
@@ -1276,7 +1276,7 @@
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "illuminate/html": "5.0.*",
+                "laravelcollective/html": "5.0.*",
                 "mockery/mockery": "0.9.*",
                 "orchestra/testbench": "3.0.*",
                 "phpunit/phpunit": "~4.5"
@@ -1291,14 +1291,6 @@
                 }
             },
             "autoload": {
-                "classmap": [
-                    "src/migrations",
-                    "tests/AcTestCase.php",
-                    "tests/helpers",
-                    "tests/fixtures/",
-                    "tests/fixtures/models",
-                    "tests/fixtures/controllers"
-                ],
                 "files": [
                     "src/Efficiently/AuthorityController/helpers.php"
                 ],
@@ -1335,7 +1327,60 @@
                 "role",
                 "security"
             ],
-            "time": "2015-06-16 09:41:22"
+            "time": "2015-09-04 08:36:32"
+        },
+        {
+            "name": "efriandika/laravel-settings",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/efriandika/laravel-settings.git",
+                "reference": "653c01281b3dddfe5d1b9e130e313d6f1221863b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/efriandika/laravel-settings/zipball/653c01281b3dddfe5d1b9e130e313d6f1221863b",
+                "reference": "653c01281b3dddfe5d1b9e130e313d6f1221863b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.x",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/database": "~5.0",
+                "illuminate/events": "5.0.*",
+                "phpunit/phpunit": "4.6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/database/migrations"
+                ],
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Efriandika\\LaravelSettings\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Efriandika Pratama",
+                    "email": "efriandika@gmail.com"
+                }
+            ],
+            "description": "Laravel 5 Persistent Settings",
+            "keywords": [
+                "Settings",
+                "laravel",
+                "persistent"
+            ],
+            "time": "2015-04-13 14:10:36"
         },
         {
             "name": "embed/embed",
@@ -1343,12 +1388,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/oscarotero/Embed.git",
-                "reference": "6edaff2b639ab9d22f7d0b2bbe51b11deab9bd18"
+                "reference": "bb9749ebfd6122c570d6596b543c47d73790fc6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/6edaff2b639ab9d22f7d0b2bbe51b11deab9bd18",
-                "reference": "6edaff2b639ab9d22f7d0b2bbe51b11deab9bd18",
+                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/bb9749ebfd6122c570d6596b543c47d73790fc6e",
+                "reference": "bb9749ebfd6122c570d6596b543c47d73790fc6e",
                 "shasum": ""
             },
             "require": {
@@ -1389,7 +1434,7 @@
                 "opengraph",
                 "twitter cards"
             ],
-            "time": "2015-08-21 20:28:03"
+            "time": "2015-08-24 22:11:18"
         },
         {
             "name": "endroid/qrcode",
@@ -2033,12 +2078,12 @@
             "version": "2.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/greggilbert/recaptcha.git",
+                "url": "git@github.com:greggilbert/recaptcha.git",
                 "reference": "828b9fdeee3c3b15ea1ce148d2871adaaeca26d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greggilbert/recaptcha/zipball/828b9fdeee3c3b15ea1ce148d2871adaaeca26d3",
+                "url": "https://api.github.com/repos/greggilbert/recaptcha/zipball/30909552d594717d35a2f419622dddf95782f933",
                 "reference": "828b9fdeee3c3b15ea1ce148d2871adaaeca26d3",
                 "shasum": ""
             },
@@ -3402,16 +3447,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.16.0",
+            "version": "1.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "c0c0b4bee3aabce7182876b0d912ef2595563db7"
+                "reference": "0524c87587ab85bc4c2d6f5b41253ccb930a5422"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c0c0b4bee3aabce7182876b0d912ef2595563db7",
-                "reference": "c0c0b4bee3aabce7182876b0d912ef2595563db7",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/0524c87587ab85bc4c2d6f5b41253ccb930a5422",
+                "reference": "0524c87587ab85bc4c2d6f5b41253ccb930a5422",
                 "shasum": ""
             },
             "require": {
@@ -3428,7 +3473,7 @@
                 "php-console/php-console": "^3.1.3",
                 "phpunit/phpunit": "~4.5",
                 "phpunit/phpunit-mock-objects": "2.3.0",
-                "raven/raven": "~0.8",
+                "raven/raven": "~0.11",
                 "ruflin/elastica": ">=0.90 <3.0",
                 "swiftmailer/swiftmailer": "~5.3",
                 "videlalvaro/php-amqplib": "~2.4"
@@ -3474,7 +3519,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-08-09 17:44:44"
+            "time": "2015-08-31 09:17:37"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -3614,16 +3659,16 @@
         },
         {
             "name": "patricktalmadge/bootstrapper",
-            "version": "5.7.0",
+            "version": "5.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/patricktalmadge/bootstrapper.git",
-                "reference": "c386256cd4d74c6c85b88d6bda00c16c78c4de5d"
+                "reference": "7586b33494002547be17ab505b655ce2f3234f2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/patricktalmadge/bootstrapper/zipball/c386256cd4d74c6c85b88d6bda00c16c78c4de5d",
-                "reference": "c386256cd4d74c6c85b88d6bda00c16c78c4de5d",
+                "url": "https://api.github.com/repos/patricktalmadge/bootstrapper/zipball/7586b33494002547be17ab505b655ce2f3234f2e",
+                "reference": "7586b33494002547be17ab505b655ce2f3234f2e",
                 "shasum": ""
             },
             "require": {
@@ -3670,7 +3715,7 @@
                 "bootstrap",
                 "laravel"
             ],
-            "time": "2015-06-17 21:26:35"
+            "time": "2015-08-31 16:00:55"
         },
         {
             "name": "php-mime-mail-parser/php-mime-mail-parser",
@@ -4002,16 +4047,16 @@
         },
         {
             "name": "prettus/l5-repository",
-            "version": "2.1.3",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/prettus/l5-repository.git",
-                "reference": "dbf6832a21e650a6ea4495a7a5da8436f3b01ead"
+                "reference": "7e7c4f3857de940f44779ad564e2448bc8096a4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/prettus/l5-repository/zipball/dbf6832a21e650a6ea4495a7a5da8436f3b01ead",
-                "reference": "dbf6832a21e650a6ea4495a7a5da8436f3b01ead",
+                "url": "https://api.github.com/repos/prettus/l5-repository/zipball/7e7c4f3857de940f44779ad564e2448bc8096a4e",
+                "reference": "7e7c4f3857de940f44779ad564e2448bc8096a4e",
                 "shasum": ""
             },
             "require": {
@@ -4058,7 +4103,7 @@
                 "model",
                 "repository"
             ],
-            "time": "2015-07-15 03:54:41"
+            "time": "2015-08-27 03:25:57"
         },
         {
             "name": "psr/log",
@@ -4414,16 +4459,16 @@
         },
         {
             "name": "sabre/vobject",
-            "version": "3.4.6",
+            "version": "3.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fruux/sabre-vobject.git",
-                "reference": "c2606c5985aabd14f37d444e494d72f67b71d290"
+                "reference": "7b3690545451159fc608dfac6696110f6770ff5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fruux/sabre-vobject/zipball/c2606c5985aabd14f37d444e494d72f67b71d290",
-                "reference": "c2606c5985aabd14f37d444e494d72f67b71d290",
+                "url": "https://api.github.com/repos/fruux/sabre-vobject/zipball/7b3690545451159fc608dfac6696110f6770ff5d",
+                "reference": "7b3690545451159fc608dfac6696110f6770ff5d",
                 "shasum": ""
             },
             "require": {
@@ -4476,7 +4521,7 @@
                 "jCard",
                 "vCard"
             ],
-            "time": "2015-08-06 20:27:33"
+            "time": "2015-09-04 15:17:58"
         },
         {
             "name": "spatie/laravel-analytics",
