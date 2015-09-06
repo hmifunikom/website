@@ -63,6 +63,11 @@ return [
                     if($self->user()->userable->id_divisi >= 1 && $self->user()->userable->id_divisi <= 5) return true;
                     return $self->user()->userable->id_divisi == $anggota->id_divisi;
                 });
+
+                $authority->allow('coverStore', HMIF\Modules\Keanggotaan\Entities\Divisi::class, function($self, $divisi) {
+                    if($self->user()->userable->id_divisi >= 1 && $self->user()->userable->id_divisi <= 5) return true;
+                    return $self->user()->userable->id_divisi == $divisi->id_divisi;
+                });
             }
 
             // User | Inti
@@ -71,6 +76,8 @@ return [
                 $authority->allow('manage', HMIF\Modules\Event\Entities\Event::class);
                 $authority->allow('manage', HMIF\Modules\Event\Entities\Ticket::class);
                 $authority->allow('manage', HMIF\Modules\Event\Entities\Attendee::class);
+
+                $authority->allow('manage', HMIF\Modules\Keanggotaan\Entities\Divisi::class);
 
                 $authority->allow('manage', HMIF\Modules\User\Entities\User::class);
             }

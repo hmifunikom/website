@@ -10,6 +10,7 @@ class ImageManipulation {
     private $temp_filename;
     private $filename;
     private $suffix;
+    private $mime;
 
     private $orig_path;
     private $thumb_path;
@@ -31,21 +32,32 @@ class ImageManipulation {
 
             $this->file_object = Input::file($field);
             $this->temp_filename = str_random();
+            $this->mime = $this->file_object->getMimeType();
             $this->file_object->move($this->temp_path, $this->temp_filename);
 
             $this->_uploaded = true;
         }
     }
 
-    public function resize($size = 1024)
+    public function save($size = null)
     {
         $img = Image::make($this->_source());
-        $img->resize(null, $size, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
+
+        if($size)
+        {
+            $img->resize(null, $size, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+        }
+
         $this->_fix_orientation($img);
         $img->save($this->_destination_orig());
+    }
+
+    public function resize($size = 1024)
+    {
+        $this->save($size);
     }
 
     public function thumb($width = 300, $height = null)
@@ -68,7 +80,7 @@ class ImageManipulation {
 
     public function getFileName()
     {
-        return $this->filename.$this->suffix.'.'.$this->file_object->getClientOriginalExtension();
+        return $this->filename.$this->suffix.'.'.$this->_original_extension();
     }
 
     private function _source()
@@ -78,12 +90,40 @@ class ImageManipulation {
 
     private function _destination_orig()
     {
-        return $this->orig_path.'/'.$this->filename.$this->suffix.'.'.$this->file_object->getClientOriginalExtension();
+        return $this->orig_path.'/'.$this->filename.$this->suffix.'.'.$this->_original_extension();
     }
 
     private function _destination_thumb()
     {    
-        return $this->thumb_path.'/'.$this->filename.$this->suffix.'.'.$this->file_object->getClientOriginalExtension();
+        return $this->thumb_path.'/'.$this->filename.$this->suffix.'.'.$this->_original_extension();
+    }
+
+    private function _original_extension()
+    {
+        if($this->file_object->getClientOriginalExtension())
+        {
+            return $this->file_object->getClientOriginalExtension();
+        }
+        else
+        {
+            switch($this->mime)
+            {
+                case 'image/jpg':
+                case 'image/jpeg':
+                    return 'jpg';
+                break;
+
+                case 'image/png':
+                    return 'png';
+                break;
+
+                case 'image/gif':
+                    return 'gif';
+                break;
+            }
+        }
+
+        return 'jpg';
     }
 
     private function _fix_orientation($img)

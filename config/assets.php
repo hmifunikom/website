@@ -82,6 +82,10 @@ return [
             'password-indicator'   => [
                 'local' => 'assets/plugins/password-indicator/css/password-indicator.css',
             ],
+
+            'jquery-cropbox'       => [
+                'local' => 'assets/plugins/jquery-cropbox/jquery.cropbox.css',
+            ],
         ],
 
         'js'  => [
@@ -262,6 +266,25 @@ return [
 
             'password-indicator'         => [
                 'local' => 'assets/plugins/password-indicator/js/password-indicator.js',
+            ],
+
+            'hammer'                     => [
+                'local' => 'assets/plugins/hammer/hammer.js',
+                'cdn'   => 'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/hammer.js',
+            ],
+
+            'jquery-mousewheel'         => [
+                'local' => 'assets/plugins/jquery-mousewheel/jquery.mousewheel.js',
+                'cdn'   => 'https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.6/jquery.mousewheel.js',
+            ],
+
+            'jquery-cropbox'            => [
+                'local' => 'assets/plugins/jquery-cropbox/jquery.cropbox.js',
+            ],
+
+            'canvas-to-blob'            => [
+                'local' => 'assets/plugins/canvas-to-blob/canvas-to-blob.js',
+                'cdn'   => 'https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/2.2.0/js/canvas-to-blob.min.js',
             ],
         ]
     ]

@@ -26,7 +26,7 @@
                 </a>
                 <ul class="dropdown-menu animated fadeInLeft">
                     <li class="arrow"></li>
-                    <li><a href="javascript:;">Edit Profil</a></li>
+                    <li><a href="{{ route('panel.keanggotaan.anggota.edit', auth()->user()->userable) }}">Edit Profil</a></li>
                     <li class="divider"></li>
                     <li><a href="{{ url('auth/logout') }}">Keluar</a></li>
                 </ul>

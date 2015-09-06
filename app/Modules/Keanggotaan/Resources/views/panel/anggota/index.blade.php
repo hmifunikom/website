@@ -108,7 +108,6 @@
                                             @if($angg->anggota_spesial) <strong>{{ $angg->nama }}</strong> @else {{ $angg->nama }} @endif
                                         </td>
                                         <td>{{ $angg->jabatan }}</td>
-                                        <td>{{ $angg->tempat }}</td>
                                         <td class="text-right">
                                             {!! Former::inline_open()->route('panel.keanggotaan.anggota.destroy', $angg->getWrappedObject())->data_pjax()->data_confirm('Hapus anggota ini?') !!}
                                             {!! Button::withValue(Icon::eye())->small()->asLinkTo(route('panel.keanggotaan.anggota.show', $angg->getWrappedObject()))->withAttributes(['data-pjax']) !!}

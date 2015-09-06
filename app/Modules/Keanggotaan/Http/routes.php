@@ -15,6 +15,7 @@ Route::group(['namespace' => 'HMIF\\Modules\Keanggotaan\Http\Controllers\Panel']
         if(Request::is('panel/keanggotaan/*'))
         {
             route_bind_key('anggota', HMIF\Modules\Keanggotaan\Repositories\AnggotaRepository::class, 'nim');
+            route_bind_key('divisi', HMIF\Modules\Keanggotaan\Repositories\DivisiRepository::class, 'singkatan');
         }
 
         Route::get('keanggotaan', ['as' => 'panel.keanggotaan.index', function() {
@@ -23,5 +24,8 @@ Route::group(['namespace' => 'HMIF\\Modules\Keanggotaan\Http\Controllers\Panel']
 
         Route::resource('keanggotaan/anggota', 'AnggotaController', ['except' => ['create', 'store']]);
         Route::post('keanggotaan/anggota/{anggota}/avatar', ['uses' => 'AnggotaController@avatarStore', 'as' => 'panel.keanggotaan.avatar.store']);
+
+        Route::resource('keanggotaan/divisi', 'DivisiController', ['except' => ['create', 'store', 'destroy']]);
+        Route::post('keanggotaan/divisi/{divisi}/cover', ['uses' => 'DivisiController@coverStore', 'as' => 'panel.keanggotaan.cover.store']);
     });
 });

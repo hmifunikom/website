@@ -4,54 +4,15 @@
     <style>
         .accordion ul:hover li a {background: url({{ asset_version('assets/img/content-bg-cover.png') }});}
 
-        .accordion ul li:nth-child(1),
-        .carousel .carousel-inner .item:nth-child(1) {
-            background-image: url({{ asset_version('assets/images/leader/1.jpg') }});
-            background-position:left center;
+        <?php $i = 1; ?>
+        @foreach($inti as $anggota)
+        .accordion ul li:nth-child({{ $i }}),
+        .carousel .carousel-inner .item:nth-child({{ $i }}) {
+            background-image: url({{ asset_version('media/images/'.$anggota->divisi->cover) }});
+            background-position:{{ $anggota->divisi->cover_position }} center;
         }
-        .accordion ul li:nth-child(2),
-        .carousel .carousel-inner .item:nth-child(2) {
-            background-image: url({{ asset_version('assets/images/leader/2.jpg') }});
-        }
-        .accordion ul li:nth-child(3),
-        .carousel .carousel-inner .item:nth-child(3) {
-            background-image: url({{ asset_version('assets/images/leader/3.jpg') }});
-        }
-        .accordion ul li:nth-child(4),
-        .carousel .carousel-inner .item:nth-child(4) {
-            background-image: url({{ asset_version('assets/images/leader/4.jpg') }});
-        }
-        .accordion ul li:nth-child(5),
-        .carousel .carousel-inner .item:nth-child(5) {
-            background-image: url({{ asset_version('assets/images/leader/5.jpg') }});
-        }
-        .accordion ul li:nth-child(6),
-        .carousel .carousel-inner .item:nth-child(6) {
-            background-image: url({{ asset_version('assets/images/leader/6.jpg') }});
-            background-position:right center;
-        }
-        .accordion ul li:nth-child(7),
-        .carousel .carousel-inner .item:nth-child(7) {
-            background-image: url({{ asset_version('assets/images/leader/7.jpg') }});
-            background-position:right center;
-        }
-        .accordion ul li:nth-child(8),
-        .carousel .carousel-inner .item:nth-child(8) {
-            background-image: url({{ asset_version('assets/images/leader/8.jpg') }});
-        }
-        .accordion ul li:nth-child(9),
-        .carousel .carousel-inner .item:nth-child(9) {
-            background-image: url({{ asset_version('assets/images/leader/9.jpg') }});
-        }
-        .accordion ul li:nth-child(10),
-        .carousel .carousel-inner .item:nth-child(10) {
-            background-image: url({{ asset_version('assets/images/leader/10.jpg') }});
-            background-position:left center;
-        }
-        .accordion ul li:nth-child(11),
-        .carousel .carousel-inner .item:nth-child(11) {
-            background-image: url({{ asset_version('assets/images/leader/11.jpg') }});
-        }
+        <?php $i++; ?>
+        @endforeach
 
         /*-------*/
 
@@ -122,11 +83,11 @@
                         </div>
                         <div class="author">
                             <div class="image">
-                                <img src="https://hmifunikom.org/l5/public_html/media/thumbs/10112337_NI5.1433164421.jpg" alt="Muhammad Irham Halid" />
+                                <img src="{{ $inti->first()->avatar }}" alt="{{ $inti->first()->nama }}" />
                             </div>
                             <div class="info">
-                                Muhammad Irham Halid
-                                <small>Ketua Umum</small>
+                                {{ $inti->first()->nama }}
+                                <small>{{ $inti->first()->jabatan }}</small>
                             </div>
                         </div>
                     </div>
@@ -154,8 +115,8 @@
                 <!-- begin col-3 -->
                 <div class="col-md-12 milestone-col">
                     <div class="milestone text-right">
-                        <div class="number" data-animation="true" data-animation-type="fadeInDown">Muhammad Irham Halid</div>
-                        <div class="title" data-animation="true" data-animation-type="fadeInDown">Ketua Umum</div>
+                        <div class="number" data-animation="true" data-animation-type="fadeInDown">{{ $inti->first()->nama }}</div>
+                        <div class="title" data-animation="true" data-animation-type="fadeInDown">{{ $inti->first()->jabatan }}</div>
                     </div>
                 </div>
                 <!-- end col-3 -->
@@ -212,94 +173,16 @@
         <div id="carousel-example-generic" data-animation="true" data-animation-type="fadeIn" class="carousel slide" data-ride="carousel">
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
+                @foreach($inti as $anggota)
+                <div class="item @if($anggota->id_divisi == 1) active @endif">
                     <div class="info">
                         <a href="#">
-                            <h2><span>Muhammad Irham Halid</span></h2>
-                            <p><span>Ketua Umum</span></p>
+                            <h2><span>{{ $anggota->nama }}</span></h2>
+                            <p><span>{{ $anggota->jabatan }}</span></p>
                         </a>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Rifanda Yulio Difelani</span></h2>
-                            <p><span>Wakil Ketua Umum</span></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Arief Nur Khoerudin</span></h2>
-                            <p><span>Sekretaris</span></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Amanda Nurul Amalia</span></h2>
-                            <p><span>Bendahara</span></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Melindah </span></h2>
-                            <p><span>Ketua Divisi Administrasi dan Kesekretariatan</span></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Listia Yuliastuti</span></h2>
-                            <p><span>Ketua Divisi Hubungan Masyarakat</span></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Rizki Abdul Rozak</span></h2>
-                            <p><span>Ketua Divisi Penelitian dan Pengembangan</span></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Asmunanda Imam Rasyid</span></h2>
-                            <p><span>Ketua Divisi Pengembangan Wawasan dan Teknologi Informasi</span></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Ade Nurwahid</span></h2>
-                            <p><span>Ketua Divisi Kerohanian</span></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Dana Suherman</span></h2>
-                            <p><span>Ketua Divisi Olahraga</span></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Julio Febryanto</span></h2>
-                            <p><span>Ketua Divisi Kewirausahaan</span></p>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <!-- Controls -->
@@ -315,94 +198,16 @@
 
         <div class="accordion" data-animation="true" data-animation-type="fadeIn">
             <ul>
+                @foreach($inti as $anggota)
                 <li>
                     <div class="info">
                         <a href="#">
-                            <h2><span>Muhammad Irham Halid</span></h2>
-                            <p><span>Ketua Umum</span></p>
+                            <h2><span>{{ $anggota->nama }}</span></h2>
+                            <p><span>{{ $anggota->jabatan }}</span></p>
                         </a>
                     </div>
                 </li>
-                <li>
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Rifanda Yulio Difelani</span></h2>
-                            <p><span>Wakil Ketua Umum</span></p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Arief Nur Khoerudin</span></h2>
-                            <p><span>Sekretaris</span></p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Amanda Nurul Amalia</span></h2>
-                            <p><span>Bendahara</span></p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Melindah </span></h2>
-                            <p><span>Ketua Divisi Administrasi dan Kesekretariatan</span></p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Listia Yuliastuti</span></h2>
-                            <p><span>Ketua Divisi Hubungan Masyarakat</span></p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Rizki Abdul Rozak</span></h2>
-                            <p><span>Ketua Divisi Penelitian dan Pengembangan</span></p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Asmunanda Imam Rasyid</span></h2>
-                            <p><span>Ketua Divisi Pengembangan Wawasan dan Teknologi Informasi</span></p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Ade Nurwahid</span></h2>
-                            <p><span>Ketua Divisi Kerohanian</span></p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Dana Suherman</span></h2>
-                            <p><span>Ketua Divisi Olahraga</span></p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <a href="#">
-                            <h2><span>Julio Febryanto</span></h2>
-                            <p><span>Ketua Divisi Kewirausahaan</span></p>
-                        </a>
-                    </div>
-                </li>
+                @endforeach
             </ul>
         </div>
 

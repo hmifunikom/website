@@ -2,6 +2,11 @@
 
 use HMIF\Modules\Event\Repositories\Criterias\UpcomingEventCriteria;
 use HMIF\Modules\Event\Repositories\EventRepository;
+use HMIF\Modules\Keanggotaan\Repositories\AnggotaRepository;
+use HMIF\Modules\Keanggotaan\Repositories\Criterias\ActiveCriteria;
+use HMIF\Modules\Keanggotaan\Repositories\Criterias\ByDivisiCriteria;
+use HMIF\Modules\Keanggotaan\Repositories\Criterias\OrganigramCriteria;
+
 
 class HomeController extends Controller {
 
@@ -32,10 +37,15 @@ class HomeController extends Controller {
      * @param EventRepository $eventRepository
      * @return Response
      */
-	public function index(EventRepository $eventRepository)
+	public function index(AnggotaRepository $anggotaRepository, EventRepository $eventRepository)
 	{
+        $inti = $anggotaRepository->pushCriteria(new ActiveCriteria())
+            ->pushCriteria(new OrganigramCriteria())
+            ->pushCriteria(new ByDivisiCriteria('1234'))
+            ->all();
+
 		$upcoming = $eventRepository->pushCriteria(new UpcomingEventCriteria(3))->all();
-        return view('index')->with(compact('upcoming'));
+        return view('index')->with(compact('inti', 'upcoming'));
 	}
 
 }

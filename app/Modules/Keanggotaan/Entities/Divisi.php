@@ -14,6 +14,7 @@ class Divisi extends BaseModel implements HasPresenter {
     protected $casts = [
         'divisi'    => 'string',
         'singkatan' => 'string',
+        'aktif'     => 'boolean',
     ];
 
     public function anggota()

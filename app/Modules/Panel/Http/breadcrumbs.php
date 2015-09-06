@@ -18,6 +18,7 @@ Breadcrumbs::register('panel.index', function ($breadcrumbs) {
 |--------------------------------------------------------------------------
 */
 
+// Anggota
 Breadcrumbs::register('panel.keanggotaan.anggota.index', function ($breadcrumbs) {
     $breadcrumbs->parent('panel.index');
     $breadcrumbs->push('Keanggotaan');
@@ -32,6 +33,23 @@ Breadcrumbs::register('panel.keanggotaan.anggota.show', function($breadcrumbs, $
 Breadcrumbs::register('panel.keanggotaan.anggota.edit', function($breadcrumbs, $anggota) {
     $breadcrumbs->parent('panel.keanggotaan.anggota.show', $anggota);
     $breadcrumbs->push('Edit Anggota');
+});
+
+// Divisi
+Breadcrumbs::register('panel.keanggotaan.divisi.index', function ($breadcrumbs) {
+    $breadcrumbs->parent('panel.index');
+    $breadcrumbs->push('Keanggotaan');
+    $breadcrumbs->push('Divisi', route('panel.keanggotaan.divisi.index'));
+});
+
+Breadcrumbs::register('panel.keanggotaan.divisi.show', function($breadcrumbs, $divisi) {
+    $breadcrumbs->parent('panel.keanggotaan.divisi.index');
+    $breadcrumbs->push($divisi->singkatan, route('panel.keanggotaan.divisi.show', $divisi));
+});
+
+Breadcrumbs::register('panel.keanggotaan.divisi.edit', function($breadcrumbs, $divisi) {
+    $breadcrumbs->parent('panel.keanggotaan.divisi.show', $divisi);
+    $breadcrumbs->push('Ganti Penanggung Jawab');
 });
 
 /*
