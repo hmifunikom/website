@@ -3,7 +3,7 @@
 @section('head')
     <style>
         #hero .content-bg {
-            background-image: url({{ asset_version('assets/images/keanggotaan-bg.jpg') }});
+            background-image: url({{ asset_version('media/images/' . settings('hmif_keanggotaan_background')) }});
         }
 
         #divisi {

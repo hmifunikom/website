@@ -70,7 +70,7 @@ return [
                 });
             }
 
-            // User | Inti
+            // User, Setting | Inti
             if($user->userable->divisi->id_penanggung_jawab == $user->userable->id_anggota)
             {
                 $authority->allow('manage', HMIF\Modules\Event\Entities\Event::class);
@@ -80,12 +80,10 @@ return [
                 $authority->allow('manage', HMIF\Modules\Keanggotaan\Entities\Divisi::class);
 
                 $authority->allow('manage', HMIF\Modules\User\Entities\User::class);
+
+                $authority->allow('manage', 'Setting');
             }
         }
-
-        $authority->allow('update', HMIF\Modules\User\Entities\User::class, function($self, $user) {
-            return $self->user()->id_user->id_anggota == $user->id_user;
-        });
 
         $authority->allow('update', HMIF\Modules\User\Entities\User::class, function($self, $user) {
             return $self->user()->id_user->id_anggota == $user->id_user;

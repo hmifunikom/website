@@ -17,7 +17,7 @@
         /*-------*/
 
         #milestone .content-bg {
-            background-image: url({{ asset_version('assets/images/leader-bg.jpg') }});
+            background-image: url({{ asset_version('media/images/' . settings('hmif_visimisi_background')) }});
         }
 
         #event .content-bg {
@@ -31,7 +31,7 @@
     <div id="home" class="content has-bg home">
         <!-- begin content-bg -->
         <div class="content-bg">
-            <img src="{{ asset_version('assets/images/home-bg.jpg') }}" alt="Home" />
+            <img src="{{ asset_version('media/images/' . settings('hmif_main_background')) }}" alt="Home" />
         </div>
         <!-- end content-bg -->
         <!-- begin container -->
@@ -78,7 +78,7 @@
                     <div class="about-author">
                         <div class="quote bg-silver">
                             <i class="fa fa-quote-left"></i>
-                            <h3>We are loyal, responsible<br /><span>and together to be Azmazing</span></h3>
+                            <h3>{{ settings('hmif_leader_quote') }}</h3>
                             <i class="fa fa-quote-right"></i>
                         </div>
                         <div class="author">
@@ -135,21 +135,12 @@
                     <div id="tab-content" class="tab-content">
                         <!-- begin tab-pane -->
                         <div class="tab-pane fade in active" id="visi">
-                            <p>
-                                Menjadikan HMIF UNIKOM sebagai wadah serta penyalur aspirasi, minat, dan bakat. Guna menghasilkan masyarakat Teknik Informatika yang lebih berkualitas, baik dalam bidang akademik maupun non akademik.
-                            </p>
+                            {!! parsedown(settings('hmif_visi')) !!}
                         </div>
                         <!-- end tab-pane -->
                         <!-- begin tab-pane -->
                         <div class="tab-pane fade" id="misi">
-                            <ol>
-                                <li>Menghasilkan anggota-anggota HMIF Unikom yang solid, loyal, dan bertanggung jawab terhadap himpunan serta bermanfaat bagi lingkungan Teknik Informatika Unikom.</li>
-                                <li>Menjadikan mahasiswa Teknik Informatika Unikom sebagai individu yang bermoral, berfikiran kritis, cerdas, serta kompeten.</li>
-                                <li>Menciptakan hubungan yang bersinergi antara mahasiswa HMIF Unikom dan Prodi Teknik Informatika melalui interaksi sosial.</li>
-                                <li>Menumbuh kembangkan kemampuan berwirausaha dan rasa kepedulian terhadap sesama.</li>
-                                <li>Menggali potensi serta mengapresiasi karya mahasiswa Teknik Informatika</li>
-                                <li>Menjali kemitraan dengan organisasi atau lembaga baik di dalam maupun di luar Unikom.</li>
-                            </ol>
+                            {!! parsedown(settings('hmif_misi')) !!}
                         </div>
                         <!-- end tab-pane -->
                     </div>

@@ -8,6 +8,10 @@ Route::group(['namespace' => 'HMIF\\Modules\Panel\Http\Controllers'], function()
         });
 
         Route::get('dashboard', ['uses' => 'DashboardController@index', 'as' => 'panel.index']);
+
+        Route::get('setting', ['uses' => 'SettingController@edit', 'as' => 'panel.setting.edit']);
+        Route::put('setting', ['uses' => 'SettingController@update', 'as' => 'panel.setting.update']);
+        Route::post('setting/image', ['uses' => 'SettingController@updateImage', 'as' => 'panel.setting.update.image']);
     });
 });
 

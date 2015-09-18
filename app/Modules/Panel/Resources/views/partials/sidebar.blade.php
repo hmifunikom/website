@@ -71,6 +71,14 @@
                 </a>
             </li>
             @endif
+            @if(Authority::can('manage', 'Setting'))
+            <li class="{{ menu_active('panel.setting.edit') }}">
+                <a href="{{ route('panel.setting.edit') }}" data-toggle="ajax">
+                    <i class="fa fa-gear"></i>
+                    <span>Setting</span>
+                </a>
+            </li>
+            @endif
 
             <!-- begin sidebar minify button -->
             <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>

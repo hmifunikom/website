@@ -22,6 +22,8 @@
             margin-top: 90px;
         }
 
+        .gm-style img { max-width: none !important; }
+        .gm-style label { width: auto !important; display: inline !important; }
     </style>
 @stop
 
@@ -52,14 +54,7 @@
                 <div class="col-md-6 col-sm-6" data-animation="true" data-animation-type="fadeInLeft">
                     <!-- begin about -->
                     <div class="about">
-                        <h3>Alamat Sekretariat</h3>
-                        <p>
-                            <strong>HMIF Unikom</strong><br />
-                            Universitas Komputer Indonesia<br />
-                            Jl. Dipati Ukur No. 112 (<strong>R.4416</strong>)<br />
-                            Bandung 40132<br />
-                            T: 022 96072227 E: <a href="mailto:humas@hmifunikom.org">humas@hmifunikom.org</a>
-                        </p>
+                        {!! parsedown(settings('hmif_contact')) !!}
                     </div>
                     <!-- end about -->
                 </div>
@@ -102,7 +97,7 @@
         $(document).ready(function() {
             var script = document.createElement('script');
             script.type = 'text/javascript';
-            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&callback=handleGoogleMapSetting';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDrMCZfcXmMriljaYHFlKyiryagVBV_F9M&sensor=true&callback=handleGoogleMapSetting';
             document.body.appendChild(script);
         });
     </script>
